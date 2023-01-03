@@ -2,6 +2,7 @@ package com.codeine.codingweek;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -20,6 +21,7 @@ public class Main extends Application {
         scene.getStylesheets().add(getClass().getResource("css/style.css").toExternalForm()) ;
 
         stage.setTitle("TN FlashCards") ;
+        stage.getIcons().add(new Image(getClass().getResource("images/MAscotte_borderless.png").toExternalForm())) ;
         stage.setScene(scene) ;
         stage.show() ;
     }
