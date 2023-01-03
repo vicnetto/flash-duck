@@ -18,10 +18,10 @@
 
     <HBox alignment="CENTER" prefHeight="400">
         <HBox alignment="CENTER" prefWidth="400" prefHeight="300">
-            <Button text="Création" prefWidth="300" prefHeight="400" style="-fx-border-color: #282a36; -fx-text-fill: #44475a; -fx-font-weight: bold"/>
+            <Button text="Création" prefWidth="300" prefHeight="400" fx:id="button_creation" styleClass="card" onAction="#creation" />
         </HBox>
         <HBox alignment="CENTER" prefWidth="400" prefHeight="300">
-            <Button text="Apprentissage" prefWidth="300" prefHeight="400" style="-fx-border-color: #282a36; -fx-text-fill: #44475a; -fx-font-weight: bold"/>
+            <Button text="Apprentissage" prefWidth="300" prefHeight="400" fx:id="button_apprentissage" style="-fx-border-color: #282a36; -fx-text-fill: #44475a; -fx-font-weight: bold" onAction="#apprentissage"/>
         </HBox>
     </HBox>
 </VBox>
