@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Pile {
 
     private String category_name ; // Nom de la catégorie
+    private String name ;
     private int score = 0 ; // Score sur la pile actuelle
     private ArrayList<Card> cards = new ArrayList<>() ; 
 
@@ -15,9 +16,10 @@ public class Pile {
      * 
      */
 
-    public Pile(String name, ArrayList<Card> cards) {
+    public Pile(String category_name, String name, ArrayList<Card> cards) {
 
-        this.category_name = name ;
+        this.category_name = category_name ;
+        this.name = name ;
         this.cards = cards ;
 
     }
@@ -34,5 +36,11 @@ public class Pile {
         this.category_name = name ;
     }
 
-    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
