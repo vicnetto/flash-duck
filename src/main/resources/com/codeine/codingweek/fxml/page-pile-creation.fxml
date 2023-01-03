@@ -5,10 +5,15 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.codeine.codingweek.AffichagePilesController"
       prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4">
+
+    <MenuBar>
+        <fx:include source="menu.fxml"/>
+    </MenuBar>
 
     <ScrollPane minHeight="500" style="-fx-background: #6272a4">
         <GridPane alignment="CENTER" hgap="20" vgap="20" style="-fx-background: #6272a4" fx:id="gridPiles">
