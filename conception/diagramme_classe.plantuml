@@ -10,7 +10,7 @@ class FlashCardGame {
 class FlashCard {
     -String question
     -String reponse
-    }
+}
 class Pile {
     -int score
 }
