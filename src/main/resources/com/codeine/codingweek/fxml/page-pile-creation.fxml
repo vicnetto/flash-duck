@@ -2,10 +2,16 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
 
 <VBox alignment="CENTER" prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichagePilesController">
+
+    <MenuBar>
+        <fx:include source="menu.fxml"/>
+    </MenuBar>
 
     <ScrollPane minHeight="500" style="-fx-background: #6272a4">
         <VBox fx:id="gridPiles" alignment="CENTER" style="-fx-background: #6272a4">

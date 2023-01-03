@@ -15,7 +15,7 @@ public class ViewSwitcher {
         ViewSwitcher.scene = scene ;
     }
 
-    public static void setFlashCardGame(FlashCardGame fcg) {
+    public static void setCarnet(FlashCardGame fcg) {
         ViewSwitcher.fcg = fcg ;
     }
 
@@ -29,6 +29,7 @@ public class ViewSwitcher {
         AffichageCartesController affichageCartesController = new AffichageCartesController(fcg);
         CreationCarteController carteCreationController = new CreationCarteController(fcg);
         CreationPileController creationPileController = new CreationPileController(fcg);
+        MenuController menuController = new MenuController();
 
         loader.setControllerFactory(ic -> {
             if (ic.equals(AccueilController.class)) return accueilController;
@@ -36,6 +37,7 @@ public class ViewSwitcher {
             else if (ic.equals(CreationCarteController.class)) return carteCreationController;
             else if (ic.equals(AffichageCartesController.class)) return affichageCartesController;
             else if (ic.equals(CreationPileController.class)) return creationPileController;
+            else if (ic.equals(MenuController.class)) return menuController;
             else System.out.println("Pas de controller trouve");
             return null;
         });
