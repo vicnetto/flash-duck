@@ -14,11 +14,13 @@ class FlashCard {
 class Pile {
     -int scoreActuel | [0,1]->pourcentage
 }
-enum Tag {
+class Tag {
     -String nomCateg
+    -String couleur
 }
 
 FlashCardGame -- "*\nlesCartes" FlashCard
 FlashCardGame -- "*\nlesPiles" Pile
 Pile -- "*\nlesCartes" FlashCard
 FlashCard -- "1" Tag
+FlashCardGame -- "*" Tag
