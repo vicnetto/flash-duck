@@ -1,11 +1,24 @@
 
 .card {
-
-  -fx-background-color : blue;
+  
+  /* Style the button */
+  -fx-background-color: white;
   -fx-border-color: black;
   -fx-border-width: 1px;
   -fx-border-radius: 5px;
   -fx-padding: 10px;
   -fx-font-size: 16px;
 
+  
+  /* Add a shadow effect */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 0);
+
+}
+
+.card:hover {
+  /* Change the background color on hover */
+  -fx-background-color: lightgrey;
+  
+  /* Increase the shadow effect on hover */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 8, 0, 0, 0);
 }
