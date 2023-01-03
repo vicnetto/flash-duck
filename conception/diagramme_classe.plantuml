@@ -1,0 +1,24 @@
+@startuml
+
+title Diagramme de classe de l'application FlashCard
+
+' ABDEE6
+
+class FlashCardGame {
+    
+}
+class FlashCard {
+    -String question
+    -String reponse
+    }
+class Pile {
+    -int scoreActuel | [0,1]->pourcentage
+}
+enum Tag {
+    -String nomCateg
+}
+
+FlashCardGame -- "*\nlesCartes" FlashCard
+FlashCardGame -- "*\nlesPiles" Pile
+Pile -- "*\nlesCartes" FlashCard
+FlashCard -- "1" Tag
