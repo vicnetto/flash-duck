@@ -21,6 +21,7 @@ public class ViewSwitcher {
 
 
     public static void swtichTo(View view) throws IOException {
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ViewSwitcher.class.getResource(view.getFileName()));
 
@@ -35,7 +36,10 @@ public class ViewSwitcher {
             else System.out.println("Pas de controller trouve");
             return null;
         });
+
         Parent root = loader.load();
+        
         scene.setRoot(root);
+
     }
 }

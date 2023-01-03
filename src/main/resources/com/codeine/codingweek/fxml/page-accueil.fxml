@@ -4,21 +4,24 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.codeine.codingweek.AccueilController"
       alignment="CENTER"
       spacing="30"
-      prefHeight="600" prefWidth="800" style="-fx-background-color: #D7C799">
+      prefHeight="600" prefWidth="800" style="-fx-background-color: #f4f4f4">
 
     <HBox alignment="CENTER" maxHeight="200">
-        <Label text="Bienvenue, choisissez un mode !" style="-fx-font: 30 arial; -fx-font-weight: bold;"/>
+        <Label text="Bienvenue, choisissez un mode !" styleClass="text"/>
     </HBox>
 
     <HBox alignment="CENTER" prefHeight="400">
         <HBox alignment="CENTER" prefWidth="400" prefHeight="300">
-            <Button text="Création" prefWidth="300" prefHeight="400" fx:id="button_creation" styleClass="card" onAction="#creation" />
+            <Button text="Création" prefWidth="300" prefHeight="400" fx:id="button_creation" styleClass="card" onAction="#creation">
+            </Button>
         </HBox>
         <HBox alignment="CENTER" prefWidth="400" prefHeight="300">
             <Button text="Apprentissage" prefWidth="300" prefHeight="400" fx:id="button_apprentissage" styleClass="card" onAction="#apprentissage"/>
