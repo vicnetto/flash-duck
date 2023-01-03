@@ -31,7 +31,6 @@ public class ViewSwitcher {
             else System.out.println("Pas de controller trouve");
             return null;
         });
-        System.out.println(ViewSwitcher.class.getResource(view.getFileName()));
         Parent root = loader.load();
         scene.setRoot(root);
     }
