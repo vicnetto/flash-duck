@@ -66,6 +66,13 @@
     </dependencies>
 
     <build>
+        <finalName>TN FlashCards</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources/com/codeine/codingweek</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
