@@ -14,7 +14,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(new BorderPane());
         ViewSwitcher.setScene(scene);
-        ViewSwitcher.swtichTo(View.APPRENTISSAGE);
+        ViewSwitcher.swtichTo(View.ACCUEIL);
 
         stage.setTitle("Hello!");
         stage.setScene(scene);

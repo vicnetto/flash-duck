@@ -34,8 +34,8 @@ public class AccueilController implements Initializable {
     }
 
     @FXML
-    public void apprentissage() {
-
+    public void apprentissage() throws IOException {
+        ViewSwitcher.swtichTo(View.APPRENTISSAGE);
     }
 
 }
