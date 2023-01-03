@@ -23,6 +23,10 @@ public class CreationPileController implements Initializable {
     @FXML
     private Button button_valider ;
 
+    public CreationPileController(FlashCardGame fcg) {
+        this.fcg = fcg;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

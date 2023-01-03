@@ -22,6 +22,12 @@ public class CreationCarteController implements Initializable {
     @FXML
     private Button button_valider ;
 
+    private FlashCardGame fcg;
+
+    public CreationCarteController(FlashCardGame fcg) {
+        this.fcg = fcg;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

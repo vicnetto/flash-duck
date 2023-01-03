@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationPileController">
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationPileController">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -20,7 +20,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextArea prefHeight="55.0" prefWidth="800.0">
+                  <TextArea prefHeight="55.0" prefWidth="800.0" fx:id="textarea_t">
                      <font>
                         <Font size="15.0" />
                      </font>

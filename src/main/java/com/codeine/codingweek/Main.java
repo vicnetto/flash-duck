@@ -14,14 +14,17 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
 
         Scene scene = new Scene(new BorderPane()) ;
-        
+
+        FlashCardGame fcg = new FlashCardGame();
+
         ViewSwitcher.setScene(scene) ;
+        ViewSwitcher.setFlashCardGame(fcg);
         ViewSwitcher.swtichTo(View.ACCUEIL) ;
 
         scene.getStylesheets().add(getClass().getResource("css/style.css").toExternalForm()) ;
 
         stage.setTitle("TN FlashCards") ;
-        stage.getIcons().add(new Image(getClass().getResource("images/MAscotte_borderless.png").toExternalForm())) ;
+        stage.getIcons().add(new Image(getClass().getResource("images/Mascotte_borderless.png").toExternalForm())) ;
         stage.setScene(scene) ;
         stage.show() ;
     }

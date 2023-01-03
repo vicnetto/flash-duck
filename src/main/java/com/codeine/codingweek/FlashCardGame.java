@@ -7,6 +7,7 @@ public class FlashCardGame {
     private ArrayList<Pile> lesPiles;
 
     public FlashCardGame() {
+        lesPiles = new ArrayList<Pile>();
     }
 
     public ArrayList<Pile> getLesPiles() {

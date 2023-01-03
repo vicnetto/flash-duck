@@ -11,6 +11,11 @@ public class AffichageCartesController implements Initializable {
     @FXML
     public GridPane gridCartes;
 
+    private FlashCardGame fcg;
+
+    public AffichageCartesController(FlashCardGame fcg) {
+        this.fcg = fcg;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
