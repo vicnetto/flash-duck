@@ -16,8 +16,8 @@
     </MenuBar>
 
     <ScrollPane minHeight="500" style="-fx-background: #6272a4">
-        <GridPane alignment="CENTER" hgap="20" vgap="20" style="-fx-background: #6272a4" fx:id="gridCartes">
-        </GridPane>
+        <VBox alignment="CENTER" style="-fx-background: #6272a4" fx:id="gridCartes">
+        </VBox>
     </ScrollPane>
 
     <HBox alignment="CENTER" prefHeight="100">
