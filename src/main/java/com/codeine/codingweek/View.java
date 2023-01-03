@@ -2,9 +2,9 @@ package com.codeine.codingweek;
 
 public enum View {
 
-    ACCUEIL("fxml/page-accueil.fxml"), // Page d'accueil = ControllerAccueil
-    CREATION("fxml/page-creation.fxml"), // Page d'ajout de pile de cartes = GlobalController
-    APPRENTISSAGE("fxml/page-apprentissage.fxml") ; //  
+    ACCUEIL("fxml/page-accueil.fxml"), // ControllerAccueil
+    PILE_CREATION("fxml/page-pile-creation.fxml"), // ControlleurGlobal
+    CARTE_CREATION("fxml/page-carte-creation.fxml");
 
     private String fileName ;
 
