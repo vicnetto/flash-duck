@@ -7,6 +7,7 @@ public enum View {
     CARTE_CREATION("fxml/page-carte-creation.fxml"), // AffichageCartesController
     FORM_CARTE("fxml/form-creation-carte.fxml"), // CreationCarteController
     FORM_PILE("fxml/form-creation-pile.fxml"), // CreationPileController
+    APPRENTISSAGE_ACCUEIL("fxml/page-apprentissage-accueil.fxml") // PageApprentissageAccueil
     ;
 
     private String fileName ;

@@ -11,4 +11,5 @@
     <MenuItem text="Menu principal" onAction="#menuPrincipal"/>
     <MenuItem text="Menu apprentissage" onAction="#menuApprentissage"/>
     <MenuItem text="Menu creation" onAction="#menuCreation"/>
+    
 </Menu>
