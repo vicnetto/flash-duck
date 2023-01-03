@@ -8,6 +8,7 @@ public enum View {
     CARTE_CREATION("fxml/page-carte-creation.fxml"), // AffichageCartesController
     FORM_CARTE("fxml/form-creation-carte.fxml"), // CreationCarteController
     FORM_PILE("fxml/form-creation-pile.fxml"), // CreationPileController
+    FORM_MODIFICATION_CARTE("fxml/form-modification-carte.fxml"), // ModificationCarteController
 
     APPRENTISSAGE_ACCUEIL("fxml/page-apprentissage-accueil.fxml"); // PageApprentissageAccueil
 

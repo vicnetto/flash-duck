@@ -6,6 +6,7 @@ public class FlashCardGame {
 
     private ArrayList<Pile> lesPiles;
     private int currentPile = 0;
+    private int currentCarte = 0;
 
     public FlashCardGame() {
         lesPiles = new ArrayList<Pile>();
@@ -40,5 +41,13 @@ public class FlashCardGame {
 
     public void setCurrentPile(int currentPile) {
         this.currentPile = currentPile;
+    }
+
+    public int getCurrentCarte() {
+        return currentCarte;
+    }
+
+    public void setCurrentCarte(int currentCarte) {
+        this.currentCarte = currentCarte;
     }
 }

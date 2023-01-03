@@ -35,10 +35,19 @@ public class AffichageCartesController implements Initializable {
             vb.getChildren().add(reponse);
             vb.setPadding(new Insets(10));
             vb.setStyle("-fx-border-color: black; -fx-border-radius: 5; -fx-margin-bottom: 20");
-            Button bt = new Button("supprimer");
+            Button suppr = new Button("supprimer");
             int copieI = i;
-            bt.setOnMouseClicked((e) -> {supprimerCarte(copieI);});
-            vb.getChildren().add(bt);
+            suppr.setOnMouseClicked((e) -> {supprimerCarte(copieI);});
+            vb.getChildren().add(suppr);
+            Button modif = new Button("modif");
+            modif.setOnMouseClicked((e)-> {
+                try {
+                    goToModificationFormCarte(copieI);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
+            vb.getChildren().add(modif);
             this.gridCartes.getChildren().add(vb);
             i++;
         }
@@ -48,14 +57,27 @@ public class AffichageCartesController implements Initializable {
         ViewSwitcher.swtichTo(View.FORM_CARTE);
     }
 
+    public void goToModificationFormCarte(int i) throws IOException {
+        this.fcg.setCurrentCarte(i);
+        ViewSwitcher.swtichTo(View.FORM_MODIFICATION_CARTE);
+    }
+
     public void supprimerCarte(int i) {
         this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).deleteCarteByIndex(i);
         this.gridCartes.getChildren().remove(this.gridCartes.getChildren().get(i));
         for (int j = 0; j < this.gridCartes.getChildren().size(); j++) {
             VBox vb = (VBox) this.gridCartes.getChildren().get(j);
-            Button bt = (Button) vb.getChildren().get(2);
+            Button suppr = (Button) vb.getChildren().get(2);
             int copieJ = j;
-            bt.setOnMouseClicked((e) -> {supprimerCarte(copieJ);});
+            suppr.setOnMouseClicked((e) -> {supprimerCarte(copieJ);});
+            Button modif = (Button) vb.getChildren().get(3);
+            modif.setOnMouseClicked((e) ->{
+                try {
+                    goToModificationFormCarte(copieJ);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
         }
     }
 }

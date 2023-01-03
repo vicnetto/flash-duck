@@ -32,6 +32,7 @@ public class ViewSwitcher {
         CreationPileController creationPileController = new CreationPileController(fcg);
         MenuController menuController = new MenuController();
         PageApprentissageAccueil apprentissageaccueilController = new PageApprentissageAccueil(fcg) ;
+        ModificationCarteController modificationCarteController = new ModificationCarteController(fcg);
 
         loader.setControllerFactory(ic -> {
             if (ic.equals(AccueilController.class)) return accueilController ;
@@ -41,6 +42,7 @@ public class ViewSwitcher {
             else if (ic.equals(CreationPileController.class)) return creationPileController ;
             else if (ic.equals(MenuController.class)) return menuController ;
             else if (ic.equals(PageApprentissageAccueil.class)) return apprentissageaccueilController ;
+            else if (ic.equals(ModificationCarteController.class)) return modificationCarteController ;
             else System.out.println("Pas de controller trouve") ;
             return null;
         });

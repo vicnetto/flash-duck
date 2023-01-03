@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.codeine.codingweek.ModificationCarteController">
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox>
+                    <children>
+                        <Label text="Question">
+                            <font>
+                                <Font size="20.0"/>
+                            </font>
+                        </Label>
+                        <TextArea prefHeight="55.0" prefWidth="800.0" fx:id="textarea_q">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0"/>
+                            </VBox.margin>
+                        </TextArea>
+                    </children>
+                </VBox>
+                <VBox layoutX="10.0" layoutY="275.0">
+                    <children>
+                        <Label text="Réponse">
+                            <font>
+                                <Font size="20.0"/>
+                            </font>
+                        </Label>
+                        <TextArea prefHeight="55.0" prefWidth="800.0" fx:id="textarea_r">
+                            <font>
+                                <Font size="20.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0"/>
+                            </VBox.margin>
+                        </TextArea>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="30.0"/>
+                    </VBox.margin>
+                </VBox>
+                <VBox layoutX="10.0" layoutY="310.0">
+                    <children>
+                        <Label text="Ajouter un contenu multimédia">
+                            <font>
+                                <Font size="20.0"/>
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
+                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
+                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
+                            </children>
+                            <VBox.margin>
+                                <Insets top="10.0"/>
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="30.0"/>
+                    </VBox.margin>
+                </VBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Button mnemonicParsing="false" text="Annuler" fx:id="button_annuler" onAction="#annuler">
+                            <HBox.margin>
+                                <Insets right="40.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Modifier" fx:id="button_valider" onAction="#modifierCarte">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="30.0"/>
+                    </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    <padding>
+        <Insets left="30.0" right="30.0"/>
+    </padding>
+</BorderPane>
+
