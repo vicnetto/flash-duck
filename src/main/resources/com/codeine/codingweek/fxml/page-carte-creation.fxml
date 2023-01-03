@@ -15,13 +15,11 @@
         <fx:include source="menu.fxml"/>
     </MenuBar>
 
-    <ScrollPane minHeight="500" style="-fx-background: #6272a4">
-        <VBox alignment="CENTER" style="-fx-background: #6272a4" fx:id="gridCartes">
-        </VBox>
-    </ScrollPane>
+    <VBox alignment="CENTER" prefHeight="500" style="-fx-background: #6272a4" fx:id="gridCartes">
+    </VBox>
 
     <HBox alignment="CENTER" prefHeight="100">
-        <Button text="+ Ajouter une carte"/>
+        <Button text="+ Ajouter une carte" onAction="#goToFormCarte"/>
     </HBox>
 
 </VBox>

@@ -40,7 +40,7 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" text="Ajouter" onAction="#ajouterPile">
+                  <Button mnemonicParsing="false" onAction="#ajouterPile" text="Ajouter">
                      <font>
                         <Font size="18.0" />
                      </font>

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class FlashCardGame {
 
     private ArrayList<Pile> lesPiles;
+    private int currentPile = 0;
 
     public FlashCardGame() {
         lesPiles = new ArrayList<Pile>();
@@ -31,5 +32,13 @@ public class FlashCardGame {
             }
             i++;
         }
+    }
+
+    public int getCurrentPile() {
+        return currentPile;
+    }
+
+    public void setCurrentPile(int currentPile) {
+        this.currentPile = currentPile;
     }
 }

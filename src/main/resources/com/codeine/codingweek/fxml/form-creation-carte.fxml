@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationCarteController">
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationCarteController">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -22,7 +22,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextArea prefHeight="55.0" prefWidth="800.0">
+                  <TextArea prefHeight="55.0" prefWidth="800.0" fx:id="textarea_q">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -39,7 +39,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextArea prefHeight="55.0" prefWidth="800.0">
+                  <TextArea prefHeight="55.0" prefWidth="800.0" fx:id="textarea_r">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -76,7 +76,7 @@
             </VBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Button">
+                  <Button mnemonicParsing="false" text="Annuler" fx:id="button_annuler" onAction="#annuler">
                      <HBox.margin>
                         <Insets right="40.0" />
                      </HBox.margin>
@@ -84,7 +84,7 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" text="Button">
+                  <Button mnemonicParsing="false" text="Ajouter" fx:id="button_valider" onAction="#ajouterCarte">
                      <font>
                         <Font size="18.0" />
                      </font>

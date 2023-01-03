@@ -33,10 +33,22 @@ public class AffichagePilesController implements Initializable {
             vb.getChildren().add(nom);
             vb.setPadding(new Insets(10));
             vb.setStyle("-fx-border-color: black; -fx-border-radius: 5; -fx-margin-bottom: 20;");
+            int copieI = i;
+            vb.setOnMouseClicked((e) -> {
+                try {
+                    this.goToPile(copieI);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
             this.gridPiles.getChildren().add(vb);
         }
     }
 
+    public void goToPile(int i) throws IOException {
+        this.fcg.setCurrentPile(i);
+        ViewSwitcher.swtichTo(View.CARTE_CREATION);
+    }
 
     public void goToFormCreationPile(ActionEvent actionEvent) throws IOException {
         ViewSwitcher.swtichTo(View.FORM_PILE);

@@ -24,5 +24,36 @@ public class Card {
         this.freq_apparition = 10 ; // A voir
 
     }
-    
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public String getReponse() {
+        return reponse;
+    }
+
+    public void setReponse(String reponse) {
+        this.reponse = reponse;
+    }
+
+    public float getFreq_apparition() {
+        return freq_apparition;
+    }
+
+    public void setFreq_apparition(float freq_apparition) {
+        this.freq_apparition = freq_apparition;
+    }
+
+    public int getNbrErreur() {
+        return nbrErreur;
+    }
+
+    public void setNbrErreur(int nbrErreur) {
+        this.nbrErreur = nbrErreur;
+    }
 }

@@ -7,6 +7,7 @@ public class Pile {
     private String category_name ; // Nom de la catégorie
     private String name ;
     private int score = 0 ; // Score sur la pile actuelle
+
     private ArrayList<Card> cards = new ArrayList<>() ; 
 
     /* Calcul du score
@@ -49,5 +50,20 @@ public class Pile {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void addCarte(Card carte) {
+        this.cards.add(carte);
+    }
+
+    public void deleteCarteByIndex(int i) {
+        this.cards.remove(i);
+    }
+    public void deleteCarteByQuestion(String question) {
+        for (Card carte : this.cards) {
+            if (carte.getQuestion().equals(question)) {
+                this.cards.remove(carte);
+            }
+        }
     }
 }
