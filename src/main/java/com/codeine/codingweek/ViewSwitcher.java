@@ -26,12 +26,12 @@ public class ViewSwitcher {
 
         AccueilController accueilController = new AccueilController();
         PileCreationController pileCreationController = new PileCreationController();
-        CreationCreationController carteCreationController = new CreationCreationController();
+        CreationCarteController carteCreationController = new CreationCarteController();
 
         loader.setControllerFactory(ic -> {
             if (ic.equals(AccueilController.class)) return accueilController;
             else if (ic.equals(PileCreationController.class)) return pileCreationController;
-            else if (ic.equals(CreationCreationController.class)) return carteCreationController;
+            else if (ic.equals(CreationCarteController.class)) return carteCreationController;
             else System.out.println("Pas de controller trouve");
             return null;
         });
