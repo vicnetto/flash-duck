@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
 
 <VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.codeine.codingweek.PageApprentissageAccueil"
             prefHeight="400.0" prefWidth="800.0">
 
+    <MenuBar>
+        <fx:include source="menu.fxml"/>
+    </MenuBar>
 
+    <ScrollPane minHeight="500" style="-fx-background: #6272a4">
+        <GridPane alignment="CENTER" hgap="20" vgap="20" style="-fx-background: #6272a4" fx:id="gridPiles">
+        </GridPane>
+    </ScrollPane>
+
+    <HBox alignment="CENTER" prefHeight="100" styleClass="button_classique">
+        <Button text="Statistiques"/>
+    </HBox>
 
 </VBox>
