@@ -2,9 +2,9 @@ package com.codeine.codingweek;
 
 public enum View {
 
-    ACCUEIL("fxml/page-accueil.fxml"),
-    CREATION("fxml/page-creation.fxml"),
-    APPRENTISSAGE("fxml/page-apprentissage.fxml") ;
+    ACCUEIL("fxml/page-accueil.fxml"), // Page d'accueil = ControllerAccueil
+    CREATION("fxml/page-creation.fxml"), // Page d'ajout de pile de cartes = GlobalController
+    APPRENTISSAGE("fxml/page-apprentissage.fxml") ; //  
 
     private String fileName ;
 
@@ -15,4 +15,5 @@ public enum View {
     public String getFileName() {
         return fileName ;
     }
+
 }
