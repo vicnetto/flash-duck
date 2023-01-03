@@ -3,9 +3,10 @@ package com.codeine.codingweek;
 public enum View {
 
     ACCUEIL("fxml/page-accueil.fxml"), // ControllerAccueil
-    PILE_CREATION("fxml/page-pile-creation.fxml"), // ControllerGlobal
-    CARTE_CREATION("fxml/page-carte-creation.fxml"), // ControllerCarteCreation
-    FORM_CARTE_CREATION("fxml/form-creation-carte.fxml") // Controller
+    PILE_CREATION("fxml/page-pile-creation.fxml"), // AffichagePilesController
+    CARTE_CREATION("fxml/page-carte-creation.fxml"), // AffichageCartesController
+    FORM_CARTE("fxml/form-creation-carte.fxml"), // CreationCarteController
+    FORM_PILE("fxml/form-creation-pile.fxml"), // CreationPileController
     ;
 
     private String fileName ;

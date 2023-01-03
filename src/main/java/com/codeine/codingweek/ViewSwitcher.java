@@ -15,7 +15,7 @@ public class ViewSwitcher {
         ViewSwitcher.scene = scene ;
     }
 
-    public static void setCarnet(FlashCardGame fcg) {
+    public static void setFlashCardGame(FlashCardGame fcg) {
         ViewSwitcher.fcg = fcg ;
     }
 
@@ -26,13 +26,19 @@ public class ViewSwitcher {
         loader.setLocation(ViewSwitcher.class.getResource(view.getFileName()));
 
         AccueilController accueilController = new AccueilController();
-        PileCreationController pileCreationController = new PileCreationController();
-        CarteCreationController carteCreationController = new CarteCreationController();
+        AffichagePilesController affichagePilesController = new AffichagePilesController(fcg);
+        AffichageCartesController affichageCartesController = new AffichageCartesController(fcg);
+        CreationCarteController carteCreationController = new CreationCarteController(fcg);
+        CreationPileController creationPileController = new CreationPileController(fcg);
+        MenuController menuController = new MenuController();
 
         loader.setControllerFactory(ic -> {
             if (ic.equals(AccueilController.class)) return accueilController;
-            else if (ic.equals(PileCreationController.class)) return pileCreationController;
-            else if (ic.equals(CarteCreationController.class)) return carteCreationController;
+            else if (ic.equals(AffichagePilesController.class)) return affichagePilesController;
+            else if (ic.equals(CreationCarteController.class)) return carteCreationController;
+            else if (ic.equals(AffichageCartesController.class)) return affichageCartesController;
+            else if (ic.equals(CreationPileController.class)) return creationPileController;
+            else if (ic.equals(MenuController.class)) return menuController;
             else System.out.println("Pas de controller trouve");
             return null;
         });

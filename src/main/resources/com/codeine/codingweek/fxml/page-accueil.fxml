@@ -10,9 +10,12 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.codeine.codingweek.AccueilController"
-      alignment="CENTER"
       spacing="30"
       prefHeight="600" prefWidth="800" style="-fx-background-color: #f4f4f4">
+
+    <MenuBar>
+        <fx:include source="menu.fxml"/>
+    </MenuBar>
 
     <HBox alignment="CENTER" maxHeight="200">
         <Label text="Bienvenue, choisissez un mode !" styleClass="text"/>

@@ -24,6 +24,13 @@ public class Pile {
 
     }
 
+    public Pile(String category_name, String name) {
+
+        this.category_name = category_name ;
+        this.name = name ;
+
+    }
+
     public ArrayList<Card> getCards() {
         return this.cards ;
     }

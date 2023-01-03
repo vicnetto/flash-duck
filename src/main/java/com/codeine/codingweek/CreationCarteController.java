@@ -8,7 +8,7 @@ import javafx.scene.control.TextArea;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CarteCreationController implements Initializable {
+public class CreationCarteController implements Initializable {
 
     @FXML
     private TextArea textarea_q ;
@@ -22,10 +22,16 @@ public class CarteCreationController implements Initializable {
     @FXML
     private Button button_valider ;
 
+    private FlashCardGame fcg;
+
+    public CreationCarteController(FlashCardGame fcg) {
+        this.fcg = fcg;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        
+
 
     }
 
