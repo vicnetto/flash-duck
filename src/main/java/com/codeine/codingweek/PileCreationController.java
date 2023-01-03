@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.Initializable;
 
-public class ApprentissageController implements Initializable {
+public class PileCreationController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

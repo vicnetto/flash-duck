@@ -3,8 +3,8 @@ package com.codeine.codingweek;
 public enum View {
 
     ACCUEIL("fxml/page-accueil.fxml"),
-    CREATION("fxml/page-creation.fxml"),
-    APPRENTISSAGE("fxml/page-apprentissage.fxml") ;
+    PILE_CREATION("fxml/page-pile-creation.fxml"),
+    CARTE_CREATION("fxml/page-carte-creation.fxml");
 
     private String fileName ;
 

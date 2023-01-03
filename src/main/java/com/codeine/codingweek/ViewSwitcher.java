@@ -25,11 +25,13 @@ public class ViewSwitcher {
         loader.setLocation(ViewSwitcher.class.getResource(view.getFileName()));
 
         AccueilController accueilController = new AccueilController();
-        ApprentissageController apprentissageController = new ApprentissageController();
+        PileCreationController pileCreationController = new PileCreationController();
+        CarteCreationController carteCreationController = new CarteCreationController();
 
         loader.setControllerFactory(ic -> {
             if (ic.equals(AccueilController.class)) return accueilController;
-            else if (ic.equals(ApprentissageController.class)) return apprentissageController;
+            else if (ic.equals(PileCreationController.class)) return pileCreationController;
+            else if (ic.equals(CarteCreationController.class)) return carteCreationController;
             else System.out.println("Pas de controller trouve");
             return null;
         });

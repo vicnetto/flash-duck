@@ -17,13 +17,13 @@ public class JsonController {
 
     /**
      * Sauvegarde la pile dans le fichier
-     * @param newPile la pile à sauvegarder
+     * @param pile la pile à sauvegarder
      */
-    void writeNewPile(Pile newPile) {
-        // TODO: si le fichier n'existe pas, le créer
+    public void writeNewPile(Pile pile) {
         Gson gson = new Gson();
         try (FileWriter file = new FileWriter(path)) {
-            file.write(gson.toJson(newPile));
+            file.write(gson.toJson(pile));
+            System.out.println(gson.toJson(pile));
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();
@@ -34,7 +34,7 @@ public class JsonController {
      * Renvoie la pile contenue dans le fichier
      * @return la pile contenue dans le fichier
      */
-    Pile getPile() {
+    public Pile getPile() {
         Gson gson = new Gson();
         String content = null;
 
