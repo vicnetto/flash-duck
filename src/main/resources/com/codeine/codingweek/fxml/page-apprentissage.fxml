@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.codeine.codingweek.ApprentissageController"
+      prefHeight="600" prefWidth="800">
+
+    <ScrollPane minHeight="500">
+        <GridPane alignment="CENTER" hgap="20" vgap="20">
+        </GridPane>
+    </ScrollPane>
+
+    <HBox alignment="CENTER" prefHeight="100">
+        <Button text="+ Ajouter une pile"/>
+    </HBox>
+</VBox>

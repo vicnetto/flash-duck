@@ -24,10 +24,12 @@ public class ViewSwitcher {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ViewSwitcher.class.getResource(view.getFileName()));
 
-        AccueilController ca = new AccueilController();
+        AccueilController accueilController = new AccueilController();
+        ApprentissageController apprentissageController = new ApprentissageController();
 
         loader.setControllerFactory(ic -> {
-            if (ic.equals(AccueilController.class)) return ca;
+            if (ic.equals(AccueilController.class)) return accueilController;
+            else if (ic.equals(ApprentissageController.class)) return apprentissageController;
             else System.out.println("Pas de controller trouve");
             return null;
         });
