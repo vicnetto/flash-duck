@@ -5,7 +5,7 @@
 
 <HBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.codeine.codingweek.ControllerAccueil"
+      fx:controller="com.codeine.codingweek.AccueilController"
       alignment="TOP_CENTER"
       prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4">
 

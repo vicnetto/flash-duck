@@ -1,5 +1,5 @@
 package com.codeine.codingweek;
 
-public class ControllerStart {
+public class StartController {
     
 }

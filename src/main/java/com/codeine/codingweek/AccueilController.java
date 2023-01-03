@@ -1,17 +1,21 @@
 package com.codeine.codingweek;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class ControllerGlobal implements Initializable {
+public class AccueilController implements Initializable {
 
     @FXML
-    private ArrayList<Button> cards = new ArrayList<>() ;
+    private Button button_creation ;
+
+    @FXML
+    private Button button_apprentissage ;
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -20,6 +24,4 @@ public class ControllerGlobal implements Initializable {
 
     }
 
-    
-    
 }
