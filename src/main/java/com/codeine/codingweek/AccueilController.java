@@ -25,12 +25,7 @@ public class AccueilController implements Initializable {
 
     @FXML
     public void creation() throws IOException {
-
-        Scene scene = new Scene(new BorderPane()) ;
-
-        ViewSwitcher.setScene(scene) ;
-        ViewSwitcher.swtichTo(View.CREATION) ;
-
+        ViewSwitcher.swtichTo(View.PILE_CREATION) ;
     }
 
     @FXML
