@@ -1,18 +1,17 @@
 package com.codeine.codingweek;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class AffichagePilesController implements Initializable {
 
@@ -40,5 +39,19 @@ public class AffichagePilesController implements Initializable {
 
     public void goToFormCreationPile(ActionEvent actionEvent) throws IOException {
         ViewSwitcher.swtichTo(View.FORM_PILE);
+    }
+
+    public void importPile(ActionEvent actionEvent) {
+
+
+        FileChooser fileChooser = new FileChooser();
+        File selectedFile = fileChooser.showOpenDialog(null);
+        System.out.println(selectedFile.getAbsolutePath());
+
+        JsonController jsonController = new JsonController(selectedFile.getAbsolutePath());
+
+        Pile newPile = jsonController.getPile();
+
+        // TODO ...
     }
 }
