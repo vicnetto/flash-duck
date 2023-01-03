@@ -7,15 +7,15 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 
-public class GlobalController implements Initializable {
+public class AffichagePilesController implements Initializable {
 
     @FXML
-    private ArrayList<Button> cards = new ArrayList<>() ;
+    public GridPane gridPiles;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         
 
     }

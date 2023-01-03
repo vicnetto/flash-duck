@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.codeine.codingweek.PileCreationController"
+      fx:controller="com.codeine.codingweek.AffichagePilesController"
       prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4">
 
     <ScrollPane minHeight="500" style="-fx-background: #6272a4">
-        <GridPane alignment="CENTER" hgap="20" vgap="20" style="-fx-background: #6272a4">
+        <GridPane alignment="CENTER" hgap="20" vgap="20" style="-fx-background: #6272a4" fx:id="gridPiles">
         </GridPane>
     </ScrollPane>
 
