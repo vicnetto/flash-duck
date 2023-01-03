@@ -15,7 +15,7 @@ public class ViewSwitcher {
         ViewSwitcher.scene = scene ;
     }
 
-    public static void setCarnet(FlashCardGame fcg) {
+    public static void setFlashCardGame(FlashCardGame fcg) {
         ViewSwitcher.fcg = fcg ;
     }
 
