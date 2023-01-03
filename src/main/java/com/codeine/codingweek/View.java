@@ -1,7 +1,7 @@
 package com.codeine.codingweek;
 
 public enum View {
-    ACCUEIL("fxml/accueil.fxml");
+    ACCUEIL("fxml/page-accueil.fxml");
     private String fileName;
     View(String fileName) {
         this.fileName = fileName;
