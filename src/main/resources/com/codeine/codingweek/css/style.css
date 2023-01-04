@@ -3,7 +3,6 @@
   
   -fx-background-color: #f3f6dd ;
   -fx-font-weight: bold;
-  -fx-border-color: black;
   -fx-border-width: 1px;
   -fx-border-radius: 10px;
   -fx-background-radius: 10px;
@@ -33,7 +32,9 @@
     -fx-padding: 10px;
     -fx-font-size: 16px;
     -fx-text-fill: #d68301 ;
-  
+
+    -fx-spacing: 10px ;
+
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 0);
 
 }
@@ -53,6 +54,15 @@
 
 .bottom_button {
 
-  
+  -fx-padding: 10 10 10 10 ;
+  -fx-margin: 0 0 10 0 ;
+  -fx-border-radius: 0px;
+
+  -fx-border-color: black;
+  -fx-border-width: 1px;
+  -fx-border-radius: 20px;
+  -fx-background-radius: 20px;
+
+  -fx-text-fill: black !important ;
 
 }
