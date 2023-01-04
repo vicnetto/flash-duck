@@ -1,4 +1,4 @@
-package com.codeine.codingweek;
+package com.codeine.codingweek.model;
 
 public class Card {
 

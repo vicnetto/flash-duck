@@ -1,5 +1,6 @@
 package com.codeine.codingweek;
 
+import com.codeine.codingweek.model.FlashCardGame;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

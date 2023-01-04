@@ -19,13 +19,13 @@
         </MenuBar>
 
         <VBox spacing="10" alignment="CENTER" prefWidth="700">
-            <VBox alignment="CENTER" prefHeight="200" spacing="20" style="-fx-padding: 30">
+            <VBox alignment="CENTER" prefHeight="200" spacing="20" style="-fx-padding: 30" >
                 <Label fx:id="question" text="Dummy" styleClass="text"/>
                 <Label fx:id="reponse" text="Dummy" styleClass="text"/>
             </VBox>
             <StackPane>
                 <Rectangle fill="darkcyan" arcHeight="10" arcWidth="10" height="300" width="500" stroke="black" strokeWidth="5"/>
-                <ImageView fx:id="image" fitHeight="280" fitWidth="280" preserveRatio="true"/>
+                <ImageView fx:id="image" fitHeight="280" fitWidth="280" preserveRatio="true" />
             </StackPane>
             <HBox alignment="CENTER" prefHeight="100">
                 <HBox alignment="CENTER" prefWidth="350">

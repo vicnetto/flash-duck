@@ -1,10 +1,13 @@
 package com.codeine.codingweek;
 
+import com.codeine.codingweek.model.FlashCardGame;
+import com.codeine.codingweek.model.Pile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
@@ -17,7 +20,7 @@ import java.util.function.IntConsumer;
 public class AffichagePilesController implements Initializable {
 
     @FXML
-    public VBox gridPiles;
+    public GridPane gridPiles;
 
     private FlashCardGame fcg;
 

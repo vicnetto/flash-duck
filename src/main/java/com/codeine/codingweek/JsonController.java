@@ -1,5 +1,6 @@
 package com.codeine.codingweek;
 
+import com.codeine.codingweek.model.Pile;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 

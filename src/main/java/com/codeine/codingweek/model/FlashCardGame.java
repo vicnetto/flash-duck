@@ -1,4 +1,6 @@
-package com.codeine.codingweek;
+package com.codeine.codingweek.model;
+
+import com.codeine.codingweek.PatternStrategyQuestions.ApprentissageMethod;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,6 +70,10 @@ public class FlashCardGame {
 
     public void setCurrentApprentissageList(ArrayList<ApprentissageMethod> currentApprentissageList) {
         this.currentApprentissageList = currentApprentissageList;
+    }
+
+    public void addApprentissageMethodToList(ApprentissageMethod am) {
+        this.currentApprentissageList.add(am);
     }
 
     public int getCurrentIndexApprentissageList() {
