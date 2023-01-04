@@ -10,6 +10,8 @@ public class FlashCardGame {
 
     private ArrayList<ApprentissageMethod> currentApprentissageList;
 
+    private int currentIndexApprentissageList;
+
     public FlashCardGame() {
         lesPiles = new ArrayList<Pile>();
     }
@@ -59,5 +61,13 @@ public class FlashCardGame {
 
     public void setCurrentApprentissageList(ArrayList<ApprentissageMethod> currentApprentissageList) {
         this.currentApprentissageList = currentApprentissageList;
+    }
+
+    public int getCurrentIndexApprentissageList() {
+        return currentIndexApprentissageList;
+    }
+
+    public void setCurrentIndexApprentissageList(int currentIndexApprentissageList) {
+        this.currentIndexApprentissageList = currentIndexApprentissageList;
     }
 }

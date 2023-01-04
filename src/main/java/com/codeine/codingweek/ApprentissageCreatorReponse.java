@@ -10,6 +10,10 @@ public class ApprentissageCreatorReponse extends ApprentissageCreator{
 
     @Override
     public ArrayList<ApprentissageMethod> createApprentissage() {
-        return null;
+        ArrayList<ApprentissageMethod> lesQuestionsPosees = new ArrayList<ApprentissageMethod>();
+        for (Card carte : this.getFcg().getLesPiles().get(this.getFcg().getCurrentPile()).getCards()) {
+            lesQuestionsPosees.add(new ApprentissageMethodReponse(carte, ""));
+        }
+        return lesQuestionsPosees;
     }
 }
