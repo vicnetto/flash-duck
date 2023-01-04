@@ -23,7 +23,6 @@ public class JsonController {
         Gson gson = new Gson();
         try (FileWriter file = new FileWriter(path)) {
             file.write(gson.toJson(pile));
-            System.out.println(gson.toJson(pile));
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();
