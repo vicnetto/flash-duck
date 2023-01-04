@@ -17,9 +17,8 @@
         <fx:include source="menu.fxml"/>
     </MenuBar>
 
-    <ScrollPane minHeight="500" style="-fx-background: #6272a4">
-        <VBox alignment="CENTER" style="-fx-background: #6272a4" fx:id="gridPiles">
-        </VBox>
+    <ScrollPane minHeight="500" style="-fx-background: #6272a4; -fx-padding: 40">
+        <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #6272a4"/>
     </ScrollPane>
 
     <HBox alignment="CENTER" prefHeight="100" styleClass="button_classique">
