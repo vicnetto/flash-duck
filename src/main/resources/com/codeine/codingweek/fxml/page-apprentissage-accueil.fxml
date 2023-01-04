@@ -23,7 +23,7 @@
     </ScrollPane>
 
     <HBox alignment="CENTER" prefHeight="100" styleClass="button_classique">
-        <Button text="Statistiques"/>
+        <Button text="Statistiques" onAction="#statistiques"/>
     </HBox>
 
 </VBox>

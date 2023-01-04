@@ -38,7 +38,6 @@ public class CreationPileController implements Initializable {
 
     public void ajouterPile(ActionEvent actionEvent) throws IOException {
         String titre = this.textarea_t.getText();
-        System.out.println(titre);
         this.fcg.addPile(new Pile("Catégorie inconnue", titre));
         ViewSwitcher.swtichTo(View.PILE_CREATION);
     }

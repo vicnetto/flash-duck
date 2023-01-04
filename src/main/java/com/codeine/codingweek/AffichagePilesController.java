@@ -3,6 +3,8 @@ package com.codeine.codingweek;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
@@ -47,16 +49,27 @@ public class AffichagePilesController implements Initializable {
     }
 
     public void importPile(ActionEvent actionEvent) {
-
-
         FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
         File selectedFile = fileChooser.showOpenDialog(null);
-        System.out.println(selectedFile.getAbsolutePath());
+
+        if (selectedFile == null) {
+            System.out.println("Fichier invalide.");
+            return;
+        }
 
         JsonController jsonController = new JsonController(selectedFile.getAbsolutePath());
-
         Pile newPile = jsonController.getPile();
+        fcg.addPile(newPile);
 
-        // TODO ...
+        IntConsumer goToPile = integer -> {
+            try {
+                goToPile(integer);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        };
+        gridPiles.getChildren().clear();
+        AfficherPiles.afficherToutesLesPiles(fcg, gridPiles, goToPile);
     }
 }
