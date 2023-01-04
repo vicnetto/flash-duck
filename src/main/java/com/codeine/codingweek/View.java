@@ -9,9 +9,8 @@ public enum View {
     FORM_CARTE("fxml/form-creation-carte.fxml"), // CreationCarteController
     FORM_PILE("fxml/form-creation-pile.fxml"), // CreationPileController
     FORM_MODIFICATION_CARTE("fxml/form-modification-carte.fxml"), // ModificationCarteController
-
-    APPRENTISSAGE_ACCUEIL("fxml/page-apprentissage-accueil.fxml"); // PageApprentissageAccueil
-
+    APPRENTISSAGE_ACCUEIL("fxml/page-apprentissage-accueil.fxml"), // PageApprentissageAccueil
+    STATISTIQUES("fxml/page-statistiques.fxml"); //PageStatistiquesController
     
     private String fileName ;
 
