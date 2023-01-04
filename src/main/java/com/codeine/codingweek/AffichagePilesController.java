@@ -52,6 +52,12 @@ public class AffichagePilesController implements Initializable {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
         File selectedFile = fileChooser.showOpenDialog(null);
+
+        if (selectedFile == null) {
+            System.out.println("Fichier invalide.");
+            return;
+        }
+
         JsonController jsonController = new JsonController(selectedFile.getAbsolutePath());
         Pile newPile = jsonController.getPile();
         fcg.addPile(newPile);
@@ -63,6 +69,7 @@ public class AffichagePilesController implements Initializable {
                 throw new RuntimeException(e);
             }
         };
+        gridPiles.getChildren().clear();
         AfficherPiles.afficherToutesLesPiles(fcg, gridPiles, goToPile);
     }
 }
