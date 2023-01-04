@@ -6,18 +6,20 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.MenuBar?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.codeine.codingweek.AffichageCartesController"
-      prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4">
+
+
+<VBox  xmlns="http://javafx.com/javafx"
+       xmlns:fx="http://javafx.com/fxml"
+       fx:controller="com.codeine.codingweek.AffichageCartesController"
+       prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4">
 
     <MenuBar>
         <fx:include source="menu.fxml"/>
     </MenuBar>
-
-    <VBox alignment="CENTER" prefHeight="500" style="-fx-background: #6272a4" fx:id="gridCartes">
-    </VBox>
-
+    <ScrollPane>
+        <VBox alignment="CENTER" prefHeight="500" style="-fx-background: #6272a4" fx:id="gridCartes">
+        </VBox>
+    </ScrollPane>
     <HBox alignment="CENTER" prefHeight="100">
         <Button text="Retour" onAction="#retour"/>
         <Button text="+ Ajouter une carte" onAction="#goToFormCarte"/>
