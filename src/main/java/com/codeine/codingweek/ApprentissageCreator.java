@@ -19,4 +19,5 @@ public abstract class ApprentissageCreator {
     }
 
     public abstract ArrayList<ApprentissageMethod> createApprentissage();
+
 }

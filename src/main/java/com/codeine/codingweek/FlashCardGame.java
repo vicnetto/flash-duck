@@ -63,6 +63,10 @@ public class FlashCardGame {
         this.currentApprentissageList = currentApprentissageList;
     }
 
+    public void addApprentissageMethodToList(ApprentissageMethod am) {
+        this.currentApprentissageList.add(am);
+    }
+
     public int getCurrentIndexApprentissageList() {
         return currentIndexApprentissageList;
     }
