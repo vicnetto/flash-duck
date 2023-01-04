@@ -1,5 +1,7 @@
 package com.codeine.codingweek;
 
+import com.codeine.codingweek.model.Card;
+import com.codeine.codingweek.model.FlashCardGame;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

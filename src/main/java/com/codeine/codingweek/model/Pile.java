@@ -1,4 +1,4 @@
-package com.codeine.codingweek;
+package com.codeine.codingweek.model;
 
 import java.util.ArrayList;
 
@@ -6,10 +6,10 @@ public class Pile {
 
     private String category_name ; // Nom de la catégorie
     private String name ;
-    private int score = 0 ; // Score sur la pile actuelle
 
     private ArrayList<Card> cards = new ArrayList<>() ; 
 
+    private ArrayList<Integer> scores = new ArrayList<>() ;
     /* Calcul du score
      * 
      * Score de la dernière partie stockée en dur : nombre d'essais avant d'avoir bon (1, 2, 3+)
@@ -65,5 +65,17 @@ public class Pile {
                 this.cards.remove(carte);
             }
         }
+    }
+
+    public ArrayList<Integer> getScores() {
+        return scores;
+    }
+
+    public void setScores(ArrayList<Integer> scores) {
+        this.scores = scores;
+    }
+
+    public void addScore(int score) {
+        this.scores.add(score);
     }
 }

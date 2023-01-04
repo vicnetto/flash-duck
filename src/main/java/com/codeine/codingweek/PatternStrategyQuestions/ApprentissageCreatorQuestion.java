@@ -1,4 +1,7 @@
-package com.codeine.codingweek;
+package com.codeine.codingweek.PatternStrategyQuestions;
+
+import com.codeine.codingweek.model.Card;
+import com.codeine.codingweek.model.FlashCardGame;
 
 import java.util.ArrayList;
 

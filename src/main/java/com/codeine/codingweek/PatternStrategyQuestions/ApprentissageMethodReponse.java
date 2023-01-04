@@ -1,5 +1,6 @@
-package com.codeine.codingweek;
+package com.codeine.codingweek.PatternStrategyQuestions;
 
+import com.codeine.codingweek.model.Card;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 

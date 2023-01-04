@@ -1,12 +1,11 @@
 package com.codeine.codingweek;
 
 
+import com.codeine.codingweek.model.FlashCardGame;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;

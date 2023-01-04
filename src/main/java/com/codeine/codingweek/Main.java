@@ -1,5 +1,8 @@
 package com.codeine.codingweek;
 
+import com.codeine.codingweek.model.Card;
+import com.codeine.codingweek.model.FlashCardGame;
+import com.codeine.codingweek.model.Pile;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;

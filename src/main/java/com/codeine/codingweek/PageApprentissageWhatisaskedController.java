@@ -1,5 +1,7 @@
 package com.codeine.codingweek;
 
+import com.codeine.codingweek.PatternStrategyQuestions.ApprentissageMethod;
+import com.codeine.codingweek.model.FlashCardGame;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.VBox;
