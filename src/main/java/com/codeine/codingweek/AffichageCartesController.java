@@ -1,15 +1,16 @@
 package com.codeine.codingweek;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -82,6 +83,27 @@ public class AffichageCartesController implements Initializable {
                     throw new RuntimeException(ex);
                 }
             });
+        }
+    }
+
+    public void exporterPile(ActionEvent actionEvent) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Sélectionnez un emplacement");
+        chooser.setCurrentDirectory(new File("/"));
+        chooser.setFileFilter(new FileNameExtensionFilter("JSON", "json"));
+        int dialog = chooser.showSaveDialog(null);
+        if (dialog == JFileChooser.APPROVE_OPTION) {
+            try {
+                JsonController jsonController = new JsonController(chooser.getSelectedFile().toString() + ".json");
+                jsonController.writeNewPile(this.fcg.getLesPiles().get(this.fcg.getCurrentPile()));
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     }
 }

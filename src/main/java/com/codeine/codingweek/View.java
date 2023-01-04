@@ -12,8 +12,7 @@ public enum View {
     APPRENTISSAGE_ACCUEIL("fxml/page-apprentissage-accueil.fxml"), // PageApprentissageAccueil
     STATISTIQUES("fxml/page-statistiques.fxml"), //PageStatistiquesController
     APPRENTISSAGE_WHAT_IS_ASKED("fxml/page-apprentissage-whatisasked.fxml"), //PageApprentissageWhatIsAskedController
-    APPRENTISSAGE_FORM_SELECT_PARAMETERS("fxml/form-select-parameter-game.fxml") //FormSelectParameterGameController
-    ;
+    APPRENTISSAGE_CREATOR_REPONSE("fxml/page-carte-reponse.fxml"); //AffichageCarteReponseController
 
     private String fileName ;
 

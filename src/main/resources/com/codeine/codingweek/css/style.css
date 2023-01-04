@@ -12,7 +12,7 @@
   -fx-text-fill: #d68301 ;
   
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 0);
-
+  
 }
 
 .card:hover {
@@ -25,7 +25,7 @@
 
 .button_classique {
 
-    -fx-background-color: #f3f6dd ;
+    -fx-background-color: #d8d8d5 ;
     -fx-font-weight: bold;
     -fx-border-color: black;
     -fx-border-width: 1px;
@@ -44,4 +44,9 @@
   -fx-font: 30 arial; 
   -fx-font-weight: bold;
 
+}
+
+.menu, .menu-item, .context-menu {
+  -fx-background-color: #54ABAC ;
+  -fx-padding: 0;
 }

@@ -6,10 +6,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichagePilesController">
+<VBox alignment="CENTER" prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichagePilesController">
 
-    <MenuBar>
-        <fx:include source="menu.fxml"/>
+    <MenuBar styleClass="menu">
+        <fx:include source="menu.fxml" />
     </MenuBar>
 
     <ScrollPane minHeight="500" style="-fx-background: #6272a4">
@@ -20,6 +20,5 @@
     <HBox alignment="CENTER" prefHeight="100" styleClass="button_classique">
         <Button onAction="#goToFormCreationPile" text="+ Ajouter une pile" />
       <Button mnemonicParsing="false" onAction="#importPile" text="Importer une pile" />
-      <Button mnemonicParsing="false" text="Exporter une pile" />
     </HBox>
 </VBox>

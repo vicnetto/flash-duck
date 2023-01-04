@@ -26,7 +26,7 @@ public class Main extends Application {
 
         ViewSwitcher.setScene(scene) ;
         ViewSwitcher.setFlashCardGame(fcg);
-        ViewSwitcher.swtichTo(View.ACCUEIL) ;
+        ViewSwitcher.swtichTo(View.ACCUEIL);
 
         scene.getStylesheets().add(getClass().getResource("css/style.css").toExternalForm()) ;
 
@@ -34,6 +34,7 @@ public class Main extends Application {
         stage.getIcons().add(new Image(getClass().getResource("images/Mascotte_borderless.png").toExternalForm())) ;
         stage.setScene(scene) ;
         stage.show() ;
+        
     }
 
     public static void main(String[] args) {
