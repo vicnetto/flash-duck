@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -42,7 +44,7 @@ public class PageApprentissageAccueil implements Initializable {
 
     public void goToPile(int i) throws IOException {
         this.fcg.setCurrentPile(i);
-        ViewSwitcher.swtichTo(View.ACCUEIL);
+        ViewSwitcher.swtichTo(View.APPRENTISSAGE_FORM_SELECT_PARAMETERS);
     }
 
 }

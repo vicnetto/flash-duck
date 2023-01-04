@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.FormSelectParameterGameController">
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="Afficher les questions" onAction="#goToGameWithQuestions"/>
+            <Button mnemonicParsing="false" text="Afficher les réponses" onAction="#goToGameWithReponses"/>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
