@@ -10,7 +10,10 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.effect.BlendMode;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.stage.WindowEvent;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -47,11 +50,11 @@ public class AffichageCartesController implements Initializable {
             vb.setStyle("-fx-border-color: black; -fx-border-radius: 20; -fx-spacing: 10px;") ;
             vb.setAlignment(Pos.CENTER) ;
             
-            Button suppr = new Button("Supprimer");
+            Button suppr = new Button();
             int copieI = i;
             suppr.setOnMouseClicked((e) -> {supprimerCarte(copieI);});
             vb.getChildren().add(suppr);
-            Button modif = new Button("Éditer");
+            Button modif = new Button();
             modif.setOnMouseClicked((e)-> {
                 try {
                     goToModificationFormCarte(copieI);
@@ -59,15 +62,36 @@ public class AffichageCartesController implements Initializable {
                     throw new RuntimeException(ex);
                 }
             });
+            
+            ImageView imView = new ImageView(getClass().getResource("images/trash.png").toExternalForm()) ;
+
+            imView.setPreserveRatio(true) ;
+            imView.setPickOnBounds(true) ;
+            imView.setFitHeight(40);
+            imView.setFitWidth(40);
+
+            suppr.setGraphic(imView) ;
 
             suppr.getStyleClass().add("bottom_button") ;
             modif.getStyleClass().add("bottom_button") ;
+
+            imView = new ImageView(getClass().getResource("images/edit.png").toExternalForm()) ;
+
+            imView.setPreserveRatio(true) ;
+            imView.setPickOnBounds(true) ;
+            imView.setFitHeight(40);
+            imView.setFitWidth(40);
+
+            modif.setGraphic(imView) ;
             
             vb.getChildren().add(modif);
             this.gridCartes.getChildren().add(vb);
             i++;
+
         }
     }
+
+    
 
     public void goToFormCarte(ActionEvent actionEvent) throws IOException {
         ViewSwitcher.swtichTo(View.FORM_CARTE);
