@@ -1,12 +1,15 @@
 package com.codeine.codingweek;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class FlashCardGame {
 
     private ArrayList<Pile> lesPiles;
     private int currentPile = 0;
     private int currentCarte = 0;
+    private List<String> categories = Arrays.asList("Histoire", "Art", "Musique", "Cinéma", "Gastronomie", "Sport", "Science", "Littérature");
 
     private ArrayList<ApprentissageMethod> currentApprentissageList;
 
@@ -18,6 +21,10 @@ public class FlashCardGame {
 
     public ArrayList<Pile> getLesPiles() {
         return lesPiles;
+    }
+
+    public List<String> getCategories() {
+        return this.categories;
     }
 
     public void setLesPiles(ArrayList<Pile> lesPiles) {
