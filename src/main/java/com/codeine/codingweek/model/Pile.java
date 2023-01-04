@@ -9,7 +9,7 @@ public class Pile {
 
     private ArrayList<Card> cards = new ArrayList<>() ; 
 
-    private ArrayList<Integer> scores = new ArrayList<>() ;
+    private ArrayList<Float> scores = new ArrayList<>() ;
     /* Calcul du score
      * 
      * Score de la dernière partie stockée en dur : nombre d'essais avant d'avoir bon (1, 2, 3+)
@@ -67,15 +67,15 @@ public class Pile {
         }
     }
 
-    public ArrayList<Integer> getScores() {
+    public ArrayList<Float> getScores() {
         return scores;
     }
 
-    public void setScores(ArrayList<Integer> scores) {
+    public void setScores(ArrayList<Float> scores) {
         this.scores = scores;
     }
 
-    public void addScore(int score) {
+    public void addScore(float score) {
         this.scores.add(score);
     }
 }

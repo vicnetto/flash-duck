@@ -3,6 +3,7 @@ package com.codeine.codingweek;
 import com.codeine.codingweek.PatternStrategyQuestions.ApprentissageMethod;
 import com.codeine.codingweek.model.Card;
 import com.codeine.codingweek.model.FlashCardGame;
+import com.codeine.codingweek.model.Pile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,12 +42,7 @@ public class AffichageCarteReponseController implements Initializable {
 
     public void iKnew(ActionEvent actionEvent) throws IOException {
         this.fcg.setCurrentIndexApprentissageList(this.fcg.getCurrentIndexApprentissageList()+1);
-        if (this.fcg.getCurrentIndexApprentissageList() < this.fcg.getCurrentApprentissageList().size()) {
-            ViewSwitcher.swtichTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
-        }
-        else {
-            ViewSwitcher.swtichTo(View.ACCUEIL);
-        }
+        handleNextApprentissage();
     }
 
     public void copyCurrentApprentissageToEndList() {
@@ -58,20 +54,22 @@ public class AffichageCarteReponseController implements Initializable {
     public void iDidntKnow(ActionEvent actionEvent) throws IOException {
         copyCurrentApprentissageToEndList();
         this.fcg.setCurrentIndexApprentissageList(this.fcg.getCurrentIndexApprentissageList()+1);
-        if (this.fcg.getCurrentIndexApprentissageList() < this.fcg.getCurrentApprentissageList().size()) {
-            ViewSwitcher.swtichTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
-        }
-        else {
-            ViewSwitcher.swtichTo(View.ACCUEIL);
-        }
+        handleNextApprentissage();
     }
 
     public void nextQuestion(ActionEvent actionEvent) throws IOException {
         this.fcg.setCurrentIndexApprentissageList(this.fcg.getCurrentIndexApprentissageList()+1);
+        handleNextApprentissage();
+    }
+
+    public void handleNextApprentissage() throws IOException {
         if (this.fcg.getCurrentIndexApprentissageList() < this.fcg.getCurrentApprentissageList().size()) {
             ViewSwitcher.swtichTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
         }
         else {
+            Pile pile = this.fcg.getLesPiles().get(this.fcg.getCurrentPile());
+            Float div = (float) pile.getCards().size()/this.fcg.getCurrentIndexApprentissageList();
+            pile.addScore((float) 100.0*(div));
             ViewSwitcher.swtichTo(View.ACCUEIL);
         }
     }
