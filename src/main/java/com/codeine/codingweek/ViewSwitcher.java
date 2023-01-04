@@ -25,24 +25,15 @@ public class ViewSwitcher {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ViewSwitcher.class.getResource(view.getFileName()));
 
-        AccueilController accueilController = new AccueilController();
-        AffichagePilesController affichagePilesController = new AffichagePilesController(fcg);
-        AffichageCartesController affichageCartesController = new AffichageCartesController(fcg);
-        CreationCarteController carteCreationController = new CreationCarteController(fcg);
-        CreationPileController creationPileController = new CreationPileController(fcg);
-        MenuController menuController = new MenuController();
-        PageApprentissageAccueil apprentissageaccueilController = new PageApprentissageAccueil(fcg) ;
-        ModificationCarteController modificationCarteController = new ModificationCarteController(fcg);
-
         loader.setControllerFactory(ic -> {
-            if (ic.equals(AccueilController.class)) return accueilController ;
-            else if (ic.equals(AffichagePilesController.class)) return affichagePilesController ;
-            else if (ic.equals(CreationCarteController.class)) return carteCreationController ;
-            else if (ic.equals(AffichageCartesController.class)) return affichageCartesController ;
-            else if (ic.equals(CreationPileController.class)) return creationPileController ;
-            else if (ic.equals(MenuController.class)) return menuController ;
-            else if (ic.equals(PageApprentissageAccueil.class)) return apprentissageaccueilController ;
-            else if (ic.equals(ModificationCarteController.class)) return modificationCarteController ;
+            if (ic.equals(AccueilController.class)) return new AccueilController();
+            else if (ic.equals(AffichagePilesController.class)) return new AffichagePilesController(fcg) ;
+            else if (ic.equals(CreationCarteController.class)) return new CreationCarteController(fcg) ;
+            else if (ic.equals(AffichageCartesController.class)) return new AffichageCartesController(fcg) ;
+            else if (ic.equals(CreationPileController.class)) return new CreationPileController(fcg) ;
+            else if (ic.equals(MenuController.class)) return new MenuController() ;
+            else if (ic.equals(PageApprentissageAccueil.class)) return new PageApprentissageAccueil(fcg) ;
+            else if (ic.equals(ModificationCarteController.class)) return new ModificationCarteController(fcg) ;
             else System.out.println("Pas de controller trouve") ;
             return null;
         });
