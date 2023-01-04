@@ -4,8 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
 import javax.swing.*;
@@ -16,8 +18,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AffichageCartesController implements Initializable {
+
     @FXML
     public VBox gridCartes;
+    @FXML
+    private ScrollPane scrollPane ;
 
     private FlashCardGame fcg;
 
@@ -27,6 +32,7 @@ public class AffichageCartesController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         int i = 0;
         for (Card carte : this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).getCards()) {
             VBox vb = new VBox();
@@ -34,13 +40,16 @@ public class AffichageCartesController implements Initializable {
             Label reponse = new Label(carte.getReponse());
             vb.getChildren().add(question);
             vb.getChildren().add(reponse);
-            vb.setPadding(new Insets(10));
-            vb.setStyle("-fx-border-color: black; -fx-border-radius: 5; -fx-margin-bottom: 20");
-            Button suppr = new Button("supprimer");
+
+            vb.setPadding(new Insets(10, 0, 10, 0)) ;
+            vb.setStyle("-fx-border-color: black; -fx-border-radius: 20; -fx-spacing: 10px;") ;
+            vb.setAlignment(Pos.CENTER) ;
+            
+            Button suppr = new Button("Supprimer");
             int copieI = i;
             suppr.setOnMouseClicked((e) -> {supprimerCarte(copieI);});
             vb.getChildren().add(suppr);
-            Button modif = new Button("modif");
+            Button modif = new Button("Éditer");
             modif.setOnMouseClicked((e)-> {
                 try {
                     goToModificationFormCarte(copieI);
@@ -48,6 +57,10 @@ public class AffichageCartesController implements Initializable {
                     throw new RuntimeException(ex);
                 }
             });
+
+            suppr.getStyleClass().add("bottom_button") ;
+            modif.getStyleClass().add("bottom_button") ;
+            
             vb.getChildren().add(modif);
             this.gridCartes.getChildren().add(vb);
             i++;
@@ -68,8 +81,10 @@ public class AffichageCartesController implements Initializable {
     }
 
     public void supprimerCarte(int i) {
+
         this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).deleteCarteByIndex(i);
         this.gridCartes.getChildren().remove(this.gridCartes.getChildren().get(i));
+
         for (int j = 0; j < this.gridCartes.getChildren().size(); j++) {
             VBox vb = (VBox) this.gridCartes.getChildren().get(j);
             Button suppr = (Button) vb.getChildren().get(2);
