@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.GridPane?>
-
-<VBox alignment="CENTER" prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4"
+<VBox alignment="CENTER" prefHeight="600" prefWidth="800" style="-fx-background-color: #e7ecec"
       xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.codeine.codingweek.AffichagePilesController">
 
@@ -17,13 +12,37 @@
         <fx:include source="menu.fxml" />
     </MenuBar>
 
-    <ScrollPane minHeight="500" style="-fx-background: #e7ecec; -fx-border-radius: 7px; -fx-background-radius: 7px; -fx-padding: 40">
-        <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #6272a4">
-        </GridPane>
+    <HBox alignment="CENTER" prefHeight="50">
+        <Label text="Mode Création" styleClass="text"/>
+    </HBox>
+
+    <ScrollPane minHeight="450" style="-fx-padding: 40">
+        <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #6272a4"/>
     </ScrollPane>
 
-    <HBox alignment="CENTER" prefHeight="100" styleClass="button_classique">
-        <Button onAction="#goToFormCreationPile" text="+ Ajouter une pile" />
-      <Button mnemonicParsing="false" onAction="#importPile" text="Importer une pile" />
+    <HBox alignment="CENTER" prefHeight="100" styleClass="bottom_button" spacing="50">
+        <Button alignment="CENTER" onAction="#goToFormCreationPile" styleClass="bottom_button" text="+ Ajouter une pile"/>
+        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#importPile" styleClass="bottom_button" text="Importer une pile"/>
     </HBox>
 </VBox>
+
+<!--   <center>-->
+<!--       <VBox>-->
+<!--           <VBox alignment="CENTER" prefHeight="450" prefWidth="800" style="-fx-background-color: #e7ecec">-->
+<!--               <ScrollPane minHeight="450" style="-fx-background: #e7ecec; -fx-padding: 40">-->
+<!--&lt;!&ndash;               <ScrollPane minHeight="450" style="-fx-background-color:transparent; -fx-padding: 40">&ndash;&gt;-->
+<!--                   <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #6272a4">-->
+<!--                   </GridPane>-->
+<!--               </ScrollPane>-->
+<!--           </VBox>-->
+
+<!--           <HBox alignment="CENTER" prefHeight="100" styleClass="bottom_page" spacing="50">-->
+<!--               <Button alignment="CENTER" onAction="#goToFormCreationPile" styleClass="bottom_button" text="+ Ajouter une pile">-->
+<!--               </Button>-->
+<!--               <Button alignment="CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#importPile" styleClass="bottom_button" text="Importer une pile">-->
+<!--               </Button>-->
+<!--           </HBox>-->
+<!--       </VBox>-->
+<!--   </center>-->
+<!--</BorderPane>-->
+<!--&gt;>>>>>> 8e04496 (Adding identifing names to apprentissage and creation pages)-->

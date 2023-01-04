@@ -8,16 +8,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.MenuBar?>
 
+<?import javafx.scene.control.Label?>
 <VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.codeine.codingweek.PageApprentissageAccueil"
-            prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #e7ecec">
+	xmlns:fx="http://javafx.com/fxml"
+	prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #e7ecec"
+	fx:controller="com.codeine.codingweek.PageApprentissageAccueil">
 
     <MenuBar styleClass="menu">
         <fx:include source="menu.fxml"/>
     </MenuBar>
 
-    <ScrollPane minHeight="500" style="-fx-background: #e7ecec; -fx-padding: 40">
+    <HBox alignment="CENTER" prefHeight="50">
+        <Label text="Menu Apprentissage" styleClass="text"/>
+    </HBox>
+
+    <ScrollPane minHeight="450" style="-fx-padding: 40">
         <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #6272a4"/>
     </ScrollPane>
 

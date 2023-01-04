@@ -42,7 +42,7 @@
 .text {
 
   -fx-text-fill: #d68301 ;
-  -fx-font: 30 arial; 
+  -fx-font: 20 arial;
   -fx-font-weight: bold;
 
 }
