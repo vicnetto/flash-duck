@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -10,91 +11,112 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<?import javafx.scene.control.MenuBar?>
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationCarteController">
+<BorderPane prefHeight="600.0"
+            prefWidth="800.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.codeine.codingweek.CreationCarteController">
    <top>
       <MenuBar>
-         <fx:include source="menu.fxml"/>
+         <fx:include source="menu.fxml" />
       </MenuBar>
    </top>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" style="-fx-padding: 30">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 30" BorderPane.alignment="CENTER">
          <VBox>
             <Label text="Question">
                <font>
-                  <Font size="20.0"/>
+                  <Font size="20.0" />
                </font>
             </Label>
-            <TextArea prefHeight="55.0" prefWidth="800.0" fx:id="textarea_q">
+            <TextArea fx:id="textarea_q" prefHeight="55.0" prefWidth="800.0">
                <font>
-                  <Font size="15.0"/>
+                  <Font size="15.0" />
                </font>
                <VBox.margin>
-                  <Insets top="10.0"/>
+                  <Insets top="10.0" />
                </VBox.margin>
             </TextArea>
+            <VBox>
+               <children>
+                  <Label text="Ajouter un contenu multimédia">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
          </VBox>
          <VBox layoutX="10.0" layoutY="275.0">
             <children>
                <Label text="Réponse">
                   <font>
-                     <Font size="20.0"/>
+                     <Font size="20.0" />
                   </font>
                </Label>
-               <TextArea prefHeight="55.0" prefWidth="800.0" fx:id="textarea_r">
+               <TextArea fx:id="textarea_r" prefHeight="55.0" prefWidth="800.0">
                   <font>
-                     <Font size="20.0"/>
+                     <Font size="20.0" />
                   </font>
                   <VBox.margin>
-                     <Insets top="10.0"/>
+                     <Insets top="10.0" />
                   </VBox.margin>
                </TextArea>
             </children>
             <VBox.margin>
-               <Insets top="30.0"/>
+               <Insets top="30.0" />
             </VBox.margin>
          </VBox>
          <VBox layoutX="10.0" layoutY="310.0">
             <children>
                <Label text="Ajouter un contenu multimédia">
                   <font>
-                     <Font size="20.0"/>
+                     <Font size="20.0" />
                   </font>
                </Label>
                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
-                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
-                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true"/>
+                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                   </children>
                   <VBox.margin>
-                     <Insets top="10.0"/>
+                     <Insets top="10.0" />
                   </VBox.margin>
                </HBox>
             </children>
             <VBox.margin>
-               <Insets top="30.0"/>
+               <Insets top="30.0" />
             </VBox.margin>
          </VBox>
          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <children>
-               <Button mnemonicParsing="false" text="Annuler" fx:id="button_annuler" onAction="#annuler">
+               <Button fx:id="button_annuler" mnemonicParsing="false" onAction="#annuler" text="Annuler">
                   <HBox.margin>
-                     <Insets right="40.0"/>
+                     <Insets right="40.0" />
                   </HBox.margin>
                   <font>
-                     <Font size="18.0"/>
+                     <Font size="18.0" />
                   </font>
                </Button>
-               <Button mnemonicParsing="false" text="Ajouter" fx:id="button_valider" onAction="#ajouterCarte">
+               <Button fx:id="button_valider" mnemonicParsing="false" onAction="#ajouterCarte" text="Ajouter">
                   <font>
-                     <Font size="18.0"/>
+                     <Font size="18.0" />
                   </font>
                </Button>
             </children>
             <VBox.margin>
-               <Insets top="30.0"/>
+               <Insets top="30.0" />
             </VBox.margin>
          </HBox>
       </VBox>
