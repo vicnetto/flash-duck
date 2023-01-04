@@ -12,7 +12,8 @@ public class MenuController {
     }
 
     @FXML
-    private void menuApprentissage() {
+    private void menuApprentissage() throws IOException {
+        ViewSwitcher.swtichTo(View.APPRENTISSAGE_ACCUEIL);
     }
 
     @FXML
