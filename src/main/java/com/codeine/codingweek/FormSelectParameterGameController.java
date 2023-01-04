@@ -13,7 +13,7 @@ public class FormSelectParameterGameController {
     }
 
     public void goToGameWithQuestions(ActionEvent actionEvent) throws IOException {
-        this.fcg.setCurrentCarte(0);
+        this.fcg.setCurrentIndexApprentissageList(0);
         ApprentissageCreatorQuestion acq = new ApprentissageCreatorQuestion(fcg);
         ArrayList<ApprentissageMethod> amq = acq.createApprentissage();
         this.fcg.setCurrentApprentissageList(amq);
@@ -21,7 +21,7 @@ public class FormSelectParameterGameController {
     }
 
     public void goToGameWithReponses(ActionEvent actionEvent) throws IOException {
-        this.fcg.setCurrentCarte(0);
+        this.fcg.setCurrentIndexApprentissageList(0);
         ApprentissageCreatorReponse acq = new ApprentissageCreatorReponse(fcg);
         ArrayList<ApprentissageMethod> amq = acq.createApprentissage();
         this.fcg.setCurrentApprentissageList(amq);

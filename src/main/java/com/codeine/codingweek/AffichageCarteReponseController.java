@@ -2,10 +2,15 @@ package com.codeine.codingweek;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-public class AffichageCarteReponseController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class AffichageCarteReponseController implements Initializable {
 
     @FXML
     private Label reponse;
@@ -16,22 +21,55 @@ public class AffichageCarteReponseController {
     @FXML
     private ImageView image;
 
-    private int currentPile;
+    private FlashCardGame fcg;
 
-    public int getCurrentPile() {
-        return currentPile;
+    public AffichageCarteReponseController(FlashCardGame flashCardGame) {
+        this.fcg = flashCardGame;
     }
 
-    public void setCurrentPile(int currentPile) {
-        this.currentPile = currentPile;
+    public FlashCardGame getFlashCardGame() {
+        return fcg;
     }
 
-    public void iKnew(ActionEvent actionEvent) {
+    public void setFlashCardGame(FlashCardGame flashCardGame) {
+        this.fcg = flashCardGame;
     }
 
-    public void iDidntKnow(ActionEvent actionEvent) {
+    public void iKnew(ActionEvent actionEvent) throws IOException {
+        this.fcg.setCurrentIndexApprentissageList(this.fcg.getCurrentIndexApprentissageList()+1);
+        if (this.fcg.getCurrentIndexApprentissageList() < this.fcg.getCurrentApprentissageList().size()) {
+            ViewSwitcher.swtichTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
+        }
+        else {
+            ViewSwitcher.swtichTo(View.ACCUEIL);
+        }
     }
 
-    public void nextQuestion(ActionEvent actionEvent) {
+    public void iDidntKnow(ActionEvent actionEvent) throws IOException {
+        this.fcg.setCurrentIndexApprentissageList(this.fcg.getCurrentIndexApprentissageList()+1);
+        if (this.fcg.getCurrentIndexApprentissageList() < this.fcg.getCurrentApprentissageList().size()) {
+            ViewSwitcher.swtichTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
+        }
+        else {
+            ViewSwitcher.swtichTo(View.ACCUEIL);
+        }
+    }
+
+    public void nextQuestion(ActionEvent actionEvent) throws IOException {
+        this.fcg.setCurrentIndexApprentissageList(this.fcg.getCurrentIndexApprentissageList()+1);
+        if (this.fcg.getCurrentIndexApprentissageList() < this.fcg.getCurrentApprentissageList().size()) {
+            ViewSwitcher.swtichTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
+        }
+        else {
+            ViewSwitcher.swtichTo(View.ACCUEIL);
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ApprentissageMethod am = this.fcg.getCurrentApprentissageList().get(this.fcg.getCurrentIndexApprentissageList());
+        Card carte = am.getCarte();
+        this.reponse.setText(carte.getReponse());
+        this.question.setText(carte.getQuestion());
     }
 }

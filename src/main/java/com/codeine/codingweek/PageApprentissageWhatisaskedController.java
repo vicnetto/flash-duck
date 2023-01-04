@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -24,7 +25,7 @@ public class PageApprentissageWhatisaskedController implements Initializable {
         am.afficher(this.laVb);
     }
 
-    public void goToReponse(ActionEvent actionEvent) {
-        // TODO
+    public void goToReponse(ActionEvent actionEvent) throws IOException {
+        ViewSwitcher.swtichTo(View.APPRENTISSAGE_CREATOR_REPONSE);
     }
 }
