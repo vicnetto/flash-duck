@@ -6,26 +6,23 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichagePilesController">
-   <center>
-      <VBox alignment="CENTER" prefHeight="600" prefWidth="800" style="-fx-background-color: #e7ecec">
-      
-          <ScrollPane minHeight="500" style="-fx-background: #e7ecec; -fx-border-radius: 7px; -fx-background-radius: 7px;">
-              <VBox fx:id="gridPiles" alignment="CENTER">
-        </VBox>
-          </ScrollPane>
-      
-          <HBox alignment="CENTER" prefHeight="100" styleClass="button_classique">
-              <Button onAction="#goToFormCreationPile" text="+ Ajouter une pile" />
-              <Button mnemonicParsing="false" onAction="#importPile" text="Importer une pile" />
-          </HBox>
-      </VBox>
-   </center>
-   <top>
-   
-          <MenuBar styleClass="menu" BorderPane.alignment="CENTER">
-           <fx:include source="menu.fxml" />
-       </MenuBar>
-   </top>
-</BorderPane>
+<VBox alignment="CENTER" prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.codeine.codingweek.AffichagePilesController">
+
+    <MenuBar styleClass="menu">
+        <fx:include source="menu.fxml" />
+    </MenuBar>
+
+    <ScrollPane minHeight="500" style="-fx-background: #e7ecec; -fx-border-radius: 7px; -fx-background-radius: 7px; -fx-padding: 40">
+        <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #6272a4">
+        </GridPane>
+    </ScrollPane>
+
+    <HBox alignment="CENTER" prefHeight="100" styleClass="button_classique">
+        <Button onAction="#goToFormCreationPile" text="+ Ajouter une pile" />
+      <Button mnemonicParsing="false" onAction="#importPile" text="Importer une pile" />
+    </HBox>
+</VBox>

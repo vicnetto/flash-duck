@@ -1,14 +1,12 @@
 package com.codeine.codingweek;
 
-
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
-
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,7 +15,7 @@ import java.util.function.IntConsumer;
 public class PageApprentissageAccueil implements Initializable {
 
     @FXML
-    private VBox gridPiles;
+    private GridPane gridPiles;
 
     private FlashCardGame fcg;
 
