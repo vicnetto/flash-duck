@@ -1,6 +1,9 @@
 package com.codeine.codingweek;
 
+
 import javafx.fxml.FXML;
+import javafx.event.ActionEvent;
+
 import javafx.fxml.Initializable;
 import javafx.scene.layout.VBox;
 
@@ -18,6 +21,10 @@ public class PageApprentissageAccueil implements Initializable {
 
     public PageApprentissageAccueil(FlashCardGame fcg) {
         this.fcg = fcg ;
+    }
+
+    public void statistiques(ActionEvent actionEvent) throws IOException {
+        ViewSwitcher.swtichTo(View.STATISTIQUES);
     }
 
     @Override
