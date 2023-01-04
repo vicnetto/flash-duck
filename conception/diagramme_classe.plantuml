@@ -5,7 +5,10 @@ title Diagramme de classe de l'application FlashCard
 ' ABDEE6
 
 class FlashCardGame {
-    
+    -int currentPile
+    -int currentCarte
+    -ArrayList<String> categories
+    -int currentIndexApprentissageList
 }
 class FlashCard {
     -String question
@@ -14,14 +17,191 @@ class FlashCard {
 class Pile {
     -int score
 }
-class Tag {
-    -String nomCateg
-    -String couleur
+
+package "Patern Creator" {
+
+    abstract ApprentissageMethod {
+        -Card carte
+        -String hintShowed
+        {abstract} +void afficher(VBox vb)
+    }
+
+    class ApprentissageMethodQuestion {
+        +void afficher(VBox vb)
+    }
+
+    class ApprentissageMethodReponse {
+        +void afficher(VBox vb)
+    }
+
+    abstract ApprentissageCreator {
+        {abstract} +void createApprentissage()
+    }
+
+    class ApprentissageCreatorQuestion {
+        +void createApprentissage()
+    }
+
+    class ApprentissageCreatorReponse {
+        +void createApprentissage()
+    }
+
 }
 
-FlashCardGame -- "*\nlesPiles" Pile
-FlashCard -- "1" Tag
-FlashCardGame -- "*" Tag
+enum View {
+    -String fileName
+}
+
+class ViewSwitcher {
+    {static} -Scene scene
+    {static} +switchTo(View view)
+}
+
+package "Controllers" {
+    interface Initializable {
+        +void Initialize()
+    }
+
+    class AccueilController {
+        -Button button_creation @FMXL
+        -Button button_creation @FMXL
+        +void creation()
+        +void apprentissage()
+    }
+
+    class AffichageCarteReponseController {
+        -Label reponse @FXML
+        -Label question @FXML
+        -Label ImageView @FXML
+        +void iKnew() @FXML
+        +void iDidntKnow() @FXML
+        +void nextQuestion() @FXML
+        +void copyCurrentApprentissageToEndList()
+        +void handleNextApprentissage()
+    }
+
+    class AffichageCartesController {
+        -VBox gridCartes @FXML
+        -ScrollPane scrollPane @FXML
+        +void goToFormCarte() @FXML
+        +void retour() @FXML
+        +void goToModificationCarte(int i)
+        +void supprimerCarte(int i)
+        +void exporterPile() @FXML
+    }
+
+    class AffichagePilesController {
+        -GridPane gridPiles @FXML
+        +void goToPile() @FXML
+        +void goToFormCreationPile @FXML
+        +void importPile @FXML
+    }
+
+    class CreationCarteController {
+        -TextArea textarea_q @FXML
+        -TextArea textarea_r @FXML
+        -Button button_annuler @FXML
+        -Button button_valider @FXML
+        +void ajouterCarte() @FXML
+        +void annuler() @FXML
+    }
+
+    class CreationPileController {
+        -TextArea textarea_t @FXML
+        -TextArea textarea_c @FXML
+        -Button button_annuler @FXML
+        -Button button_valider @FXML
+        +void ajouterPile() @FXML
+        +void annuler() @FXML
+        +List<String> getAutocompleOptions()
+    }
+
+    class FormSelectParameterGameController {
+        +void goToGameWithQuestions() @FXML
+        +void goToGameWithReponses() @FXML
+    }
+
+    class JsonController {
+        -String path
+        +void writeNewPile(Pile pile)
+        +Pile getPile()
+    }
+
+    class MenuController {
+        +void menuPrincipal() @FXML
+        +void menuApprentissage() @FXML
+        +void menuCreation() @FXML
+    }
+
+    class ModificationCarteController {
+        -TextArea textarea_q @FXML
+        -TextArea textarea_r @FXML
+        +void annuler() @FXML
+        +void modifierCarte() @FXML
+    }
+
+    class PageApprentissageAccueil {
+        -GridPane gridPiles @FXML
+        +void statistiques() @FXML
+        +void goToPile(int i)
+    }
+
+    class PageApprentissageWhatIsAskedController {
+        -Text asked @FXML
+        -Text hint @FXML
+        -VBox laVb @FXML
+        +void goToReponse() @FXML
+    }
+
+    class PageStatistiquesController {
+
+    }
+}
+
+class AfficherPile {
+    {static} +int maxByLine
+    {static} +void afficherToutesLesPiles(FlashCardGame, GridPane, IntConsumer)
+}
+
+class Main {
+    -Scene scene
+    +void start(Stage stage)
+}
+
+FlashCardGame -- "*" Pile
+FlashCardGame -- "*" ApprentissageMethod
 Pile *--- "*" FlashCard
+ApprentissageMethod <|-- ApprentissageMethodQuestion
+ApprentissageMethod <|-- ApprentissageMethodReponse
+ApprentissageCreator -- "1" FlashCardGame
+ApprentissageCreator <|-- ApprentissageCreatorQuestion
+ApprentissageCreator <|-- ApprentissageCreatorReponse
+ApprentissageCreator ..> ApprentissageMethod : <<create>>
+ViewSwitcher -- "1" FlashCardGame
+ViewSwitcher ..> View
+Initializable <|.. AccueilController
+Initializable <|.. AffichageCarteReponseController
+AffichageCarteReponseController -- "1" FlashCardGame
+Initializable <|.. AffichageCartesController
+AffichageCartesController -- "1" FlashCardGame
+Initializable <|.. AffichagePilesController
+AffichagePilesController -- "1" FlashCardGame
+AffichagePilesController ..> AfficherPile
+Initializable <|.. CreationCarteController
+CreationCarteController -- "1" FlashCardGame
+Initializable <|.. CreationPileController
+CreationPileController -- "1" FlashCardGame
+FormSelectParameterGameController -- "1" FlashCardGame
+FormSelectParameterGameController ..> ApprentissageCreator
+FormSelectParameterGameController ..> ApprentissageMethod
+Main -- "1" FlashCardGame
+Initializable <|.. ModificationCarteController
+ModificationCarteController -- "1" FlashCardGame
+Initializable <|.. PageApprentissageAccueil
+PageApprentissageAccueil -- "1" FlashCardGame
+Initializable <|.. PageApprentissageWhatIsAskedController
+PageApprentissageWhatIsAskedController -- "1" FlashCardGame
+Initializable <|.. PageStatistiquesController
+PageApprentissageWhatIsAskedCPageStatistiquesControllerontroller -- "1" FlashCardGame
 
 @enduml
