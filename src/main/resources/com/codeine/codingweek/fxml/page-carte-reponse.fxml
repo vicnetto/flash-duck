@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.codeine.codingweek.AffichageCarteReponseController"
+            prefHeight="600" prefWidth="800">
+
+    <center>
+        <MenuBar>
+            <fx:include source="menu.fxml"/>
+        </MenuBar>
+
+        <VBox spacing="10" alignment="CENTER" prefWidth="700">
+            <VBox alignment="CENTER" prefHeight="200" spacing="20" style="-fx-padding: 30">
+                <Label fx:id="question" text="Dummy" styleClass="text"/>
+                <Label fx:id="reponse" text="Dummy" styleClass="text"/>
+            </VBox>
+            <StackPane>
+                <Rectangle fill="darkcyan" arcHeight="10" arcWidth="10" height="300" width="500" stroke="black" strokeWidth="5"/>
+                <ImageView fx:id="image" fitHeight="280" fitWidth="280" preserveRatio="true"/>
+            </StackPane>
+            <HBox alignment="CENTER" prefHeight="100">
+                <HBox alignment="CENTER" prefWidth="350">
+                    <Button text="Je savais" styleClass="button_classique" onAction="#iKnew"/>
+                </HBox>
+                <HBox alignment="CENTER" prefWidth="350">
+                    <Button text="Je ne savais pas" styleClass="button_classique" onAction="#iDidntKnow"/>
+                </HBox>
+            </HBox>
+        </VBox>
+    </center>
+
+    <right>
+        <VBox alignment="CENTER" style="-fx-padding: 30" prefWidth="100">
+            <Button text="→" styleClass="button_classique" onAction="#nextQuestion"/>
+        </VBox>
+    </right>
+</BorderPane>
