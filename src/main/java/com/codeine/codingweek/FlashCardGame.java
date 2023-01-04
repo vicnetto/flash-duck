@@ -8,6 +8,8 @@ public class FlashCardGame {
     private int currentPile = 0;
     private int currentCarte = 0;
 
+    private ArrayList<ApprentissageMethod> currentApprentissageList;
+
     public FlashCardGame() {
         lesPiles = new ArrayList<Pile>();
     }
@@ -49,5 +51,13 @@ public class FlashCardGame {
 
     public void setCurrentCarte(int currentCarte) {
         this.currentCarte = currentCarte;
+    }
+
+    public ArrayList<ApprentissageMethod> getCurrentApprentissageList() {
+        return currentApprentissageList;
+    }
+
+    public void setCurrentApprentissageList(ArrayList<ApprentissageMethod> currentApprentissageList) {
+        this.currentApprentissageList = currentApprentissageList;
     }
 }
