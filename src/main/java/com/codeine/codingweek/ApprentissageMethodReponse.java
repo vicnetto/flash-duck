@@ -10,8 +10,8 @@ public class ApprentissageMethodReponse extends ApprentissageMethod{
 
     @Override
     public void afficher(VBox vb) {
-        Text asked = (Text) vb.lookup("asked");
-        Text hint = (Text) vb.lookup("hint");
+        Text asked = (Text) vb.lookup("#asked");
+        Text hint = (Text) vb.lookup("#hint");
 
         asked.setText(this.getCarte().getReponse());
         hint.setText(this.getHintShowed());

@@ -15,7 +15,7 @@
         </GridPane>
     </ScrollPane>
 
-    <HBox alignment="CENTER" prefHeight="100" styleClass="button_classique">
+    <HBox alignment="CENTER" prefHeight="100" styleClass="button_classiqueP">
         <Button text="+ Ajouter une pile"/>
     </HBox>
 </VBox>

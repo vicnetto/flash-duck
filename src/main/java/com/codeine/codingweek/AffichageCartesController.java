@@ -104,9 +104,7 @@ public class AffichageCartesController implements Initializable {
     public void exporterPile(ActionEvent actionEvent) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        } catch (Exception ignored) {}
         JFileChooser chooser = new JFileChooser();
         chooser.setDialogTitle("Sélectionnez un emplacement");
         chooser.setCurrentDirectory(new File("/"));
