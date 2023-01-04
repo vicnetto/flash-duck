@@ -34,6 +34,7 @@ public class Main extends Application {
         stage.getIcons().add(new Image(getClass().getResource("images/Mascotte_borderless.png").toExternalForm())) ;
         stage.setScene(scene) ;
         stage.show() ;
+        
     }
 
     public static void main(String[] args) {

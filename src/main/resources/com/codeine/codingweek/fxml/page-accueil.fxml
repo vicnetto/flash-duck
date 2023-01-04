@@ -1,33 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.Menu?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.codeine.codingweek.AccueilController"
-      spacing="30"
-      prefHeight="600" prefWidth="800" style="-fx-background-color: #f4f4f4">
+<VBox prefHeight="600.0" prefWidth="800.0" spacing="30" style="-fx-background-color: #e7ecec" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AccueilController">
 
-    <MenuBar>
-        <fx:include source="menu.fxml"/>
+    <MenuBar styleClass="menu">
+        <fx:include source="menu.fxml" />
     </MenuBar>
 
-    <HBox alignment="CENTER" maxHeight="200">
-        <Label text="Bienvenue, choisissez un mode !" styleClass="text"/>
+    <HBox alignment="CENTER" maxHeight="200" prefHeight="122.0" prefWidth="800.0">
+        <Label styleClass="text" text="Bienvenue, choisissez un mode !">
+         <HBox.margin>
+            <Insets right="-150.0" />
+         </HBox.margin></Label>
+      <ImageView fitHeight="106.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+         <HBox.margin>
+            <Insets left="200.0" right="-100.0" />
+         </HBox.margin>
+         <image>
+            <Image url="@../images/Mascotte_borderless.png" />
+         </image>
+      </ImageView>
+      <VBox.margin>
+         <Insets top="-30.0" />
+      </VBox.margin>
     </HBox>
 
     <HBox alignment="CENTER" prefHeight="400">
-        <HBox alignment="CENTER" prefWidth="400" prefHeight="300">
-            <Button text="Création" prefWidth="300" prefHeight="400" fx:id="button_creation" styleClass="card" onAction="#creation">
-            </Button>
+        <HBox alignment="CENTER" prefHeight="300" prefWidth="400">
+            <Button fx:id="button_creation" alignment="TOP_CENTER" contentDisplay="BOTTOM" onAction="#creation" prefHeight="400" prefWidth="300" styleClass="card" text="Création">
+            <graphic>
+               <ImageView blendMode="SRC_ATOP" fitHeight="356.0" fitWidth="221.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../images/learning_logo.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <HBox.margin>
+               <Insets right="-50.0" />
+            </HBox.margin></Button>
         </HBox>
-        <HBox alignment="CENTER" prefWidth="400" prefHeight="300">
-            <Button text="Apprentissage" prefWidth="300" prefHeight="400" fx:id="button_apprentissage" styleClass="card" onAction="#apprentissage"/>
+        <HBox alignment="CENTER" prefHeight="300" prefWidth="400">
+            <Button fx:id="button_apprentissage" alignment="TOP_CENTER" contentDisplay="BOTTOM" onAction="#apprentissage" prefHeight="400" prefWidth="300" styleClass="card" text="Apprentissage">
+            <graphic>
+               <ImageView blendMode="SRC_ATOP" fitHeight="356.0" fitWidth="221.0" pickOnBounds="true">
+                  <image>
+                     <Image url="@../images/brain_logo.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <HBox.margin>
+               <Insets right="50.0" />
+            </HBox.margin></Button>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
         </HBox>
+      <VBox.margin>
+         <Insets top="-20.0" />
+      </VBox.margin>
     </HBox>
 </VBox>
