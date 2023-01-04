@@ -12,7 +12,7 @@
 
 
 <?import javafx.scene.control.MenuBar?>
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationCarteController">
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationCarteController">
    <top>
       <MenuBar>
          <fx:include source="menu.fxml"/>

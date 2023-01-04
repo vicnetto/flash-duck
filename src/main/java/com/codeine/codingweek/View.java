@@ -13,7 +13,7 @@ public enum View {
     STATISTIQUES("fxml/page-statistiques.fxml"), //PageStatistiquesController
     APPRENTISSAGE_WHAT_IS_ASKED("fxml/page-apprentissage-whatisasked.fxml"), //PageApprentissageWhatIsAskedController
     APPRENTISSAGE_CREATOR_REPONSE("fxml/page-carte-reponse.fxml"); //AffichageCarteReponseController
-    
+
     private String fileName ;
 
     View(String fileName) {
