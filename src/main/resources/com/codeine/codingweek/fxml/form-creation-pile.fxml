@@ -32,7 +32,7 @@
             </VBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Annuler">
+                  <Button mnemonicParsing="false" onAction="#annuler" text="Annuler">
                      <HBox.margin>
                         <Insets right="40.0" />
                      </HBox.margin>

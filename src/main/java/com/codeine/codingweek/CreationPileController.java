@@ -32,6 +32,10 @@ public class CreationPileController implements Initializable {
 
     }
 
+    public void annuler(ActionEvent actionEvent) throws  IOException {
+        ViewSwitcher.swtichTo(View.PILE_CREATION);
+    }
+
     public void ajouterPile(ActionEvent actionEvent) throws IOException {
         String titre = this.textarea_t.getText();
         System.out.println(titre);
