@@ -9,7 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import javax.swing.JFileChooser;
 
+
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -82,6 +86,20 @@ public class AffichageCartesController implements Initializable {
                     throw new RuntimeException(ex);
                 }
             });
+        }
+    }
+
+    public void exporterPile(ActionEvent actionEvent) {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File("/"));
+        int dialog = chooser.showSaveDialog(null);
+        if (dialog == JFileChooser.APPROVE_OPTION) {
+            try {
+                JsonController jsonController = new JsonController(chooser.getSelectedFile().toString() + ".json");
+                jsonController.writeNewPile(this.fcg.getLesPiles().get(this.fcg.getCurrentPile()));
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     }
 }
