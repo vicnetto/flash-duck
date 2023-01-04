@@ -13,6 +13,7 @@ public class AfficherPiles {
 
     public static final int maxByLine = 4;
 
+    public static final String cellStyle = "-fx-border-color: black;-fx-border-radius: 5; -fx-margin-bottom: 20; -fx-background-color: #f3f6dd;";
 
     public static void afficherToutesLesPiles(FlashCardGame fcg, GridPane gridPiles, IntConsumer goToPile) {
         int line;
@@ -22,11 +23,16 @@ public class AfficherPiles {
             VBox vb = new VBox();
             vb.setPrefSize(150, 80);
             vb.setAlignment(Pos.CENTER);
+            vb.setPadding(new Insets(10));
+            vb.setStyle(cellStyle);
+            vb.setOnMouseEntered(action ->
+                    vb.setStyle(cellStyle + "-fx-background-color: #fdd700"));
+            vb.setOnMouseExited(action ->
+                    vb.setStyle(cellStyle + "-fx-background-color: #f3f6dd"));
 
             Label nom = new Label(fcg.getLesPiles().get(i).getName());
+            nom.setStyle("-fx-text-fill: #000000");
             vb.getChildren().add(nom);
-            vb.setPadding(new Insets(10));
-            vb.setStyle("-fx-border-color: black; -fx-border-radius: 5; -fx-margin-bottom: 20;");
 
             int ii = i;
             vb.setOnMouseClicked(e -> goToPile.accept(ii));

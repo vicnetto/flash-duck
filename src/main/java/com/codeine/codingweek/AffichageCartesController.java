@@ -48,7 +48,7 @@ public class AffichageCartesController implements Initializable {
             leftBox.getChildren().add(reponse);
 
             leftBox.setPadding(new Insets(10, 0, 10, 0)) ;
-            leftBox.setStyle("-fx-border-color: black; -fx-border-radius: 20; -fx-spacing: 10px;") ;
+            leftBox.setStyle("-fx-border-color: black; -fx-border-radius: 20; -fx-spacing: 10px; -fx-background-color: #f3f6dd;") ;
             leftBox.setAlignment(Pos.CENTER) ;
             
             int copieI = i;

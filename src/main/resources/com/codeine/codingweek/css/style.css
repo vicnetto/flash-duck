@@ -16,7 +16,7 @@
 
 .card:hover {
   
-  -fx-background-color: rgb(253, 215, 0);
+  -fx-background-color: #fdd700;
   
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 8, 0, 0, 0);
 
