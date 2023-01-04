@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.text.Font?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationPileController">
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationPileController">
    <top>
       <MenuBar>
-         <fx:include source="menu.fxml"/>
+         <fx:include source="menu.fxml" />
       </MenuBar>
    </top>
 
@@ -24,33 +25,47 @@
          <VBox>
             <Label text="Titre">
                <font>
-                  <Font size="20.0"/>
+                  <Font size="20.0" />
                </font>
             </Label>
-            <TextArea prefHeight="55.0" prefWidth="800.0" fx:id="textarea_t">
+            <TextArea fx:id="textarea_t" prefHeight="55.0" prefWidth="800.0">
                <font>
-                  <Font size="15.0"/>
+                  <Font size="15.0" />
                </font>
                <VBox.margin>
-                  <Insets top="10.0"/>
+                  <Insets top="10.0" />
                </VBox.margin>
             </TextArea>
          </VBox>
+         <VBox prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Label text="Catégorie">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Label>
+               <TextArea fx:id="textarea_c" prefHeight="55.0" prefWidth="800.0">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+               </TextArea>
+            </children>
+         </VBox>
          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <VBox.margin>
-               <Insets top="30.0"/>
+               <Insets top="30.0" />
             </VBox.margin>
             <Button mnemonicParsing="false" onAction="#annuler" text="Annuler">
                <HBox.margin>
-                  <Insets right="40.0"/>
+                  <Insets right="40.0" />
                </HBox.margin>
                <font>
-                  <Font size="18.0"/>
+                  <Font size="18.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#ajouterPile" text="Ajouter">
                <font>
-                  <Font size="18.0"/>
+                  <Font size="18.0" />
                </font>
             </Button>
          </HBox>
