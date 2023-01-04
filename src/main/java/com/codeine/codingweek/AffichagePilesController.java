@@ -3,9 +3,6 @@ package com.codeine.codingweek;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
@@ -13,6 +10,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
 public class AffichagePilesController implements Initializable {
 
@@ -27,22 +26,15 @@ public class AffichagePilesController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (int i = 0; i < this.fcg.getLesPiles().size(); i++) {
-            VBox vb = new VBox();
-            Label nom = new Label(this.fcg.getLesPiles().get(i).getName());
-            vb.getChildren().add(nom);
-            vb.setPadding(new Insets(10));
-            vb.setStyle("-fx-border-color: black; -fx-border-radius: 5; -fx-margin-bottom: 20;");
-            int copieI = i;
-            vb.setOnMouseClicked((e) -> {
-                try {
-                    this.goToPile(copieI);
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-            });
-            this.gridPiles.getChildren().add(vb);
-        }
+        IntConsumer goToPile = integer -> {
+            try {
+                goToPile(integer);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        };
+
+        AfficherPiles.afficherToutesLesPiles(fcg, gridPiles, goToPile);
     }
 
     public void goToPile(int i) throws IOException {
