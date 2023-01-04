@@ -57,6 +57,10 @@ public class AffichageCartesController implements Initializable {
         ViewSwitcher.swtichTo(View.FORM_CARTE);
     }
 
+    public void retour(ActionEvent actionEvent) throws  IOException{
+        ViewSwitcher.swtichTo(View.PILE_CREATION);
+    }
+
     public void goToModificationFormCarte(int i) throws IOException {
         this.fcg.setCurrentCarte(i);
         ViewSwitcher.swtichTo(View.FORM_MODIFICATION_CARTE);

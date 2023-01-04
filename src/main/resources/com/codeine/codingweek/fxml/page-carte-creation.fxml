@@ -19,6 +19,7 @@
     </VBox>
 
     <HBox alignment="CENTER" prefHeight="100">
+        <Button text="Retour" onAction="#retour"/>
         <Button text="+ Ajouter une carte" onAction="#goToFormCarte"/>
     </HBox>
 
