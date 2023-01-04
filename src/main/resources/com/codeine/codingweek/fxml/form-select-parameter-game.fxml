@@ -3,9 +3,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-
+<?import javafx.scene.control.MenuBar?>
 
 <BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.FormSelectParameterGameController">
+   <top>
+      <MenuBar>
+         <fx:include source="menu.fxml"/>
+      </MenuBar>
+   </top>
    <center>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
          <children>
