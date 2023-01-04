@@ -10,10 +10,9 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.effect.BlendMode;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.WindowEvent;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -25,7 +24,7 @@ import java.util.ResourceBundle;
 public class AffichageCartesController implements Initializable {
 
     @FXML
-    public VBox gridCartes;
+    public VBox vBoxCartes;
     @FXML
     private ScrollPane scrollPane ;
 
@@ -40,29 +39,21 @@ public class AffichageCartesController implements Initializable {
 
         int i = 0;
         for (Card carte : this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).getCards()) {
-            VBox vb = new VBox();
+            VBox leftBox = new VBox();
+            leftBox.setPrefWidth(700);
+
             Label question = new Label(carte.getQuestion());
             Label reponse = new Label(carte.getReponse());
-            vb.getChildren().add(question);
-            vb.getChildren().add(reponse);
+            leftBox.getChildren().add(question);
+            leftBox.getChildren().add(reponse);
 
-            vb.setPadding(new Insets(10, 0, 10, 0)) ;
-            vb.setStyle("-fx-border-color: black; -fx-border-radius: 20; -fx-spacing: 10px;") ;
-            vb.setAlignment(Pos.CENTER) ;
+            leftBox.setPadding(new Insets(10, 0, 10, 0)) ;
+            leftBox.setStyle("-fx-border-color: black; -fx-border-radius: 20; -fx-spacing: 10px;") ;
+            leftBox.setAlignment(Pos.CENTER) ;
             
-            Button suppr = new Button();
             int copieI = i;
-            suppr.setOnMouseClicked((e) -> {supprimerCarte(copieI);});
-            vb.getChildren().add(suppr);
-            Button modif = new Button();
-            modif.setOnMouseClicked((e)-> {
-                try {
-                    goToModificationFormCarte(copieI);
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-            });
-            
+            VBox rightBox = new VBox();
+
             ImageView imView = new ImageView(getClass().getResource("images/trash.png").toExternalForm()) ;
 
             imView.setPreserveRatio(true) ;
@@ -70,10 +61,11 @@ public class AffichageCartesController implements Initializable {
             imView.setFitHeight(40);
             imView.setFitWidth(40);
 
-            suppr.setGraphic(imView) ;
-
-            suppr.getStyleClass().add("bottom_button") ;
-            modif.getStyleClass().add("bottom_button") ;
+            Button delete = new Button();
+            delete.setOnMouseClicked(e -> supprimerCarte(copieI));
+            delete.getStyleClass().add("bottom_button") ;
+            delete.setGraphic(imView) ;
+            rightBox.getChildren().add(delete);
 
             imView = new ImageView(getClass().getResource("images/edit.png").toExternalForm()) ;
 
@@ -82,12 +74,21 @@ public class AffichageCartesController implements Initializable {
             imView.setFitHeight(40);
             imView.setFitWidth(40);
 
-            modif.setGraphic(imView) ;
-            
-            vb.getChildren().add(modif);
-            this.gridCartes.getChildren().add(vb);
-            i++;
+            Button modify = new Button();
+            modify.setOnMouseClicked((e)-> {
+                try {
+                    goToModificationFormCarte(copieI);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
+            modify.getStyleClass().add("bottom_button") ;
+            modify.setGraphic(imView) ;
+            rightBox.getChildren().add(modify);
 
+            HBox hBox = new HBox(leftBox, rightBox);
+            this.vBoxCartes.getChildren().addAll(hBox);
+            i++;
         }
     }
 
@@ -109,14 +110,14 @@ public class AffichageCartesController implements Initializable {
     public void supprimerCarte(int i) {
 
         this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).deleteCarteByIndex(i);
-        this.gridCartes.getChildren().remove(this.gridCartes.getChildren().get(i));
+        this.vBoxCartes.getChildren().remove(this.vBoxCartes.getChildren().get(i));
 
-        for (int j = 0; j < this.gridCartes.getChildren().size(); j++) {
-            VBox vb = (VBox) this.gridCartes.getChildren().get(j);
-            Button suppr = (Button) vb.getChildren().get(2);
+        for (int j = 0; j < this.vBoxCartes.getChildren().size(); j++) {
+            HBox hb = (HBox) this.vBoxCartes.getChildren().get(j);
+            Button suppr = (Button) ((VBox) hb.getChildren().get(1)).getChildren().get(0);
             int copieJ = j;
-            suppr.setOnMouseClicked((e) -> {supprimerCarte(copieJ);});
-            Button modif = (Button) vb.getChildren().get(3);
+            suppr.setOnMouseClicked((e) -> supprimerCarte(copieJ));
+            Button modif = (Button) ((VBox) hb.getChildren().get(1)).getChildren().get(1);
             modif.setOnMouseClicked((e) ->{
                 try {
                     goToModificationFormCarte(copieJ);

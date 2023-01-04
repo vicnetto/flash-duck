@@ -7,22 +7,24 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="600" prefWidth="800" style="-fx-background-color: #e7ecec" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichageCartesController">
+<VBox prefHeight="600" prefWidth="800" style="-fx-background-color: #e7ecec" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichageCartesController">
 
     <MenuBar styleClass="menu">
         <fx:include source="menu.fxml" />
     </MenuBar>
-    <ScrollPane fx:id="scrollPane" style="-fx-spacing: 20px;">
+
+    <ScrollPane fx:id="scrollPane" minHeight="490" maxHeight="490" style="-fx-padding: 10 0 10 0;">
       <BorderPane>
          <center>
-              <VBox fx:id="gridCartes" alignment="CENTER" prefHeight="500" prefWidth="783.0" style="-fx-background: #e7ecec; -fx-padding: 10 0 10 0;">
+              <VBox fx:id="vBoxCartes" alignment="CENTER" prefHeight="500" spacing="20"
+                    style="-fx-background: #e7ecec; -fx-padding: 0 10 0 10;">
               </VBox>
          </center>
       </BorderPane>
     </ScrollPane>
 
-    <HBox alignment="CENTER" prefHeight="130.0" prefWidth="800.0">
-        <Button alignment="CENTER" onAction="#retour" styleClass="bottom_button" text="Retour" />
+    <HBox alignment="CENTER" prefHeight="100" prefWidth="800.0" spacing="50">
+        <Button alignment="CENTER" onAction="#retour" styleClass="bottom_button" text="Retour"/>
         <Button alignment="CENTER" onAction="#goToFormCarte" styleClass="bottom_button" text="+ Ajouter une carte" />
         <Button alignment="CENTER" mnemonicParsing="false" onAction="#exporterPile" styleClass="bottom_button" text="Exporter la pile" />
     </HBox>
