@@ -8,8 +8,7 @@
       fx:controller="com.codeine.codingweek.MenuController"
       text="Menu" style="-fx-text-fill: #54ABAC">
 
-    <MenuItem text="Menu principal" onAction="#menuPrincipal"/>
-    <MenuItem text="Menu apprentissage" onAction="#menuApprentissage"/>
-    <MenuItem text="Menu creation" onAction="#menuCreation"/>
-    
+    <MenuItem text="Principal" onAction="#menuPrincipal"/>
+    <MenuItem text="Creation" onAction="#menuCreation"/>
+    <MenuItem text="Apprentissage" onAction="#menuApprentissage"/>
 </Menu>
