@@ -26,7 +26,7 @@ public class AfficherPiles {
             vb.setPadding(new Insets(10));
             vb.setStyle(cellStyle);
             vb.setOnMouseEntered(action ->
-                    vb.setStyle(cellStyle + "-fx-background-color: #fdd700"));
+                    vb.setStyle(cellStyle + "-fx-background-color: #ffd064"));
             vb.setOnMouseExited(action ->
                     vb.setStyle(cellStyle + "-fx-background-color: #f3f6dd"));
 
