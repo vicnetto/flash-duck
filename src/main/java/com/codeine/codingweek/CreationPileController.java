@@ -12,6 +12,7 @@ import javafx.scene.input.KeyCode;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class CreationPileController implements Initializable {
@@ -35,6 +36,7 @@ public class CreationPileController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        button_valider.setDisable(!isValidForm());
         textarea_c.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.TAB) {
                 event.consume();
@@ -55,6 +57,12 @@ public class CreationPileController implements Initializable {
             }
         });
 
+        textarea_t.setOnKeyReleased(event -> {
+            button_valider.setDisable(!isValidForm());
+        });
+        textarea_c.setOnKeyReleased(event -> {
+            button_valider.setDisable(!isValidForm());
+        });
     }
 
     private List<String> getAutocompleteOptions() {
@@ -62,14 +70,20 @@ public class CreationPileController implements Initializable {
         return fcg.getCategories();
     }
 
-    public void annuler(ActionEvent actionEvent) throws  IOException {
+    public void annuler(ActionEvent actionEvent) throws IOException {
         ViewSwitcher.swtichTo(View.PILE_CREATION);
     }
 
     public void ajouterPile(ActionEvent actionEvent) throws IOException {
-        String titre = this.textarea_t.getText();
-        String categorie = this.textarea_c.getText().replaceAll("\t", "");
-        this.fcg.addPile(new Pile(categorie, titre));
-        ViewSwitcher.swtichTo(View.PILE_CREATION);
+        if (isValidForm()) {
+            String titre = this.textarea_t.getText();
+            String categorie = this.textarea_c.getText().replaceAll("\t", "");
+            this.fcg.addPile(new Pile(categorie, titre));
+            ViewSwitcher.swtichTo(View.PILE_CREATION);
+        }
+    }
+
+    private boolean isValidForm() {
+        return !Objects.equals(this.textarea_t.getText(), "") && !Objects.equals(this.textarea_c.getText(), "");
     }
 }
