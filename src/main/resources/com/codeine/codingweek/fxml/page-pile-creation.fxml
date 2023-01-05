@@ -8,9 +8,7 @@
       xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.codeine.codingweek.AffichagePilesController">
 
-    <MenuBar styleClass="menu">
-        <fx:include source="menu.fxml" />
-    </MenuBar>
+    <fx:include source="menu.fxml" />
 
     <HBox alignment="CENTER" prefHeight="50">
         <Label text="Mode Création" styleClass="text"/>
