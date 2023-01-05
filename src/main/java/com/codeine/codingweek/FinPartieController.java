@@ -43,6 +43,6 @@ public class FinPartieController implements Initializable {
 
     @FXML
     public void rejouer(ActionEvent actionEvent) throws IOException {
-//        ViewSwitcher.switchTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
+        ViewSwitcher.switchTo(View.APPRENTISSAGE_FORM_SELECT_PARAMETERS);
     }
 }
