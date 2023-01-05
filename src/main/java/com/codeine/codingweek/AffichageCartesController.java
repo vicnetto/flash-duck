@@ -129,9 +129,14 @@ public class AffichageCartesController implements Initializable {
     }
 
     public void exporterPile(ActionEvent actionEvent) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception ignored) {}
+        if (System.getProperty("os.name").startsWith("Windows")) {
+            try {
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            } catch (UnsupportedLookAndFeelException | IllegalAccessException | InstantiationException |
+                     ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
         JFileChooser chooser = new JFileChooser();
         chooser.setDialogTitle("Sélectionnez un emplacement");
         chooser.setCurrentDirectory(new File("/"));
