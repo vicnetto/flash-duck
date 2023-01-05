@@ -10,9 +10,7 @@
 
 <VBox prefHeight="600" prefWidth="800" style="-fx-background-color: #e7ecec" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichageCartesController">
 
-    <MenuBar styleClass="menu">
-        <fx:include source="menu.fxml" />
-    </MenuBar>
+    <fx:include source="menu.fxml" />
 
     <ScrollPane fx:id="scrollPane" maxHeight="490" minHeight="490" style="-fx-padding: 10 0 10 0;">
       <BorderPane>

@@ -14,9 +14,7 @@
 	prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #e7ecec"
 	fx:controller="com.codeine.codingweek.PageApprentissageAccueil">
 
-    <MenuBar styleClass="menu">
-        <fx:include source="menu.fxml"/>
-    </MenuBar>
+    <fx:include source="menu.fxml"/>
 
     <HBox alignment="CENTER" prefHeight="50">
         <Label text="Menu Apprentissage" styleClass="text"/>

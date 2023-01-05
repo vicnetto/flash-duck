@@ -49,25 +49,13 @@
 .menu, .context-menu  {
     -fx-border-color: #54ABAC;
     -fx-padding: 0;
+    -fx-spacing: 30;
 }
 
 .menu-bar {
     -fx-background-color: #54ABAC;
     -fx-selection-bar: #f3f6dd ;
     -fx-text-background-color: black ;
-    -fx-padding: 5;
-}
-
-.menu-item {
-    -fx-background-color: #54ABAC;
-}
-
-.menu-item:focused {
-    -fx-background-color: #f3f6dd ;
-}
-
-.menu-item .label {
-    -fx-text-fill: black;
 }
 
 .bottom_button {

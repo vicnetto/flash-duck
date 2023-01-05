@@ -12,9 +12,7 @@
 
 <BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationPileController">
    <top>
-      <MenuBar>
-         <fx:include source="menu.fxml" />
-      </MenuBar>
+      <fx:include source="menu.fxml" />
    </top>
 
    <center>

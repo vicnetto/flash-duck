@@ -51,8 +51,9 @@ public class ViewSwitcher {
         });
 
         Parent root = loader.load();
-        
+
         scene.setRoot(root);
 
+        root.requestFocus();
     }
 }

@@ -18,9 +18,7 @@
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.codeine.codingweek.CreationCarteController">
    <top>
-      <MenuBar>
-         <fx:include source="menu.fxml" />
-      </MenuBar>
+      <fx:include source="menu.fxml" />
    </top>
    <center>
       <ScrollPane>
