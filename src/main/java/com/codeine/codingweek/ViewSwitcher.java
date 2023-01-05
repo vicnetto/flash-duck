@@ -25,7 +25,7 @@ public class ViewSwitcher {
     }
 
 
-    public static void swtichTo(View view) throws IOException {
+    public static void switchTo(View view) throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ViewSwitcher.class.getResource(view.getFileName()));
@@ -44,6 +44,7 @@ public class ViewSwitcher {
             else if (ic.equals(AffichageCarteReponseController.class)) return new AffichageCarteReponseController(fcg);
             else if (ic.equals(PageStatistiquePileController.class)) return new PageStatistiquePileController(fcg);
             else if (ic.equals(PageStatistiquesController.class)) return new PageStatistiquesController(fcg);
+            else if (ic.equals(PageStatistiqueGlobalController.class)) return new PageStatistiqueGlobalController(fcg);
             else System.out.println("Pas de controller trouve") ;
             return null;
         });

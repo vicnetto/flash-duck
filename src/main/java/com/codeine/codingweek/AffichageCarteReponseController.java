@@ -64,13 +64,13 @@ public class AffichageCarteReponseController implements Initializable {
 
     public void handleNextApprentissage() throws IOException {
         if (this.fcg.getCurrentIndexApprentissageList() < this.fcg.getCurrentApprentissageList().size()) {
-            ViewSwitcher.swtichTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
+            ViewSwitcher.switchTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
         }
         else {
             Pile pile = this.fcg.getLesPiles().get(this.fcg.getCurrentPile());
             Float div = (float) pile.getCards().size()/this.fcg.getCurrentIndexApprentissageList();
             pile.addScore((float) 100.0*(div));
-            ViewSwitcher.swtichTo(View.ACCUEIL);
+            ViewSwitcher.switchTo(View.ACCUEIL);
         }
     }
 

@@ -45,7 +45,7 @@ public class ModificationCarteController implements Initializable {
     }
 
     public void annuler(ActionEvent actionEvent) throws IOException {
-        ViewSwitcher.swtichTo(View.CARTE_CREATION);
+        ViewSwitcher.switchTo(View.CARTE_CREATION);
     }
 
     public void modifierCarte(ActionEvent actionEvent) throws IOException {
@@ -54,7 +54,7 @@ public class ModificationCarteController implements Initializable {
                     getCards().get(this.fcg.getCurrentCarte()).setQuestion(this.textarea_q.getText());
             this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).
                     getCards().get(this.fcg.getCurrentCarte()).setReponse(this.textarea_r.getText());
-            ViewSwitcher.swtichTo(View.CARTE_CREATION);
+            ViewSwitcher.switchTo(View.CARTE_CREATION);
         }
     }
 

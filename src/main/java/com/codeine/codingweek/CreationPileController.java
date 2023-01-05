@@ -71,7 +71,7 @@ public class CreationPileController implements Initializable {
     }
 
     public void annuler() throws IOException {
-        ViewSwitcher.swtichTo(View.PILE_CREATION);
+        ViewSwitcher.switchTo(View.PILE_CREATION);
     }
 
     public void ajouterPile(ActionEvent actionEvent) throws IOException {
@@ -79,7 +79,7 @@ public class CreationPileController implements Initializable {
             String titre = this.textarea_t.getText();
             String categorie = this.textarea_c.getText().replaceAll("\t", "");
             this.fcg.addPile(new Pile(categorie, titre));
-            ViewSwitcher.swtichTo(View.PILE_CREATION);
+            ViewSwitcher.switchTo(View.PILE_CREATION);
         }
     }
 

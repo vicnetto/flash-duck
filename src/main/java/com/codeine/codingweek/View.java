@@ -14,7 +14,8 @@ public enum View {
     APPRENTISSAGE_WHAT_IS_ASKED("fxml/page-apprentissage-whatisasked.fxml"), //PageApprentissageWhatIsAskedController
     APPRENTISSAGE_FORM_SELECT_PARAMETERS("fxml/form-select-parameter-game.fxml"), //FormSelectParameterGameController
     APPRENTISSAGE_CREATOR_REPONSE("fxml/page-carte-reponse.fxml"), //AffichageCarteReponseController
-    STATISTIQUES_PAGE_PILE("fxml/page-statistique-pile.fxml"); //PageStatistiquePileController
+    STATISTIQUES_PAGE_PILE("fxml/page-statistique-pile.fxml"), //PageStatistiquePileController
+    STATISTIQUES_PAGE_GLOBAL("fxml/page-statistique-global.fxml");  //PageStatistiqueGlobalController
 
     private String fileName ;
 

@@ -95,16 +95,16 @@ public class AffichageCartesController implements Initializable {
     
 
     public void goToFormCarte() throws IOException {
-        ViewSwitcher.swtichTo(View.FORM_CARTE);
+        ViewSwitcher.switchTo(View.FORM_CARTE);
     }
 
     public void retour() throws  IOException{
-        ViewSwitcher.swtichTo(View.PILE_CREATION);
+        ViewSwitcher.switchTo(View.PILE_CREATION);
     }
 
     public void goToModificationFormCarte(int i) throws IOException {
         this.fcg.setCurrentCarte(i);
-        ViewSwitcher.swtichTo(View.FORM_MODIFICATION_CARTE);
+        ViewSwitcher.switchTo(View.FORM_MODIFICATION_CARTE);
     }
 
     public void supprimerCarte(int i) {

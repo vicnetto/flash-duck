@@ -8,16 +8,16 @@ public class MenuController {
 
     @FXML
     private void menuPrincipal() throws IOException {
-        ViewSwitcher.swtichTo(View.ACCUEIL);
+        ViewSwitcher.switchTo(View.ACCUEIL);
     }
 
     @FXML
     private void menuApprentissage() throws IOException {
-        ViewSwitcher.swtichTo(View.APPRENTISSAGE_ACCUEIL);
+        ViewSwitcher.switchTo(View.APPRENTISSAGE_ACCUEIL);
     }
 
     @FXML
     private void menuCreation() throws IOException {
-        ViewSwitcher.swtichTo(View.PILE_CREATION);
+        ViewSwitcher.switchTo(View.PILE_CREATION);
     }
 }

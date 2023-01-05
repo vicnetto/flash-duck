@@ -26,12 +26,12 @@ public class AccueilController implements Initializable {
 
     @FXML
     public void creation() throws IOException {
-        ViewSwitcher.swtichTo(View.PILE_CREATION) ;
+        ViewSwitcher.switchTo(View.PILE_CREATION) ;
     }
 
     @FXML
     public void apprentissage() throws IOException {
-        ViewSwitcher.swtichTo(View.APPRENTISSAGE_ACCUEIL) ;
+        ViewSwitcher.switchTo(View.APPRENTISSAGE_ACCUEIL) ;
     }
 
 }

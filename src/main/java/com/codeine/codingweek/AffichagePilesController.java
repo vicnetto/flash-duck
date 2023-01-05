@@ -43,15 +43,15 @@ public class AffichagePilesController implements Initializable {
 
     public void goToPile(int i) throws IOException {
         this.fcg.setCurrentPile(i);
-        ViewSwitcher.swtichTo(View.CARTE_CREATION);
+        ViewSwitcher.switchTo(View.CARTE_CREATION);
     }
 
     public void goToFormCreationPile() throws IOException {
-        ViewSwitcher.swtichTo(View.FORM_PILE);
+        ViewSwitcher.switchTo(View.FORM_PILE);
     }
 
     public void retour() throws  IOException {
-        ViewSwitcher.swtichTo(View.ACCUEIL);
+        ViewSwitcher.switchTo(View.ACCUEIL);
     }
 
     public void importPile() {

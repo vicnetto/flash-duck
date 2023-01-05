@@ -21,7 +21,7 @@ public class FormSelectParameterGameController {
         ApprentissageCreatorQuestion acq = new ApprentissageCreatorQuestion(fcg);
         ArrayList<ApprentissageMethod> amq = acq.createApprentissage();
         this.fcg.setCurrentApprentissageList(amq);
-        ViewSwitcher.swtichTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
+        ViewSwitcher.switchTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
     }
 
     public void goToGameWithReponses(ActionEvent actionEvent) throws IOException {
@@ -29,6 +29,6 @@ public class FormSelectParameterGameController {
         ApprentissageCreatorReponse acq = new ApprentissageCreatorReponse(fcg);
         ArrayList<ApprentissageMethod> amq = acq.createApprentissage();
         this.fcg.setCurrentApprentissageList(amq);
-        ViewSwitcher.swtichTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
+        ViewSwitcher.switchTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
     }
 }

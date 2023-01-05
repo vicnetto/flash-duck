@@ -29,6 +29,6 @@ public class PageApprentissageWhatisaskedController implements Initializable {
     }
 
     public void goToReponse(ActionEvent actionEvent) throws IOException {
-        ViewSwitcher.swtichTo(View.APPRENTISSAGE_CREATOR_REPONSE);
+        ViewSwitcher.switchTo(View.APPRENTISSAGE_CREATOR_REPONSE);
     }
 }

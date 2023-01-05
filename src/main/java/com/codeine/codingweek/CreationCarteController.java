@@ -48,12 +48,12 @@ public class CreationCarteController implements Initializable {
     public void ajouterCarte(ActionEvent actionEvent) throws IOException {
         if (isValidForm()) {
             this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).addCarte(new Card(this.textarea_q.getText(), this.textarea_r.getText()));
-            ViewSwitcher.swtichTo(View.CARTE_CREATION);
+            ViewSwitcher.switchTo(View.CARTE_CREATION);
         }
     }
 
     public void annuler() throws IOException {
-        ViewSwitcher.swtichTo(View.CARTE_CREATION);
+        ViewSwitcher.switchTo(View.CARTE_CREATION);
     }
 
     private boolean isValidForm() {

@@ -38,13 +38,12 @@ public class PageStatistiquesController implements Initializable {
     public void goToPileStatistique(int numPile) throws IOException {
         // TODO setCurrentPile au numéro de bonne pile et déplacement vers la page
         this.fcg.setCurrentPile(numPile);
-        ViewSwitcher.swtichTo(View.STATISTIQUES_PAGE_PILE);
+        ViewSwitcher.switchTo(View.STATISTIQUES_PAGE_PILE);
     }
 
     @FXML
     public void goToStatistiquesGlobales() throws IOException  {
-        System.out.println("Stats globales") ;
-        //ViewSwitcher.switchTo(View.) ;
+        ViewSwitcher.switchTo(View.STATISTIQUES_PAGE_GLOBAL) ;
     }
 
 }
