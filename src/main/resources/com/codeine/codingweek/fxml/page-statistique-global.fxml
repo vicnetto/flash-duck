@@ -4,12 +4,8 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.MenuBar?>
-
 <VBox alignment="CENTER" prefHeight="400.0" BorderPane.alignment="CENTER" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageStatistiqueGlobalController">
-   <MenuBar styleClass="menu">
-      <fx:include source="menu.fxml" />
-   </MenuBar>
+     <fx:include source="menu.fxml" />
      <Label fx:id="global" text="Statistiques globales" prefHeight="100" styleClass="text" />
       <HBox fx:id="containerGraph" alignment="CENTER" prefHeight="500.0" prefWidth="400.0" spacing="40.0" />
 </VBox>
