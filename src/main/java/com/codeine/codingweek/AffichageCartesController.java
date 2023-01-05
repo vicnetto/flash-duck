@@ -63,7 +63,7 @@ public class AffichageCartesController implements Initializable {
 
             Button delete = new Button();
             delete.setOnMouseClicked(e -> supprimerCarte(copieI));
-            delete.getStyleClass().add("bottom_button") ;
+            delete.getStyleClass().add("icone_button") ;
             delete.setGraphic(imView) ;
             rightBox.getChildren().add(delete);
 
@@ -82,7 +82,7 @@ public class AffichageCartesController implements Initializable {
                     throw new RuntimeException(ex);
                 }
             });
-            modify.getStyleClass().add("bottom_button") ;
+            modify.getStyleClass().add("icone_button") ;
             modify.setGraphic(imView) ;
             rightBox.getChildren().add(modify);
 

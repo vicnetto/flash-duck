@@ -20,7 +20,7 @@
         <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #6272a4"/>
     </ScrollPane>
 
-    <HBox alignment="CENTER" prefHeight="100" styleClass="bottom_button" spacing="50">
+    <HBox alignment="CENTER" prefHeight="100" spacing="50">
         <Button alignment="CENTER" onAction="#goToFormCreationPile" styleClass="bottom_button" text="+ Ajouter une pile"/>
         <Button alignment="CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#importPile" styleClass="bottom_button" text="Importer une pile"/>
     </HBox>

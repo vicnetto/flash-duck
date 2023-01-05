@@ -4,6 +4,7 @@ import com.codeine.codingweek.PatternStrategyQuestions.ApprentissageMethod;
 import com.codeine.codingweek.model.FlashCardGame;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -12,7 +13,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PageApprentissageWhatisaskedController implements Initializable {
-    public Text asked;
+    public Button asked;
     public Text hint;
     public VBox laVb;
     private FlashCardGame fcg;
