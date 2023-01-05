@@ -57,7 +57,7 @@ public class PageStatistiquePileController implements Initializable {
         y.setLabel("Score sur la pile") ;
         y.setAutoRanging(false);
         y.setLowerBound(0) ;
-        y.setUpperBound(100) ;
+        y.setUpperBound(110) ;
         y.setTickUnit(1) ;
 
         LineChart<Number, Number> lineChart = new LineChart<>(x, y) ;
