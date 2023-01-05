@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.Rectangle?>
-<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichageCarteReponseController">
-    <top>
-        <fx:include source="menu.fxml"/>
-    </top>
-    <center>
-        <VBox alignment="CENTER" prefWidth="700" spacing="10">
-            <VBox alignment="CENTER" prefHeight="200.0" spacing="20" styleClass="card_bis">
-                <Label fx:id="question" styleClass="text" text="Dummy" />
-                <Label fx:id="reponse" styleClass="text" text="Dummy" />
-            <VBox.margin>
-               <Insets left="20.0" right="20.0" top="20.0" />
-            </VBox.margin>
-            </VBox>
-<!--            <StackPane>-->
-<!--                <Rectangle arcHeight="10" arcWidth="10" fill="darkcyan" height="300" stroke="black" strokeWidth="5" width="500" />-->
-<!--                <ImageView fx:id="image" fitHeight="280" fitWidth="280" preserveRatio="true" />-->
-<!--            </StackPane>-->
-            <HBox alignment="CENTER" prefHeight="100">
-                <HBox alignment="CENTER" prefWidth="350">
-                    <Button onAction="#iKnew" styleClass="button_classique" text="Je savais" />
-                </HBox>
-                <HBox alignment="CENTER" prefWidth="350">
-                    <Button onAction="#iDidntKnow" styleClass="button_classique" text="Je ne savais pas" />
-                </HBox>
-            </HBox>
-        </VBox>
-    </center>
+<VBox prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichageCarteReponseController" spacing="10">
+    <fx:include source="menu.fxml"/>
 
-<!--    <right>-->
-<!--        <VBox alignment="CENTER" prefWidth="100.0" style="-fx-padding: 30">-->
-<!--            <Button onAction="#nextQuestion" prefHeight="38.0" prefWidth="36.0" styleClass="button_classique" text="→" />-->
-<!--        </VBox>-->
-<!--    </right>-->
-</BorderPane>
+    <HBox spacing="50" alignment="CENTER" maxHeight="150" style="-fx-padding: 12 0 30 0">
+        <HBox styleClass="card_bis" maxHeight="50">
+            <Label text="Numéro: "/>
+            <Label fx:id="number"/>
+        </HBox>
+    </HBox>
+
+    <VBox prefHeight="330" alignment="CENTER" spacing="30" style="-fx-padding: 0 40 0 40">
+        <VBox styleClass="card_bis" alignment="CENTER" prefHeight="150" spacing="20">
+            <Label text="Question)" prefHeight="50" styleClass="question_response_number"/>
+            <Label id="asked" fx:id="question" prefHeight="50"/>
+            <VBox minHeight="30" maxHeight="30"/>
+        </VBox>
+        <VBox minHeight="150" maxHeight="150" styleClass="card_bis" alignment="CENTER" spacing="20">
+            <Label text="Réponse)" prefHeight="50" styleClass="question_response_number"/>
+            <Label fx:id="reponse" prefHeight="50" styleClass="text"/>
+            <VBox minHeight="30" maxHeight="30"/>
+        </VBox>
+    </VBox>
+
+    <HBox alignment="CENTER" prefHeight="50" style="-fx-padding: 30 0 0 0" spacing="50">
+        <HBox alignment="CENTER">
+            <Button onAction="#iKnew" styleClass="bottom_button_green" text="Je savais" />
+        </HBox>
+        <HBox alignment="CENTER">
+            <Button onAction="#iDidntKnow" styleClass="bottom_button_red" text="Je ne savais pas" />
+        </HBox>
+    </HBox>
+
+    <!--    <right>-->
+    <!--        <VBox alignment="CENTER" prefWidth="100.0" style="-fx-padding: 30">-->
+    <!--            <Button onAction="#nextQuestion" prefHeight="38.0" prefWidth="36.0" styleClass="button_classique" text="→" />-->
+    <!--        </VBox>-->
+    <!--    </right>-->
+</VBox>

@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageApprentissageWhatisaskedController">
+   <VBox minHeight="30"/>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageApprentissageWhatisaskedController">
-   <center>
-      <VBox fx:id="laVb" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button id="asked" fx:id="asked" prefHeight="300" prefWidth="400" styleClass="card_bis" text="What is asked">
-            </Button>
-            <Text id="hint" fx:id="hint" strokeType="OUTSIDE" strokeWidth="0.0" text="Hint">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Text>
-            <Label fx:id="compteurLabel">
-            </Label>
-         </children>
+   <VBox fx:id="laVb" alignment="CENTER" minHeight="550" maxHeight="550" prefWidth="800" spacing="10">
+
+         <HBox spacing="50" alignment="CENTER" maxHeight="150" style="-fx-padding: 0 0 30 0">
+            <HBox styleClass="card_bis" maxHeight="50">
+               <Label text="Numéro: "/>
+               <Label id="question"/>
+            </HBox>
+            <HBox styleClass="card_bis" maxHeight="50">
+               <Label text="Temps réstant: "/>
+               <Label fx:id="compteurLabel"/>
+            </HBox>
+         </HBox>
+
+         <VBox prefHeight="330" alignment="CENTER" spacing="30" style="-fx-padding: 0 40 0 40">
+            <VBox styleClass="card_bis" alignment="CENTER" prefHeight="150" spacing="20">
+               <Label text="Question)" prefHeight="50" styleClass="question_response_number"/>
+               <Label id="asked" prefHeight="50"/>
+               <Text id="hint" fx:id="hint" strokeType="OUTSIDE" strokeWidth="0.0" text="Hint">
+                  <font>
+                     <Font size="25.0" />
+                  </font>
+               </Text>
+            </VBox>
+            <VBox minHeight="150"/>
+         </VBox>
+
+         <HBox alignment="CENTER" minHeight="50" style="-fx-padding: 30 0 0 0">
+            <Button mnemonicParsing="false" onAction="#goToReponse" styleClass="bottom_button" text="Voir la réponse"/>
+         </HBox>
       </VBox>
-   </center>
-   <bottom>
-      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
-         <children>
-            <Button mnemonicParsing="false" onAction="#goToReponse" styleClass="bottom_button" text="Voir la réponse" />
-         </children>
-         <BorderPane.margin>
-            <Insets bottom="20.0" />
-         </BorderPane.margin>
-      </HBox>
-   </bottom>
-</BorderPane>
+</VBox>

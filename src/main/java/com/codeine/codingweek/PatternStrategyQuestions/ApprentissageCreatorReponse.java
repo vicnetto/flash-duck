@@ -13,9 +13,13 @@ public class ApprentissageCreatorReponse extends ApprentissageCreator{
 
     @Override
     public ArrayList<ApprentissageMethod> createApprentissage() {
-        ArrayList<ApprentissageMethod> lesQuestionsPosees = new ArrayList<ApprentissageMethod>();
-        for (Card carte : this.getFcg().getLesPiles().get(this.getFcg().getCurrentPile()).getCards()) {
-            lesQuestionsPosees.add(new ApprentissageMethodReponse(carte, ""));
+        ArrayList<ApprentissageMethod> lesQuestionsPosees = new ArrayList<>();
+        ArrayList<Card> cartes = this.getFcg().getLesPiles().get(this.getFcg().getCurrentPile()).getCards();
+
+        int i = 0;
+        for (Card carte : cartes) {
+            i++;
+            lesQuestionsPosees.add(new ApprentissageMethodReponse(cartes.size(), i, carte, ""));
         }
         return lesQuestionsPosees;
     }

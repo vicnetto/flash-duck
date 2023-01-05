@@ -18,6 +18,9 @@ import java.util.ResourceBundle;
 public class AffichageCarteReponseController implements Initializable {
 
     @FXML
+    private Label number;
+
+    @FXML
     private Label reponse;
 
     @FXML
@@ -78,6 +81,7 @@ public class AffichageCarteReponseController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ApprentissageMethod am = this.fcg.getCurrentApprentissageList().get(this.fcg.getCurrentIndexApprentissageList());
         Card carte = am.getCarte();
+        this.number.setText(am.getQuestionNumber() + "/" + am.getQuantityOfQuestions());
         this.reponse.setText(carte.getReponse());
         this.question.setText(carte.getQuestion());
     }

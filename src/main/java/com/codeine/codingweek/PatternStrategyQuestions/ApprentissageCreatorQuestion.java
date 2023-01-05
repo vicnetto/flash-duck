@@ -4,6 +4,7 @@ import com.codeine.codingweek.model.Card;
 import com.codeine.codingweek.model.FlashCardGame;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ApprentissageCreatorQuestion extends ApprentissageCreator{
 
@@ -13,9 +14,13 @@ public class ApprentissageCreatorQuestion extends ApprentissageCreator{
 
     @Override
     public ArrayList<ApprentissageMethod> createApprentissage() {
-        ArrayList<ApprentissageMethod> lesQuestionsPosees = new ArrayList<ApprentissageMethod>();
-        for (Card carte : this.getFcg().getLesPiles().get(this.getFcg().getCurrentPile()).getCards()) {
-            lesQuestionsPosees.add(new ApprentissageMethodQuestion(carte, ""));
+        ArrayList<ApprentissageMethod> lesQuestionsPosees = new ArrayList<>();
+        List<Card> cartes = this.getFcg().getLesPiles().get(this.getFcg().getCurrentPile()).getCards();
+
+        int i = 0;
+        for (Card carte : cartes) {
+            i++;
+            lesQuestionsPosees.add(new ApprentissageMethodQuestion(cartes.size(), i, carte, ""));
         }
         return lesQuestionsPosees;
     }

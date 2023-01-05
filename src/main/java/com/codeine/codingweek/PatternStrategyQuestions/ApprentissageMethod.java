@@ -5,11 +5,17 @@ import javafx.scene.layout.VBox;
 
 public abstract class ApprentissageMethod {
 
+    int quantityOfQuestions;
+
+    int questionNumber;
+
     private Card carte;
 
     private String hintShowed;
 
-    public ApprentissageMethod(Card carte, String hintShowed) {
+    ApprentissageMethod(int quantityOfQuestions, int questionNumber, Card carte, String hintShowed) {
+        this.quantityOfQuestions = quantityOfQuestions;
+        this.questionNumber = questionNumber;
         this.carte = carte;
         this.hintShowed = hintShowed;
     }
@@ -27,6 +33,14 @@ public abstract class ApprentissageMethod {
 
     public void setCarte(Card carte) {
         this.carte = carte;
+    }
+
+    public int getQuantityOfQuestions() {
+        return quantityOfQuestions;
+    }
+
+    public int getQuestionNumber() {
+        return questionNumber;
     }
 
     public abstract void afficher(VBox vb);

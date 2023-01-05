@@ -58,23 +58,28 @@
     -fx-text-background-color: black ;
 }
 
-.bottom_button {
+.bottom_button, .bottom_button_green, .bottom_button_red {
 
   -fx-padding: 20 20 20 20 ;
   -fx-margin: 0 0 10 0 ;
   -fx-border-radius: 0px;
-
   -fx-border-width: 1px;
   -fx-border-radius: 20px;
   -fx-background-radius: 20px;
-
   -fx-background-color: white ;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.650), 4, 0, 0, 0);
-  
 }
 
-.bottom_button:hover {
-  -fx-background-color: #fdd700;
+.bottom_button_green {
+    -fx-background-color: #b6d3a8;
+}
+
+.bottom_button_red {
+    -fx-background-color: #fc5d5d;
+}
+
+.bottom_button:hover, .bottom_button_green:hover, .bottom_button_red:hover {
+  -fx-background-color: #ffd064;
 }
 
 .icone_button {
@@ -141,6 +146,11 @@
   
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 4, 0, 0, 0);
   
+}
+
+.question_response_number {
+    -fx-font-weight: bold;
+    -fx-background-color: #ffd064;
 }
 
 .text_area_edit {

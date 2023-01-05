@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 
 public class PageApprentissageWhatisaskedController implements Initializable {
 
-    public Button asked;
+    public Label label;
     public Text hint;
     public VBox laVb;
     public Label compteurLabel;
@@ -37,18 +37,15 @@ public class PageApprentissageWhatisaskedController implements Initializable {
         tm.setCycleCount(Timeline.INDEFINITE);
         temps = 10;
         this.compteurLabel.setText(String.valueOf(temps));
-        KeyFrame kf = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>(){
-            @Override
-            public void handle(ActionEvent event) {
-                temps--;
-                compteurLabel.setText(String.valueOf(temps));
-                if (temps<=0){
-                    tm.stop();
-                    try {
-                        ViewSwitcher.switchTo(View.APPRENTISSAGE_CREATOR_REPONSE);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
+        KeyFrame kf = new KeyFrame(Duration.seconds(1), event -> {
+            temps--;
+            compteurLabel.setText(String.valueOf(temps));
+            if (temps<=0){
+                tm.stop();
+                try {
+                    ViewSwitcher.switchTo(View.APPRENTISSAGE_CREATOR_REPONSE);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
                 }
             }
         });
@@ -64,7 +61,7 @@ public class PageApprentissageWhatisaskedController implements Initializable {
 
     }
 
-    public void goToReponse(ActionEvent actionEvent) throws IOException {
+    public void goToReponse() throws IOException {
         tm.stop();
         ViewSwitcher.switchTo(View.APPRENTISSAGE_CREATOR_REPONSE);
     }
