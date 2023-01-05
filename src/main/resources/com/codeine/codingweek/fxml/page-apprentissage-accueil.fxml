@@ -22,7 +22,7 @@
         <Label text="Menu Apprentissage" styleClass="text"/>
     </HBox>
 
-    <ScrollPane minHeight="450" style="-fx-padding: 40">
+    <ScrollPane minHeight="450" maxHeight="450" style="-fx-padding: 33">
         <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #6272a4"/>
     </ScrollPane>
 
