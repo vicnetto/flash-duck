@@ -108,6 +108,7 @@ public class AffichageCartesController implements Initializable {
     }
 
     public void retour() throws  IOException{
+        fcg.setLastPileDeleted(null);
         ViewSwitcher.switchTo(View.PILE_CREATION);
     }
 
@@ -162,6 +163,7 @@ public class AffichageCartesController implements Initializable {
     }
 
     public void supprimerPile(ActionEvent actionEvent) throws IOException {
+        fcg.setLastPileDeleted(fcg.getLesPiles().get(fcg.getCurrentPile()));
         fcg.removePileByIndex(fcg.getCurrentPile());
         ViewSwitcher.switchTo(View.PILE_CREATION);
     }
