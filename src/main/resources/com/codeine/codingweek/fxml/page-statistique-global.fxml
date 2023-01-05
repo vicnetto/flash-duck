@@ -11,5 +11,5 @@
       <fx:include source="menu.fxml" />
    </MenuBar>
      <Label fx:id="global" text="Statistiques globales" prefHeight="100" styleClass="text" />
-      <HBox fx:id="containerGraph" alignment="CENTER" prefHeight="500.0" prefWidth="400.0" spacing="40.0" />
+      <HBox fx:id="containerGraph" alignment="CENTER" prefHeight="500.0" prefWidth="800.0" spacing="40.0" />
 </VBox>

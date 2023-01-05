@@ -41,7 +41,7 @@ public class PageStatistiquePileController implements Initializable {
 
         // Affichage pile actuel
         this.nomPile.setText("Scores pour la pile " + currentPile.getName() + 
-                                " (" + Integer.toString(scores.size()-1) + " parties)") ;
+                                " (" + Integer.toString(scores.size()) + " parties)") ;
 
         // Création graphique avec scores
 
@@ -55,6 +55,10 @@ public class PageStatistiquePileController implements Initializable {
         x.setTickUnit(1) ;
         
         y.setLabel("Score sur la pile") ;
+        y.setAutoRanging(false);
+        y.setLowerBound(0) ;
+        y.setUpperBound(100) ;
+        y.setTickUnit(1) ;
 
         LineChart<Number, Number> lineChart = new LineChart<>(x, y) ;
         XYChart.Series<Number, Number> series = new XYChart.Series<>() ;
