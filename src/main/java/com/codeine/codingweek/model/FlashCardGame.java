@@ -14,9 +14,10 @@ public class FlashCardGame {
     private int currentCarte = 0;
     private HashMap<String, Color> categoriesColor = new HashMap<String, Color>();
 
+    // APPRENTISSAGE
     private ArrayList<ApprentissageMethod> currentApprentissageList;
-
     private int currentIndexApprentissageList;
+    private boolean shuffle;
 
     public FlashCardGame() {
         lesPiles = new ArrayList<Pile>();
