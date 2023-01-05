@@ -23,8 +23,8 @@ public class AffichageCarteReponseController implements Initializable {
     @FXML
     private Label question;
 
-    @FXML
-    private ImageView image;
+//    @FXML
+//    private ImageView image;
 
     private FlashCardGame fcg;
 

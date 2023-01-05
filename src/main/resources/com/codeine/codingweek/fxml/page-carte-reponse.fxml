@@ -17,10 +17,10 @@
                <Insets left="20.0" right="20.0" top="20.0" />
             </VBox.margin>
             </VBox>
-            <StackPane>
-                <Rectangle arcHeight="10" arcWidth="10" fill="darkcyan" height="300" stroke="black" strokeWidth="5" width="500" />
-                <ImageView fx:id="image" fitHeight="280" fitWidth="280" preserveRatio="true" />
-            </StackPane>
+<!--            <StackPane>-->
+<!--                <Rectangle arcHeight="10" arcWidth="10" fill="darkcyan" height="300" stroke="black" strokeWidth="5" width="500" />-->
+<!--                <ImageView fx:id="image" fitHeight="280" fitWidth="280" preserveRatio="true" />-->
+<!--            </StackPane>-->
             <HBox alignment="CENTER" prefHeight="100">
                 <HBox alignment="CENTER" prefWidth="350">
                     <Button onAction="#iKnew" styleClass="button_classique" text="Je savais" />
@@ -32,9 +32,9 @@
         </VBox>
     </center>
 
-    <right>
-        <VBox alignment="CENTER" prefWidth="100.0" style="-fx-padding: 30">
-            <Button onAction="#nextQuestion" prefHeight="38.0" prefWidth="36.0" styleClass="button_classique" text="→" />
-        </VBox>
-    </right>
+<!--    <right>-->
+<!--        <VBox alignment="CENTER" prefWidth="100.0" style="-fx-padding: 30">-->
+<!--            <Button onAction="#nextQuestion" prefHeight="38.0" prefWidth="36.0" styleClass="button_classique" text="→" />-->
+<!--        </VBox>-->
+<!--    </right>-->
 </BorderPane>

@@ -21,7 +21,6 @@
                </font>
             </Text>
             <Label fx:id="compteurLabel">
-
             </Label>
          </children>
       </VBox>
