@@ -8,18 +8,18 @@
     <HBox spacing="50" alignment="CENTER" maxHeight="150" style="-fx-padding: 12 0 30 0">
         <HBox styleClass="card_bis" maxHeight="50">
             <Label text="Numéro: "/>
-            <Label fx:id="number"/>
+            <Label fx:id="number" style="-fx-font-weight: normal"/>
         </HBox>
     </HBox>
 
     <VBox prefHeight="330" alignment="CENTER" spacing="30" style="-fx-padding: 0 40 0 40">
         <VBox styleClass="card_bis" alignment="CENTER" prefHeight="150" spacing="20">
-            <Label text="Question)" prefHeight="50" styleClass="question_response_number"/>
+            <Label text="Question)" prefHeight="50" styleClass="question_response"/>
             <Label id="asked" fx:id="question" prefHeight="50"/>
             <VBox minHeight="30" maxHeight="30"/>
         </VBox>
         <VBox minHeight="150" maxHeight="150" styleClass="card_bis" alignment="CENTER" spacing="20">
-            <Label text="Réponse)" prefHeight="50" styleClass="question_response_number"/>
+            <Label text="Réponse)" prefHeight="50" styleClass="question_response"/>
             <Label fx:id="reponse" prefHeight="50" styleClass="text"/>
             <VBox minHeight="30" maxHeight="30"/>
         </VBox>

@@ -14,12 +14,14 @@ public class ApprentissageMethodReponse extends ApprentissageMethod{
 
     @Override
     public void afficher(VBox vb) {
-        Label asked = (Label) vb.lookup("#asked");
+        Label answer = (Label) vb.lookup("#reponse");
         Text hint = (Text) vb.lookup("#hint");
         Label questionNumber = (Label) vb.lookup("#question");
+        Button seeAnswer = (Button) vb.lookup("#see");
 
+        seeAnswer.setText("Voir la Question");
         questionNumber.setText(this.getQuestionNumber() + "/" + this.getQuantityOfQuestions());
-        asked.setText(this.getCarte().getReponse());
+        answer.setText(this.getCarte().getReponse());
         hint.setText(this.getHintShowed());
     }
 }

@@ -1,6 +1,7 @@
 package com.codeine.codingweek;
 
 import com.codeine.codingweek.PatternStrategyQuestions.ApprentissageMethod;
+import com.codeine.codingweek.PatternStrategyQuestions.ApprentissageMethodReponse;
 import com.codeine.codingweek.model.FlashCardGame;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -56,6 +57,12 @@ public class PageApprentissageWhatisaskedController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         ApprentissageMethod am = this.fcg.getCurrentApprentissageList().get(this.fcg.getCurrentIndexApprentissageList());
+
+        if (am.getClass().equals(ApprentissageMethodReponse.class)) {
+            ((VBox) laVb.getChildren().get(1)).getChildren().get(0).setVisible(false);
+            ((VBox) laVb.getChildren().get(1)).getChildren().get(1).setVisible(true);
+        }
+
         am.afficher(this.laVb);
         this.compteurTemps();
 
