@@ -17,7 +17,7 @@
 
       <VBox>
          <HBox alignment="CENTER" prefHeight="70">
-            <Label text="Paramètre de la partie" styleClass="text"/>
+            <Label text="Paramètres de la partie" styleClass="text"/>
          </HBox>
          <HBox alignment="CENTER" spacing="50.0" prefHeight="450" BorderPane.alignment="CENTER" style="-fx-background-color: #ffffff">
             <children>
