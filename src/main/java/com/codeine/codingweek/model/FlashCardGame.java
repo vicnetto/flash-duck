@@ -19,10 +19,6 @@ public class FlashCardGame {
     private int currentIndexApprentissageList;
     private boolean shuffle;
 
-    // CREATION
-    private Card lastCardDeleted;
-    private Pile lastPileDeleted;
-
     public FlashCardGame() {
         lesPiles = new ArrayList<Pile>();
         categoriesColor.put("Histoire", new Color(203, 25, 231));
@@ -117,19 +113,4 @@ public class FlashCardGame {
         return this.getLesPiles().get(this.getCurrentPile());
     }
 
-    public Card getLastCardDeleted() {
-        return lastCardDeleted;
-    }
-
-    public void setLastCardDeleted(Card lastCardDeleted) {
-        this.lastCardDeleted = lastCardDeleted;
-    }
-
-    public Pile getLastPileDeleted() {
-        return lastPileDeleted;
-    }
-
-    public void setLastPileDeleted(Pile lastPileDeleted) {
-        this.lastPileDeleted = lastPileDeleted;
-    }
 }
