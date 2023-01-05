@@ -40,4 +40,8 @@ public class FormSelectParameterGameController {
         }
         ViewSwitcher.switchTo(View.APPRENTISSAGE_WHAT_IS_ASKED);
     }
+
+    public void retour() throws IOException {
+        ViewSwitcher.switchTo(View.APPRENTISSAGE_ACCUEIL);
+    }
 }
