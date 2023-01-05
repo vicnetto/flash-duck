@@ -10,6 +10,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -20,8 +21,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import static com.codeine.codingweek.AfficherPiles.cellStyle;
 
 public class AffichageCartesController implements Initializable {
 
@@ -47,6 +46,7 @@ public class AffichageCartesController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         Button deleteStack = createDeleteButton();
+        deleteStack.setTooltip(new Tooltip("Supprimer la pile"));
         deleteStack.setOnMouseClicked(e -> {
             try {
                 supprimerPile();
@@ -60,6 +60,7 @@ public class AffichageCartesController implements Initializable {
         stackInformation.getChildren().add(label);
 
         Button editStack = createModifyButton();
+        editStack.setTooltip(new Tooltip("Éditer la pile"));
         editStack.setOnMouseClicked(e -> {
             try {
                 editerPile();
@@ -88,6 +89,7 @@ public class AffichageCartesController implements Initializable {
             VBox rightBox = new VBox();
 
             Button modify = createModifyButton();
+            modify.setTooltip(new Tooltip("Éditer la carte"));
             modify.setOnMouseClicked(e-> {
                 try {
                     goToModificationFormCarte(copieI);
@@ -98,6 +100,7 @@ public class AffichageCartesController implements Initializable {
             rightBox.getChildren().add(modify);
 
             Button delete = createDeleteButton();
+            delete.setTooltip(new Tooltip("Supprimer la carte"));
             delete.setOnMouseClicked(e -> supprimerCarte(copieI));
             rightBox.getChildren().add(delete);
 
@@ -209,6 +212,7 @@ public class AffichageCartesController implements Initializable {
 
         Button delete = new Button();
         delete.setGraphic(imView) ;
+        delete.setTooltip(new Tooltip("Supprimer la pile"));
         delete.getStyleClass().add("icone_button");
         delete.setOnMouseEntered(action -> {
                 delete.getStyleClass().clear();
