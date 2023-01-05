@@ -8,11 +8,19 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
 <VBox prefHeight="600" prefWidth="800" style="-fx-background-color: #e7ecec" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichageCartesController">
 
     <fx:include source="menu.fxml" />
 
-    <ScrollPane fx:id="scrollPane" maxHeight="490" minHeight="490" style="-fx-padding: 10 0 10 0;">
+    <StackPane minHeight="80" maxHeight="80">
+        <HBox fx:id="stackInformation" alignment="CENTER" prefHeight="80" maxHeight="80" minWidth="800" spacing="20"/>
+        <HBox fx:id="stackActions" alignment="CENTER_LEFT" prefHeight="80" maxHeight="80" minWidth="800" maxWidth="780"
+              style="-fx-padding: 0 0 0 10" spacing="10"/>
+    </StackPane>
+
+    <ScrollPane fx:id="scrollPane" maxHeight="407" minHeight="407" style="-fx-padding: 10 0 10 0;">
       <BorderPane>
          <center>
               <VBox fx:id="vBoxCartes" alignment="CENTER" prefHeight="500" spacing="20" style="-fx-background: #e7ecec; -fx-padding: 0 10 0 10;">
@@ -25,15 +33,5 @@
         <Button alignment="CENTER" onAction="#retour" styleClass="bottom_button" text="Retour" />
         <Button alignment="CENTER" onAction="#goToFormCarte" styleClass="bottom_button" text="+ Ajouter une carte" />
         <Button alignment="CENTER" mnemonicParsing="false" onAction="#exporterPile" styleClass="bottom_button" text="Exporter la pile" />
-      <VBox alignment="CENTER" prefHeight="84.0" prefWidth="172.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#supprimerPile" styleClass="button_classique" text="Supprimer la pile">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#editerPile" styleClass="button_classique" text="Éditer la pile" />
-         </children>
-      </VBox>
     </HBox>
-
 </VBox>

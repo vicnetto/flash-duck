@@ -10,6 +10,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -24,7 +25,14 @@ import java.util.ResourceBundle;
 public class AffichageCartesController implements Initializable {
 
     @FXML
-    public VBox vBoxCartes;
+    private HBox stackInformation;
+
+    @FXML
+    private HBox stackActions;
+
+    @FXML
+    private VBox vBoxCartes;
+
     @FXML
     private ScrollPane scrollPane ;
 
@@ -37,6 +45,33 @@ public class AffichageCartesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        Button deleteStack = createDeleteButton(true);
+//        deleteStack.setStyle("-fx-border-radius: 0px 0px 20px 0px; -fx-background-radius: 0px 0px 20px 0px");
+        deleteStack.setTooltip(new Tooltip("Supprimer la pile"));
+        deleteStack.setOnMouseClicked(e -> {
+            try {
+                supprimerPile();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        Label label = new Label("Pile " + this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).getName());
+        label.getStyleClass().add("text");
+        stackInformation.getChildren().add(label);
+
+        Button editStack = createModifyButton(true);
+        editStack.setTooltip(new Tooltip("Éditer la pile"));
+        editStack.setOnMouseClicked(e -> {
+            try {
+                editerPile();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        stackActions.getChildren().addAll(editStack, deleteStack);
+
         int i = 0;
         for (Card carte : this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).getCards()) {
             VBox leftBox = new VBox();
@@ -48,51 +83,33 @@ public class AffichageCartesController implements Initializable {
             leftBox.getChildren().add(reponse);
 
             leftBox.setPadding(new Insets(10, 0, 10, 0)) ;
-            leftBox.setStyle("-fx-border-color: black; -fx-border-radius: 20; -fx-spacing: 10px; -fx-background-color: #f3f6dd;") ;
+            leftBox.setStyle("-fx-border-radius: 20px 0px 0px 20px; -fx-spacing: 10px; -fx-background-color: #f3f6dd; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.650), 4, 0, 0, 0); -fx-background-radius: 20px 0px 0px 20px;") ;
             leftBox.setAlignment(Pos.CENTER) ;
             
             int copieI = i;
             VBox rightBox = new VBox();
 
-            ImageView imView = new ImageView(getClass().getResource("images/trash.png").toExternalForm()) ;
-
-            imView.setPreserveRatio(true) ;
-            imView.setPickOnBounds(true) ;
-            imView.setFitHeight(40);
-            imView.setFitWidth(40);
-
-            Button delete = new Button();
-            delete.setOnMouseClicked(e -> supprimerCarte(copieI));
-            delete.getStyleClass().add("icone_button") ;
-            delete.setGraphic(imView) ;
-            rightBox.getChildren().add(delete);
-
-            imView = new ImageView(getClass().getResource("images/edit.png").toExternalForm()) ;
-
-            imView.setPreserveRatio(true) ;
-            imView.setPickOnBounds(true) ;
-            imView.setFitHeight(40);
-            imView.setFitWidth(40);
-
-            Button modify = new Button();
-            modify.setOnMouseClicked((e)-> {
+            Button modify = createModifyButton(false);
+            modify.setTooltip(new Tooltip("Éditer la carte"));
+            modify.setOnMouseClicked(e-> {
                 try {
                     goToModificationFormCarte(copieI);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
             });
-            modify.getStyleClass().add("icone_button") ;
-            modify.setGraphic(imView) ;
             rightBox.getChildren().add(modify);
+
+            Button delete = createDeleteButton(false);
+            delete.setTooltip(new Tooltip("Supprimer la carte"));
+            delete.setOnMouseClicked(e -> supprimerCarte(copieI));
+            rightBox.getChildren().add(delete);
 
             HBox hBox = new HBox(leftBox, rightBox);
             this.vBoxCartes.getChildren().addAll(hBox);
             i++;
         }
     }
-
-    
 
     public void goToFormCarte() throws IOException {
         ViewSwitcher.switchTo(View.FORM_CARTE);
@@ -152,12 +169,87 @@ public class AffichageCartesController implements Initializable {
         }
     }
 
-    public void supprimerPile(ActionEvent actionEvent) throws IOException {
+    public void supprimerPile() throws IOException {
         fcg.removePileByIndex(fcg.getCurrentPile());
         ViewSwitcher.switchTo(View.PILE_CREATION);
     }
 
-    public void editerPile(ActionEvent actionEvent) throws IOException {
+    public void editerPile() throws IOException {
         ViewSwitcher.switchTo(View.FORM_MODIFICATION_PILE);
+    }
+
+    public Button createModifyButton(boolean forStack) {
+        ImageView imView = new ImageView(getClass().getResource("images/edit.png").toExternalForm()) ;
+
+        imView.setPreserveRatio(true) ;
+        imView.setPickOnBounds(true) ;
+        imView.setFitHeight(40);
+        imView.setFitWidth(40);
+
+        Button modify = new Button();
+        modify.setGraphic(imView) ;
+        if (!forStack) {
+            modify.getStyleClass().add("icone_button_carte_modif");
+            modify.setOnMouseEntered(action -> {
+                modify.getStyleClass().clear();
+                modify.getStyleClass().add("icone_button_carte_modif");
+                modify.getStyleClass().add("icone_button_entered");});
+            modify.setOnMouseExited(action -> {
+                modify.getStyleClass().clear();
+                modify.getStyleClass().add("icone_button_carte_modif");
+                modify.getStyleClass().add("icone_button_exited");});
+        }
+        else {
+            modify.getStyleClass().add("icone_button");
+            modify.setOnMouseEntered(action -> {
+                modify.getStyleClass().clear();
+                modify.getStyleClass().add("icone_button");
+                modify.getStyleClass().add("icone_button_entered");});
+            modify.setOnMouseExited(action -> {
+                modify.getStyleClass().clear();
+                modify.getStyleClass().add("icone_button");
+                modify.getStyleClass().add("icone_button_exited");});
+        }
+
+
+        return modify;
+    }
+
+    public Button createDeleteButton(boolean forStack) {
+        ImageView imView = new ImageView(getClass().getResource("images/trash.png").toExternalForm());
+
+        imView.setPreserveRatio(true) ;
+        imView.setPickOnBounds(true) ;
+        imView.setFitHeight(40);
+        imView.setFitWidth(40);
+
+        Button delete = new Button();
+        delete.setGraphic(imView) ;
+        delete.setTooltip(new Tooltip("Supprimer la pile"));
+        if (!forStack) {
+            delete.getStyleClass().add("icone_button_carte_delete");
+            delete.setOnMouseEntered(action -> {
+                delete.getStyleClass().clear();
+                delete.getStyleClass().add("icone_button_carte_delete");
+                delete.getStyleClass().add("icone_button_entered");});
+            delete.setOnMouseExited(action -> {
+                delete.getStyleClass().clear();
+                delete.getStyleClass().add("icone_button_carte_delete");
+                delete.getStyleClass().add("icone_button_exited");});
+        }
+        else {
+            delete.getStyleClass().add("icone_button");
+            delete.setOnMouseEntered(action -> {
+                delete.getStyleClass().clear();
+                delete.getStyleClass().add("icone_button");
+                delete.getStyleClass().add("icone_button_entered");});
+            delete.setOnMouseExited(action -> {
+                delete.getStyleClass().clear();
+                delete.getStyleClass().add("icone_button");
+                delete.getStyleClass().add("icone_button_exited");});
+        }
+
+
+        return delete;
     }
 }
