@@ -21,6 +21,7 @@
     </ScrollPane>
 
     <HBox alignment="CENTER" prefHeight="100" spacing="50">
+        <Button alignment="CENTER" onAction="#retour" styleClass="bottom_button" text="Retour"/>
         <Button alignment="CENTER" onAction="#goToFormCreationPile" styleClass="bottom_button" text="+ Ajouter une pile"/>
         <Button alignment="CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#importPile" styleClass="bottom_button" text="Importer une pile"/>
     </HBox>

@@ -50,6 +50,10 @@ public class AffichagePilesController implements Initializable {
         ViewSwitcher.swtichTo(View.FORM_PILE);
     }
 
+    public void retour() throws  IOException {
+        ViewSwitcher.swtichTo(View.ACCUEIL);
+    }
+
     public void importPile() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
