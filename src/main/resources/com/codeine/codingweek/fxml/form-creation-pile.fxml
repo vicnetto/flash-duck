@@ -3,14 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationPileController">
+<BorderPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.CreationPileController">
    <top>
       <fx:include source="menu.fxml" />
    </top>
@@ -20,53 +21,67 @@
          <padding>
             <Insets left="30.0" right="30.0" />
          </padding>
+         <ImageView fitHeight="106.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/Mascotte_borderless.png" />
+            </image>
+            <VBox.margin>
+               <Insets top="-40.0" />
+            </VBox.margin>
+         </ImageView>
          <VBox>
-            <Label text="Titre">
+            <Label styleClass="text" text="Titre">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextArea fx:id="textarea_t" prefHeight="55.0" prefWidth="800.0">
+            <TextArea fx:id="textarea_t" prefHeight="55.0" prefWidth="800.0" styleClass="text_area_edit">
                <font>
                   <Font size="15.0" />
                </font>
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets right="2.0" top="10.0" />
                </VBox.margin>
             </TextArea>
          </VBox>
          <VBox prefHeight="200.0" prefWidth="100.0">
             <children>
-               <Label text="Catégorie">
+               <Label styleClass="text" text="Catégorie">
                   <font>
                      <Font size="20.0" />
                   </font>
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
                </Label>
-               <TextArea fx:id="textarea_c" prefHeight="55.0" prefWidth="800.0">
+               <TextArea fx:id="textarea_c" prefHeight="55.0" prefWidth="800.0" styleClass="text_area_edit">
                   <font>
                      <Font size="15.0" />
                   </font>
+                  <VBox.margin>
+                     <Insets right="2.0" top="10.0" />
+                  </VBox.margin>
                </TextArea>
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <VBox.margin>
+                     <Insets top="30.0" />
+                  </VBox.margin> 
+                  <Button fx:id="button_annuler" mnemonicParsing="false" onAction="#annuler" styleClass="bottom_button" text="Annuler">
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button_valider" mnemonicParsing="false" onAction="#ajouterPile" styleClass="bottom_button" text="Ajouter">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </HBox>
             </children>
          </VBox>
-         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-            <VBox.margin>
-               <Insets top="30.0" />
-            </VBox.margin>
-            <Button mnemonicParsing="false" fx:id="button_annuler" onAction="#annuler" text="Annuler">
-               <HBox.margin>
-                  <Insets right="40.0" />
-               </HBox.margin>
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" fx:id="button_valider" onAction="#ajouterPile" text="Ajouter">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-         </HBox>
       </VBox>
    </center>
 </BorderPane>

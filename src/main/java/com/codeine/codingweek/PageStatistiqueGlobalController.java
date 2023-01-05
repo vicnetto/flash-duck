@@ -32,6 +32,7 @@ public class PageStatistiqueGlobalController implements Initializable {
         BarChart<String, Number> barChart = new BarChart<>(x, y) ;
 
         x.setLabel("Nom de la pile") ;
+
         y.setLabel("Score moyen") ;
         y.setAutoRanging(false);
         y.setLowerBound(0) ;
@@ -39,6 +40,8 @@ public class PageStatistiqueGlobalController implements Initializable {
         y.setTickUnit(1) ;
 
         for (Pile pile : fcg.getLesPiles()) {
+
+            if (pile.getScores().size() == 0) continue ;
 
             // Récupèration de la moyenne des pour chaque parties
 
