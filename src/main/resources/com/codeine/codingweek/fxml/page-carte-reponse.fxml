@@ -6,9 +6,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Rectangle?>
 <BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichageCarteReponseController">
+    <top>
+        <fx:include source="menu.fxml"/>
+    </top>
     <center>
-        <fx:include source="menu.fxml" />
-
         <VBox alignment="CENTER" prefWidth="700" spacing="10">
             <VBox alignment="CENTER" prefHeight="200.0" spacing="20" styleClass="card_bis">
                 <Label fx:id="question" styleClass="text" text="Dummy" />
