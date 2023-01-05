@@ -35,7 +35,7 @@ public class PageStatistiqueGlobalController implements Initializable {
         y.setLabel("Score moyen") ;
         y.setAutoRanging(false);
         y.setLowerBound(0) ;
-        y.setUpperBound(100) ;
+        y.setUpperBound(110) ;
         y.setTickUnit(1) ;
 
         for (Pile pile : fcg.getLesPiles()) {
