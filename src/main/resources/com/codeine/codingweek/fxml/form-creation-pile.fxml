@@ -55,7 +55,7 @@
             <VBox.margin>
                <Insets top="30.0" />
             </VBox.margin>
-            <Button mnemonicParsing="false" onAction="#annuler" text="Annuler">
+            <Button mnemonicParsing="false" fx:id="button_annuler" onAction="#annuler" text="Annuler">
                <HBox.margin>
                   <Insets right="40.0" />
                </HBox.margin>
@@ -63,7 +63,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#ajouterPile" text="Ajouter">
+            <Button mnemonicParsing="false" fx:id="button_valider" onAction="#ajouterPile" text="Ajouter">
                <font>
                   <Font size="18.0" />
                </font>

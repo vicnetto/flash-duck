@@ -10,6 +10,7 @@ import javafx.scene.control.TextArea;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class CreationCarteController implements Initializable {
@@ -34,17 +35,27 @@ public class CreationCarteController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
-
+        button_valider.setDisable(!isValidForm());
+        textarea_q.setOnKeyReleased(event -> {
+            button_valider.setDisable(!isValidForm());
+        });
+        textarea_r.setOnKeyReleased(event -> {
+            button_valider.setDisable(!isValidForm());
+        });
     }
 
     public void ajouterCarte(ActionEvent actionEvent) throws IOException {
-        this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).addCarte(new Card(this.textarea_q.getText(), this.textarea_r.getText()));
-        ViewSwitcher.swtichTo(View.CARTE_CREATION);
+        if (isValidForm()) {
+            this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).addCarte(new Card(this.textarea_q.getText(), this.textarea_r.getText()));
+            ViewSwitcher.swtichTo(View.CARTE_CREATION);
+        }
     }
 
     public void annuler(ActionEvent actionEvent) throws IOException {
         ViewSwitcher.swtichTo(View.CARTE_CREATION);
+    }
+
+    private boolean isValidForm() {
+        return !Objects.equals(this.textarea_q.getText(), "") && !Objects.equals(this.textarea_r.getText(), "");
     }
 }
