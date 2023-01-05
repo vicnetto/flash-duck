@@ -2,6 +2,7 @@ package com.codeine.codingweek;
 
 import com.codeine.codingweek.model.FlashCardGame;
 import com.codeine.codingweek.model.Pile;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -11,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -76,5 +78,11 @@ public class PageStatistiquePileController implements Initializable {
 
         containerGraph.getChildren().add(lineChart) ;
 
+    }
+
+    public void resetStats(ActionEvent actionEvent) throws IOException {
+        Pile currentPile = this.fcg.getPileCurrentPile();
+        currentPile.setScores(new ArrayList<Float>());
+        ViewSwitcher.switchTo(View.STATISTIQUES_PAGE_PILE);
     }
 }

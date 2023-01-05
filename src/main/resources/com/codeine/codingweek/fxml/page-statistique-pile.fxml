@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.MenuBar?>
 
-<VBox alignment="CENTER" prefHeight="400.0" BorderPane.alignment="CENTER" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageStatistiquePileController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageStatistiquePileController">
    <fx:include source="menu.fxml" />
-     <Label fx:id="nomPile" text="Nom pile" prefHeight="100" styleClass="text" />
+     <Label fx:id="nomPile" prefHeight="100" styleClass="text" text="Nom pile" />
       <HBox fx:id="containerGraph" alignment="CENTER" prefHeight="500.0" prefWidth="400.0" spacing="40.0" />
+   <Button mnemonicParsing="false" text="Réinitialiser les statistiques" onAction="#resetStats"/>
 </VBox>
