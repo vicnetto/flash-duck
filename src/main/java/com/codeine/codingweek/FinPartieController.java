@@ -13,9 +13,12 @@ import java.util.ResourceBundle;
 public class FinPartieController implements Initializable {
 
     @FXML
-    private Label resultat;
-    private FlashCardGame fcg;
+    private Label percentage;
 
+    @FXML
+    private Label resultat;
+
+    private FlashCardGame fcg;
 
     public FinPartieController(FlashCardGame fcg) {
         this.fcg = fcg;
@@ -28,7 +31,8 @@ public class FinPartieController implements Initializable {
         float div = (float) this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).getCards().size()/this.fcg.getCurrentIndexApprentissageList();
         float score = ((float) 100.0*(div));
 
-        resultat.setText(nbErreurs + " erreurs parmis les " + nbQuestions + " questions.\nScore : " + score + " %");
+        resultat.setText(nbErreurs + " erreurs parmis les " + nbQuestions + " questions");
+        percentage.setText(score + "%");
     }
 
     @FXML

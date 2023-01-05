@@ -6,27 +6,25 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.FinPartieController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.FinPartieController">
    <top>
       <fx:include source="menu.fxml" />
    </top>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Fin de partie" />
-            <Label fx:id="resultat" alignment="CENTER" contentDisplay="CENTER" text="Résultat" />
-            <VBox alignment="CENTER">
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#rejouer" styleClass="bottom_button" text="Rejouer la pile" />
-                        <Button fx:id="statistiques" mnemonicParsing="false" onAction="#goStatistiques" styleClass="bottom_button" text="Statistiques" />
-                     </children>
-                  </HBox>
-                  <Button fx:id="accueil" mnemonicParsing="false" onAction="#goAccueil" styleClass="bottom_button" text="Accueil" />
-               </children>
-            </VBox>
-         </children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" spacing="50">
+         <Label text="Fin de partie" styleClass="question_response"/>
+         <Label fx:id="resultat" alignment="CENTER" contentDisplay="CENTER" text="Résultat" />
+         <HBox styleClass="card_bis" maxHeight="50" maxWidth="200" alignment="CENTER">
+            <Label text="Score : "/>
+            <Label fx:id="percentage" style="-fx-font-weight: normal"/>
+         </HBox>
+         <VBox alignment="CENTER">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <Button mnemonicParsing="false" onAction="#goAccueil" styleClass="bottom_button" text="Accueil" />
+               <Button mnemonicParsing="false" onAction="#rejouer" styleClass="bottom_button" text="Rejouer la pile" />
+               <Button mnemonicParsing="false" onAction="#goStatistiques" styleClass="bottom_button" text="Statistiques" />
+            </HBox>
+         </VBox>
       </VBox>
    </center>
 </BorderPane>
