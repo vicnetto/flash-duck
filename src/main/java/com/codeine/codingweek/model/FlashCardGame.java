@@ -69,6 +69,10 @@ public class FlashCardGame {
         }
     }
 
+    public void removePileByIndex(int index) {
+        this.lesPiles.remove(index);
+    }
+
     public int getCurrentPile() {
         return currentPile;
     }

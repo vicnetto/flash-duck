@@ -151,4 +151,12 @@ public class AffichageCartesController implements Initializable {
             }
         }
     }
+
+    public void supprimerPile(ActionEvent actionEvent) throws IOException {
+        fcg.removePileByIndex(fcg.getCurrentPile());
+        ViewSwitcher.swtichTo(View.PILE_CREATION);
+    }
+
+    public void editerPile(ActionEvent actionEvent) {
+    }
 }
