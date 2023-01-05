@@ -38,6 +38,7 @@ public class PageApprentissageAccueil implements Initializable {
         };
 
         AfficherPiles.afficherToutesLesPiles(fcg, gridPiles, goToPile);
+        AfficherPiles.griserPilesVides(fcg, gridPiles);
     }
 
     public void goToPile(int i) throws IOException {

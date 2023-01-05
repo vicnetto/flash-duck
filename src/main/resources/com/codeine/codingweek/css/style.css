@@ -107,14 +107,6 @@
   
 }
 
-.card_bis:hover {
-  
-  -fx-background-color: #fdd700;
-  
-  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 8, 0, 0, 0);
-
-}
-
 .text_area_edit {
 
   -fx-border-width: 20px !important;
