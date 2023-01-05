@@ -7,19 +7,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.layout.GridPane?>
 <VBox prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageStatistiquesController">
 
     <MenuBar>
         <fx:include source="menu.fxml" />
     </MenuBar>
-    <ScrollPane>
-        <VBox>
-            <HBox alignment="CENTER" maxHeight="200">
-                <Label styleClass="text" text="Statistiques" />
-            </HBox>
-            <VBox fx:id="gridCartes" alignment="CENTER" prefHeight="500" prefWidth="779.0" style="-fx-background: #6272a4">
-            </VBox>
-        </VBox>
+    <ScrollPane minHeight="450" maxHeight="450" style="-fx-padding: 33">
+        <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #6272a4"/>
     </ScrollPane>
     <VBox prefHeight="250" alignment="CENTER">
         <Label text="Statistiques globales"/>
