@@ -39,6 +39,7 @@ public class ViewSwitcher {
             else if (ic.equals(MenuController.class)) return new MenuController() ;
             else if (ic.equals(PageApprentissageAccueil.class)) return new PageApprentissageAccueil(fcg) ;
             else if (ic.equals(ModificationCarteController.class)) return new ModificationCarteController(fcg) ;
+            else if (ic.equals(ModificationPileController.class)) return new ModificationPileController(fcg) ;
             else if (ic.equals(FormSelectParameterGameController.class)) return new FormSelectParameterGameController(fcg) ;
             else if (ic.equals(PageApprentissageWhatisaskedController.class)) return new PageApprentissageWhatisaskedController(fcg) ;
             else if (ic.equals(AffichageCarteReponseController.class)) return new AffichageCarteReponseController(fcg);

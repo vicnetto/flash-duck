@@ -157,6 +157,7 @@ public class AffichageCartesController implements Initializable {
         ViewSwitcher.switchTo(View.PILE_CREATION);
     }
 
-    public void editerPile(ActionEvent actionEvent) {
+    public void editerPile(ActionEvent actionEvent) throws IOException {
+        ViewSwitcher.switchTo(View.FORM_MODIFICATION_PILE);
     }
 }
