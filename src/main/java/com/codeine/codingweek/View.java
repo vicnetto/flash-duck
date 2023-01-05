@@ -16,6 +16,7 @@ public enum View {
     APPRENTISSAGE_FORM_SELECT_PARAMETERS("fxml/form-select-parameter-game.fxml"), //FormSelectParameterGameController
     APPRENTISSAGE_CREATOR_REPONSE("fxml/page-carte-reponse.fxml"), //AffichageCarteReponseController
     STATISTIQUES_PAGE_PILE("fxml/page-statistique-pile.fxml"), //PageStatistiquePileController
+    FIN_PARTIE("fxml/page-fin-partie.fxml"), //FinPartieController
     STATISTIQUES_PAGE_GLOBAL("fxml/page-statistique-global.fxml");  //PageStatistiqueGlobalController
 
     private String fileName ;

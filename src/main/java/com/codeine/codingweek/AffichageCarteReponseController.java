@@ -70,7 +70,7 @@ public class AffichageCarteReponseController implements Initializable {
             Pile pile = this.fcg.getLesPiles().get(this.fcg.getCurrentPile());
             Float div = (float) pile.getCards().size()/this.fcg.getCurrentIndexApprentissageList();
             pile.addScore((float) 100.0*(div));
-            ViewSwitcher.switchTo(View.ACCUEIL);
+            ViewSwitcher.switchTo(View.FIN_PARTIE);
         }
     }
 
