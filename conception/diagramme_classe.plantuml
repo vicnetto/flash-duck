@@ -202,6 +202,7 @@ PageApprentissageAccueil -- "1" FlashCardGame
 Initializable <|.. PageApprentissageWhatIsAskedController
 PageApprentissageWhatIsAskedController -- "1" FlashCardGame
 Initializable <|.. PageStatistiquesController
-PageApprentissageWhatIsAskedCPageStatistiquesControllerontroller -- "1" FlashCardGame
+PageStatistiquesController -- "1" FlashCardGame
+MenuController ..> ViewSwitcher
 
 @enduml
