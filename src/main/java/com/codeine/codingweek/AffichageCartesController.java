@@ -21,10 +21,19 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static com.codeine.codingweek.AfficherPiles.cellStyle;
+
 public class AffichageCartesController implements Initializable {
 
     @FXML
-    public VBox vBoxCartes;
+    private HBox stackInformation;
+
+    @FXML
+    private HBox stackActions;
+
+    @FXML
+    private VBox vBoxCartes;
+
     @FXML
     private ScrollPane scrollPane ;
 
@@ -153,7 +162,6 @@ public class AffichageCartesController implements Initializable {
     }
 
     public void supprimerPile(ActionEvent actionEvent) throws IOException {
-//        fcg.setLastPileDeleted(fcg.getLesPiles(fcg.getCurr));
         fcg.removePileByIndex(fcg.getCurrentPile());
         ViewSwitcher.switchTo(View.PILE_CREATION);
     }

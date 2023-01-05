@@ -87,9 +87,17 @@
   -fx-border-radius: 20px;
   -fx-background-radius: 20px;
 
-  -fx-background-color: white ;
+  -fx-background-color: #f3f6dd ;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.650), 4, 0, 0, 0);
 
+}
+
+.icone_button_entered {
+    -fx-background-color: #ffd064
+}
+
+.icone_button_exited {
+    -fx-background-color: #f3f6dd
 }
 
 .card_bis {

@@ -46,6 +46,7 @@ public class ViewSwitcher {
             else if (ic.equals(PageStatistiquePileController.class)) return new PageStatistiquePileController(fcg);
             else if (ic.equals(PageStatistiquesController.class)) return new PageStatistiquesController(fcg);
             else if (ic.equals(PageStatistiqueGlobalController.class)) return new PageStatistiqueGlobalController(fcg);
+            else if (ic.equals(FinPartieController.class)) return new FinPartieController(fcg);
             else System.out.println("Pas de controller trouve") ;
             return null;
         });
