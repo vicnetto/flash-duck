@@ -8,16 +8,17 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.layout.GridPane?>
-<VBox prefHeight="600" prefWidth="800" style="-fx-background-color: #6272a4" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageStatistiquesController">
+<VBox prefHeight="600" prefWidth="800" style="-fx-background-color: #e7ecec" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageStatistiquesController">
 
     <MenuBar>
         <fx:include source="menu.fxml" />
     </MenuBar>
     <ScrollPane minHeight="450" maxHeight="450" style="-fx-padding: 33">
-        <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #6272a4"/>
+        <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #e7ecec"/>
     </ScrollPane>
     <VBox prefHeight="250" alignment="CENTER">
-        <Label text="Statistiques globales"/>
+        <Button text="Statistiques globales" onAction="#goToStatistiquesGlobales" styleClass="bottom_button">
+        </Button>
     </VBox>
 
 </VBox>

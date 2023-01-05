@@ -27,12 +27,16 @@
     -fx-border-radius: 5px;
     -fx-padding: 10px;
     -fx-font-size: 16px;
-    -fx-text-fill: #d7c799 ;
+    -fx-text-fill: black ;
 
     -fx-spacing: 10px ;
 
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 0);
 
+}
+
+.button_classique:hover {
+  -fx-background-color: #fdd700;
 }
 
 .text {

@@ -10,7 +10,6 @@
    <MenuBar styleClass="menu">
       <fx:include source="menu.fxml" />
    </MenuBar>
-     <Label fx:id="nomPile" text="Nom pile" prefHeight="100"/>
-      <HBox fx:id="containerGraph" alignment="CENTER" prefHeight="500.0" prefWidth="400.0" spacing="20.0" />
+     <Label fx:id="nomPile" text="Nom pile" prefHeight="100" styleClass="text" />
+      <HBox fx:id="containerGraph" alignment="CENTER" prefHeight="500.0" prefWidth="400.0" spacing="40.0" />
 </VBox>
-

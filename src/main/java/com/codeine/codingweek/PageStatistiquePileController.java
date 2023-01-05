@@ -9,12 +9,14 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Paint;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class PageStatistiquePileController implements Initializable {
+
     public Label nomPile;
     public HBox containerGraph;
 
@@ -27,10 +29,7 @@ public class PageStatistiquePileController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        // Affichage pile actuel
-
         Pile currentPile = this.fcg.getPileCurrentPile() ;
-        this.nomPile.setText(currentPile.getName()) ;
 
         // Récupèration des scores pour chaque parties
 
@@ -40,14 +39,21 @@ public class PageStatistiquePileController implements Initializable {
             scores.add(score) ;
         }
 
+        // Affichage pile actuel
+        this.nomPile.setText("Scores pour la pile " + currentPile.getName() + 
+                                " (" + Integer.toString(scores.size()-1) + " parties)") ;
+
         // Création graphique avec scores
 
         NumberAxis x = new NumberAxis() ;
         NumberAxis y = new NumberAxis() ;
 
+        x.setAutoRanging(false) ;
         x.setLowerBound(0) ;
+        x.setUpperBound(scores.size()+1) ;
         x.setLabel("N° de la partie") ;
-        y.setLowerBound(0) ;
+        x.setTickUnit(1) ;
+        
         y.setLabel("Score sur la pile") ;
 
         LineChart<Number, Number> lineChart = new LineChart<>(x, y) ;
@@ -58,7 +64,7 @@ public class PageStatistiquePileController implements Initializable {
         }
 
         lineChart.getData().add(series) ;
-        lineChart.setTitle("Progression des scores") ;
+        lineChart.setTitle("Progression du score") ;
         lineChart.setLegendVisible(false) ;
         lineChart.setAnimated(true) ;
 

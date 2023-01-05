@@ -1,6 +1,8 @@
 package com.codeine.codingweek;
 
 import com.codeine.codingweek.model.FlashCardGame;
+
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.GridPane;
 
@@ -38,4 +40,11 @@ public class PageStatistiquesController implements Initializable {
         this.fcg.setCurrentPile(numPile);
         ViewSwitcher.swtichTo(View.STATISTIQUES_PAGE_PILE);
     }
+
+    @FXML
+    public void goToStatistiquesGlobales() throws IOException  {
+        System.out.println("Stats globales") ;
+        //ViewSwitcher.switchTo(View.) ;
+    }
+
 }
