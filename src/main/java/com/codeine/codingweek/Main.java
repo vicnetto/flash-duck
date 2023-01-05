@@ -37,7 +37,7 @@ public class Main extends Application {
         maPile = new Pile("Gastronomie", "France");
         maPile.addCarte(new Card("Qu'elle est la spécialité de la Picardie ?", "La ficelle picarde")) ;
         scores = new ArrayList<Float>() ;
-        scores.add((float) 100.0) ;
+        scores.add((float) 98.0) ;
         maPile.setScores(scores) ;
         fcg.addPile(maPile) ;
 

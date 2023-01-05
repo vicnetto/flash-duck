@@ -6,9 +6,9 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -19,6 +19,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PageApprentissageWhatisaskedController implements Initializable {
+
     public Button asked;
     public Text hint;
     public VBox laVb;
@@ -56,9 +57,11 @@ public class PageApprentissageWhatisaskedController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         ApprentissageMethod am = this.fcg.getCurrentApprentissageList().get(this.fcg.getCurrentIndexApprentissageList());
         am.afficher(this.laVb);
         this.compteurTemps();
+
     }
 
     public void goToReponse(ActionEvent actionEvent) throws IOException {

@@ -37,7 +37,7 @@ public class PageStatistiqueGlobalController implements Initializable {
         y.setAutoRanging(false);
         y.setLowerBound(0) ;
         y.setUpperBound(110) ;
-        y.setTickUnit(1) ;
+        y.setTickUnit(10) ;
 
         for (Pile pile : fcg.getLesPiles()) {
 

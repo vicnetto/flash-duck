@@ -58,7 +58,7 @@ public class PageStatistiquePileController implements Initializable {
         y.setAutoRanging(false);
         y.setLowerBound(0) ;
         y.setUpperBound(110) ;
-        y.setTickUnit(1) ;
+        y.setTickUnit(10) ;
 
         LineChart<Number, Number> lineChart = new LineChart<>(x, y) ;
         XYChart.Series<Number, Number> series = new XYChart.Series<>() ;
