@@ -104,4 +104,8 @@ public class FlashCardGame {
     public void setCurrentIndexApprentissageList(int currentIndexApprentissageList) {
         this.currentIndexApprentissageList = currentIndexApprentissageList;
     }
+    public Pile getPileCurrentPile() {
+        return this.getLesPiles().get(this.getCurrentPile());
+    }
+
 }

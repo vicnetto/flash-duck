@@ -42,6 +42,8 @@ public class ViewSwitcher {
             else if (ic.equals(FormSelectParameterGameController.class)) return new FormSelectParameterGameController(fcg) ;
             else if (ic.equals(PageApprentissageWhatisaskedController.class)) return new PageApprentissageWhatisaskedController(fcg) ;
             else if (ic.equals(AffichageCarteReponseController.class)) return new AffichageCarteReponseController(fcg);
+            else if (ic.equals(PageStatistiquePileController.class)) return new PageStatistiquePileController(fcg);
+            else if (ic.equals(PageStatistiquesController.class)) return new PageStatistiquesController(fcg);
             else System.out.println("Pas de controller trouve") ;
             return null;
         });

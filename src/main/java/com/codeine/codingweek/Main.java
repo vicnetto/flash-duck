@@ -10,6 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main extends Application {
 
@@ -25,6 +26,12 @@ public class Main extends Application {
         maPile.addCarte(new Card("Année de la révolution française", "1789"));
         maPile.addCarte(new Card("Dans quel pays est né Nikos Aliagas ?", "France (eh ça t'en bouche un coin)"));
         maPile.addCarte(new Card("Qui n'aime pas la tarte aux pommes ?", "Les racistes"));
+        ArrayList<Float> scores = new ArrayList<Float>();
+        scores.add((float) 21.0);
+        scores.add((float) 55.0);
+        scores.add((float) 86.0);
+        scores.add((float) 100);
+        maPile.setScores(scores);
         fcg.addPile(maPile);
 
         ViewSwitcher.setScene(scene) ;

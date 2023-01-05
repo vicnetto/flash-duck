@@ -13,7 +13,8 @@ public enum View {
     STATISTIQUES("fxml/page-statistiques.fxml"), //PageStatistiquesController
     APPRENTISSAGE_WHAT_IS_ASKED("fxml/page-apprentissage-whatisasked.fxml"), //PageApprentissageWhatIsAskedController
     APPRENTISSAGE_FORM_SELECT_PARAMETERS("fxml/form-select-parameter-game.fxml"), //FormSelectParameterGameController
-    APPRENTISSAGE_CREATOR_REPONSE("fxml/page-carte-reponse.fxml"); //AffichageCarteReponseController
+    APPRENTISSAGE_CREATOR_REPONSE("fxml/page-carte-reponse.fxml"), //AffichageCarteReponseController
+    STATISTIQUES_PAGE_PILE("fxml/page-statistique-pile.fxml"); //PageStatistiquePileController
 
     private String fileName ;
 
