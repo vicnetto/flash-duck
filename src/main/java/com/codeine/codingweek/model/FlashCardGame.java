@@ -2,8 +2,9 @@ package com.codeine.codingweek.model;
 
 import com.codeine.codingweek.PatternStrategyQuestions.ApprentissageMethod;
 
+import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class FlashCardGame {
@@ -11,7 +12,7 @@ public class FlashCardGame {
     private ArrayList<Pile> lesPiles;
     private int currentPile = 0;
     private int currentCarte = 0;
-    private List<String> categories = Arrays.asList("Histoire", "Art", "Musique", "Cinéma", "Gastronomie", "Sport", "Science", "Littérature");
+    private HashMap<String, Color> categoriesColor = new HashMap<String, Color>();
 
     private ArrayList<ApprentissageMethod> currentApprentissageList;
 
@@ -19,14 +20,34 @@ public class FlashCardGame {
 
     public FlashCardGame() {
         lesPiles = new ArrayList<Pile>();
+        categoriesColor.put("Histoire", new Color(203, 25, 231));
+        categoriesColor.put("Art", new Color(231, 221, 98));
+        categoriesColor.put("Musique", new Color(255, 0, 0));
+        categoriesColor.put("Cinéma", new Color(57, 76, 206));
+        categoriesColor.put("Gastronomie", new Color(173, 112, 67));
+        categoriesColor.put("Sport", new Color(128, 40, 40));
+        categoriesColor.put("Science", new Color(0, 255, 185));
+        categoriesColor.put("Littérature", new Color(22, 180, 24));
+    }
+
+    public void addCategorie(String nom, Color couleur) {
+        this.categoriesColor.put(nom, couleur);
+    }
+
+    public void removeCategorie(String nom) {
+        this.categoriesColor.remove(nom);
+    }
+
+    public List<String> getCategories() {
+        return new ArrayList<String>(categoriesColor.keySet());
     }
 
     public ArrayList<Pile> getLesPiles() {
         return lesPiles;
     }
 
-    public List<String> getCategories() {
-        return this.categories;
+    public HashMap<String, Color> getCategoriesColor() {
+        return categoriesColor;
     }
 
     public void setLesPiles(ArrayList<Pile> lesPiles) {
