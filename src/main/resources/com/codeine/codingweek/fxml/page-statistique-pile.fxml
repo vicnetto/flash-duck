@@ -6,9 +6,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageStatistiquePileController">
-   <fx:include source="menu.fxml" />
-     <Label fx:id="nomPile" prefHeight="100" styleClass="text" text="Nom pile" />
-      <HBox fx:id="containerGraph" alignment="CENTER" prefHeight="500.0" prefWidth="400.0" spacing="40.0" />
-   <Button mnemonicParsing="false" text="Réinitialiser les statistiques" onAction="#resetStats"/>
+<?import javafx.geometry.Insets?>
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="CENTER"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.codeine.codingweek.PageStatistiquePileController">
+    <fx:include source="menu.fxml"/>
+    <Label fx:id="nomPile" prefHeight="100" styleClass="text" text="Nom pile"/>
+    <HBox fx:id="containerGraph" alignment="CENTER" prefHeight="500.0" prefWidth="400.0" spacing="40.0"/>
+    <Button mnemonicParsing="false" text="Réinitialiser les statistiques" onAction="#resetStats"
+            styleClass="bottom_button">
+        <VBox.margin>
+            <Insets bottom="10.0"/>
+        </VBox.margin>
+    </Button>
 </VBox>
