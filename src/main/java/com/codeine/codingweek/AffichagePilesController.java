@@ -46,11 +46,11 @@ public class AffichagePilesController implements Initializable {
         ViewSwitcher.swtichTo(View.CARTE_CREATION);
     }
 
-    public void goToFormCreationPile(ActionEvent actionEvent) throws IOException {
+    public void goToFormCreationPile() throws IOException {
         ViewSwitcher.swtichTo(View.FORM_PILE);
     }
 
-    public void importPile(ActionEvent actionEvent) {
+    public void importPile() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
         File selectedFile = fileChooser.showOpenDialog(null);

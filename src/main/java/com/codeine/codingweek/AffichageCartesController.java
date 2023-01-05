@@ -94,11 +94,11 @@ public class AffichageCartesController implements Initializable {
 
     
 
-    public void goToFormCarte(ActionEvent actionEvent) throws IOException {
+    public void goToFormCarte() throws IOException {
         ViewSwitcher.swtichTo(View.FORM_CARTE);
     }
 
-    public void retour(ActionEvent actionEvent) throws  IOException{
+    public void retour() throws  IOException{
         ViewSwitcher.swtichTo(View.PILE_CREATION);
     }
 

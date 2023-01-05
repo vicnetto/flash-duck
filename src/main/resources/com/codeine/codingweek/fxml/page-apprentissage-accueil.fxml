@@ -26,7 +26,8 @@
         <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #6272a4"/>
     </ScrollPane>
 
-    <HBox alignment="CENTER" prefHeight="100">
+    <HBox alignment="CENTER" prefHeight="100" spacing="50">
+        <Button text="Retour" onAction="#retour" styleClass="bottom_button"/>
         <Button text="Statistiques" onAction="#statistiques" styleClass="bottom_button" />
     </HBox>
 

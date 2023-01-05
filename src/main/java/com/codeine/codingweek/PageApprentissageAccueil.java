@@ -27,7 +27,7 @@ public class PageApprentissageAccueil implements Initializable {
         this.fcg = fcg ;
     }
 
-    public void statistiques(ActionEvent actionEvent) throws IOException {
+    public void statistiques() throws IOException {
         ViewSwitcher.swtichTo(View.STATISTIQUES);
     }
 
@@ -47,6 +47,10 @@ public class PageApprentissageAccueil implements Initializable {
     public void goToPile(int i) throws IOException {
         this.fcg.setCurrentPile(i);
         ViewSwitcher.swtichTo(View.APPRENTISSAGE_FORM_SELECT_PARAMETERS);
+    }
+
+    public void retour() throws IOException {
+        ViewSwitcher.swtichTo(View.ACCUEIL);
     }
 
 }

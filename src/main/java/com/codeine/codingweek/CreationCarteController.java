@@ -44,6 +44,7 @@ public class CreationCarteController implements Initializable {
         });
     }
 
+
     public void ajouterCarte(ActionEvent actionEvent) throws IOException {
         if (isValidForm()) {
             this.fcg.getLesPiles().get(this.fcg.getCurrentPile()).addCarte(new Card(this.textarea_q.getText(), this.textarea_r.getText()));
@@ -51,7 +52,7 @@ public class CreationCarteController implements Initializable {
         }
     }
 
-    public void annuler(ActionEvent actionEvent) throws IOException {
+    public void annuler() throws IOException {
         ViewSwitcher.swtichTo(View.CARTE_CREATION);
     }
 

@@ -70,7 +70,7 @@ public class CreationPileController implements Initializable {
         return fcg.getCategories();
     }
 
-    public void annuler(ActionEvent actionEvent) throws IOException {
+    public void annuler() throws IOException {
         ViewSwitcher.swtichTo(View.PILE_CREATION);
     }
 
