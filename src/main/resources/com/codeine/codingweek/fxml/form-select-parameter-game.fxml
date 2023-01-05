@@ -38,7 +38,7 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
          <children>
-            <CheckBox mnemonicParsing="false" text="Mélangé" fx:id="melangeBox"/>
+            <CheckBox mnemonicParsing="false" text="Mélanger" fx:id="melangeBox"/>
          </children>
       </HBox>
    </bottom>
