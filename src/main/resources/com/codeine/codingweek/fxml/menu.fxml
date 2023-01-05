@@ -9,6 +9,6 @@
       text="Menu" style="-fx-text-fill: #54ABAC; -fx-font-weight: bold; -fx-font-size: 12 arial">
 
     <MenuItem text="Principal" onAction="#menuPrincipal"/>
-    <MenuItem text="Creation" onAction="#menuCreation"/>
+    <MenuItem text="Création" onAction="#menuCreation"/>
     <MenuItem text="Apprentissage" onAction="#menuApprentissage"/>
 </Menu>

@@ -1,46 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.geometry.Insets?>
-<BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.codeine.codingweek.AffichageCarteReponseController"
-            prefHeight="600" prefWidth="800">
+
+<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.AffichageCarteReponseController">
 
     <center>
         <MenuBar>
-            <fx:include source="menu.fxml"/>
+            <fx:include source="menu.fxml" />
         </MenuBar>
 
-        <VBox spacing="10" alignment="CENTER" prefWidth="700">
-            <VBox alignment="CENTER" prefHeight="200" spacing="20" style="-fx-padding: 30" >
-                <Label fx:id="question" text="Dummy" styleClass="text"/>
-                <Label fx:id="reponse" text="Dummy" styleClass="text"/>
+        <VBox alignment="CENTER" prefWidth="700" spacing="10">
+            <VBox alignment="CENTER" prefHeight="200.0" spacing="20" styleClass="card_bis">
+                <Label fx:id="question" styleClass="text" text="Dummy" />
+                <Label fx:id="reponse" styleClass="text" text="Dummy" />
+            <VBox.margin>
+               <Insets left="20.0" right="20.0" top="20.0" />
+            </VBox.margin>
             </VBox>
             <StackPane>
-                <Rectangle fill="darkcyan" arcHeight="10" arcWidth="10" height="300" width="500" stroke="black" strokeWidth="5"/>
+                <Rectangle arcHeight="10" arcWidth="10" fill="darkcyan" height="300" stroke="black" strokeWidth="5" width="500" />
                 <ImageView fx:id="image" fitHeight="280" fitWidth="280" preserveRatio="true" />
             </StackPane>
             <HBox alignment="CENTER" prefHeight="100">
                 <HBox alignment="CENTER" prefWidth="350">
-                    <Button text="Je savais" styleClass="button_classique" onAction="#iKnew"/>
+                    <Button onAction="#iKnew" styleClass="button_classique" text="Je savais" />
                 </HBox>
                 <HBox alignment="CENTER" prefWidth="350">
-                    <Button text="Je ne savais pas" styleClass="button_classique" onAction="#iDidntKnow"/>
+                    <Button onAction="#iDidntKnow" styleClass="button_classique" text="Je ne savais pas" />
                 </HBox>
             </HBox>
         </VBox>
     </center>
 
     <right>
-        <VBox alignment="CENTER" style="-fx-padding: 30" prefWidth="100">
-            <Button text="→" styleClass="button_classique" onAction="#nextQuestion"/>
+        <VBox alignment="CENTER" prefWidth="100.0" style="-fx-padding: 30">
+            <Button onAction="#nextQuestion" prefHeight="38.0" prefWidth="36.0" styleClass="button_classique" text="→" />
         </VBox>
     </right>
 </BorderPane>

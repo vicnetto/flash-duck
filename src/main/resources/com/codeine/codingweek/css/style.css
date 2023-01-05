@@ -72,6 +72,25 @@
 
 .bottom_button {
 
+  -fx-padding: 20 20 20 20 ;
+  -fx-margin: 0 0 10 0 ;
+  -fx-border-radius: 0px;
+
+  -fx-border-width: 1px;
+  -fx-border-radius: 20px;
+  -fx-background-radius: 20px;
+
+  -fx-background-color: white ;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.650), 4, 0, 0, 0);
+  
+}
+
+.bottom_button:hover {
+  -fx-background-color: #fdd700;
+}
+
+.icone_button {
+
   -fx-padding: 10 10 10 10 ;
   -fx-margin: 0 0 10 0 ;
   -fx-border-radius: 0px;
@@ -79,5 +98,31 @@
   -fx-border-width: 1px;
   -fx-border-radius: 20px;
   -fx-background-radius: 20px;
+
+  -fx-background-color: white ;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.650), 4, 0, 0, 0);
+
+}
+
+.card_bis {
+
+  -fx-background-color: #f3f6dd ;
+  -fx-font-weight: bold;
+  -fx-border-width: 1px;
+  -fx-border-radius: 10px;
+  -fx-background-radius: 10px;
+  -fx-padding: 10px;
+  -fx-font-size: 16px;
+  -fx-text-fill: #d68301 ;
+  
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 4, 0, 0, 0);
+  
+}
+
+.card_bis:hover {
+  
+  -fx-background-color: #fdd700;
+  
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 8, 0, 0, 0);
 
 }

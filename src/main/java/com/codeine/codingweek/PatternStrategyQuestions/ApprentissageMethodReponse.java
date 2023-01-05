@@ -1,6 +1,8 @@
 package com.codeine.codingweek.PatternStrategyQuestions;
 
 import com.codeine.codingweek.model.Card;
+
+import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -11,7 +13,7 @@ public class ApprentissageMethodReponse extends ApprentissageMethod{
 
     @Override
     public void afficher(VBox vb) {
-        Text asked = (Text) vb.lookup("#asked");
+        Button asked = (Button) vb.lookup("#asked");
         Text hint = (Text) vb.lookup("#hint");
 
         asked.setText(this.getCarte().getReponse());
