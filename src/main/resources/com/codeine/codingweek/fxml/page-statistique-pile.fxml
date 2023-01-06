@@ -19,7 +19,7 @@
     <HBox fx:id="containerGraph" alignment="CENTER" minHeight="450.0" maxHeight="450" prefWidth="800.0" spacing="40.0" style="-fx-background-color : #ffffff"/>
 
     <HBox alignment="CENTER" prefHeight="100" spacing="50" style="-fx-background-color: #e7ecec">
-        <Button alignment="CENTER" text="Retour" styleClass="bottom_button" onAction="#retour"/>
+        <Button alignment="CENTER" text="Retour menu statistiques" styleClass="bottom_button" onAction="#retour"/>
         <Button alignment="CENTER" text="Réinitialiser les statistiques" onAction="#resetStats" styleClass="bottom_button"/>
     </HBox>
 </VBox>
