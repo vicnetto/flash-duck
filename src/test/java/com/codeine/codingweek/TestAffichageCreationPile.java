@@ -4,7 +4,8 @@ import com.codeine.codingweek.model.FlashCardGame;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.Test;
@@ -13,12 +14,11 @@ import org.testfx.api.FxRobot;
 import org.testfx.assertions.api.Assertions;
 import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
-import org.testfx.matcher.control.LabeledMatchers;
 
 import java.io.IOException;
 
 @ExtendWith(ApplicationExtension.class)
-class TestAccueil {
+public class TestAffichageCreationPile {
 
     private VBox mainRoot;
 
@@ -42,14 +42,31 @@ class TestAccueil {
     }
 
     @Test
-    void shouldContainButtonCreation(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#creation").queryAs(Button.class)).hasText("Création");
+    void shouldContainButtonToReturn(FxRobot robot) {
         robot.clickOn("#creation");
+        Assertions.assertThat(robot.lookup("#return").queryAs(Button.class)).hasText("Retour");
+        robot.clickOn("#return");
     }
 
     @Test
-    void shouldContainButtonApprentissage(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#apprentissage").queryAs(Button.class)).hasText("Apprentissage");
-        robot.clickOn("#apprentissage");
+    void shouldContainButtonToAddStack(FxRobot robot) {
+        robot.clickOn("#creation");
+        Assertions.assertThat(robot.lookup("#addStack").queryAs(Button.class)).hasText("+ Ajouter une pile");
+        robot.clickOn("#addStack");
     }
+
+    @Test
+    void shouldContainButtonToImportPile(FxRobot robot) {
+        robot.clickOn("#creation");
+        Assertions.assertThat(robot.lookup("#import").queryAs(Button.class)).hasText("Importer une pile");
+        robot.clickOn("#import");
+    }
+
+//    @Test
+//    void shouldContainTwoStacks(FxRobot robot) {
+//        robot.clickOn("#creation");
+//        System.out.println(mainRoot.getChildren());
+//        org.junit.jupiter.api.Assertions.assertNotNull(((GridPane) ((ScrollPane) mainRoot.getChildren().get(2)).getContent()).getChildren().get(0));
+
+//    }
 }

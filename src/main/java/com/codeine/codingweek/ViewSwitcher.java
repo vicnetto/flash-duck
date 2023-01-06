@@ -29,6 +29,16 @@ public class ViewSwitcher {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ViewSwitcher.class.getResource(view.getFileName()));
+        controllerFactory(loader);
+
+        Parent root = loader.load();
+
+        scene.setRoot(root);
+
+        root.requestFocus();
+    }
+
+    public static void controllerFactory(FXMLLoader loader)  {
 
         loader.setControllerFactory(ic -> {
             if (ic.equals(AccueilController.class)) return new AccueilController();
@@ -51,10 +61,5 @@ public class ViewSwitcher {
             return null;
         });
 
-        Parent root = loader.load();
-
-        scene.setRoot(root);
-
-        root.requestFocus();
     }
 }
