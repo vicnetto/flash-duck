@@ -8,9 +8,7 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Paint;
 
 import java.io.IOException;
 import java.net.URL;
@@ -51,10 +49,11 @@ public class PageStatistiquePileController implements Initializable {
         NumberAxis y = new NumberAxis() ;
 
         x.setAutoRanging(false) ;
-        x.setLowerBound(0) ;
+        x.setLowerBound(1) ;
         x.setUpperBound(scores.size()+1) ;
         x.setLabel("N° de la partie") ;
         x.setTickUnit(1) ;
+        x.setMinorTickVisible(false) ;
         
         y.setLabel("Score sur la pile") ;
         y.setAutoRanging(false);
