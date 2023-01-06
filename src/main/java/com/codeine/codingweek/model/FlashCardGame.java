@@ -25,12 +25,12 @@ public class FlashCardGame {
         lesPiles = new ArrayList<Pile>();
         categoriesImagePath.put("Histoire", "images/categ_bg_default.jpg");
         categoriesImagePath.put("Art", "images/categ_bg_art.jpg");
-        categoriesImagePath.put("Musique", "images/categ_bg_default.jpg");
-        categoriesImagePath.put("Cinéma", "images/categ_bg_default.jpg");
-        categoriesImagePath.put("Gastronomie", "images/categ_bg_default.jpg");
-        categoriesImagePath.put("Sport", "images/categ_bg_default.jpg");
-        categoriesImagePath.put("Science", "images/categ_bg_default.jpg");
-        categoriesImagePath.put("Littérature", "images/categ_bg_default.jpg");
+        categoriesImagePath.put("Musique", "images/categ_bg_music.jpg");
+        categoriesImagePath.put("Cinéma", "images/categ_bg_cinema.jpg");
+        categoriesImagePath.put("Gastronomie", "images/categ_bg_cuisine.jpg");
+        categoriesImagePath.put("Sport", "images/categ_bg_sport.jpg");
+        categoriesImagePath.put("Science", "images/categ_bg_science.jpg");
+        categoriesImagePath.put("Littérature", "images/categ_bg_litterature.jpg");
     }
 
     public void addCategorie(String nom, String imagePath) {

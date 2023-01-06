@@ -43,9 +43,13 @@ public class AfficherPiles {
             String categorie = fcg.getLesPiles().get(i).getCategory();
             HashMap<String, String> hmap = fcg.getCategoriesImagePath();
             String imgPathCateg = hmap.get(categorie);
-//            System.out.println(imgPathCateg);
-//            System.out.println(currClass.getResource(imgPathCateg));
-            String path = currClass.getResource(imgPathCateg).toString();
+            String path;
+            if (imgPathCateg == null) {
+                path = currClass.getResource("images/categ_bg_default.jpg").toString();
+            }
+            else {
+                path = currClass.getResource(imgPathCateg).toString();
+            }
             // CREATION DE L'IMAGE
             Image bg = new Image(path);
             BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, true);
@@ -55,7 +59,7 @@ public class AfficherPiles {
             vb.setBackground(new Background(bimg));
 
             Label nom = new Label(fcg.getLesPiles().get(i).getName());
-            nom.setStyle("-fx-text-fill: #000000");
+            nom.setStyle("-fx-text-fill: white");
             vb.getChildren().add(nom);
 
             int ii = i;
@@ -73,6 +77,8 @@ public class AfficherPiles {
             VBox vb = (VBox) gridPiles.getChildren().get(i);
             if (fcg.getLesPiles().get(i).getCards().isEmpty()) {
                 vb.getStyleClass().add("pile_show_grey");
+                Label innerLabel = (Label) vb.getChildren().get(0);
+                innerLabel.setStyle("-fx-text-fill: #9f9f9f");
                 vb.setOnMouseClicked(e -> {});
             }
         }

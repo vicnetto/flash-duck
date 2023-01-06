@@ -169,23 +169,28 @@
 }
 
 .pile_show, .pile_show_grey {
-    -fx-border-color: black;
-    -fx-border-radius: 5;
+    /*-fx-border-color: black;*/
+    /*-fx-border-radius: 5;*/
     -fx-margin-bottom: 20;
-    -fx-border-radius: 5;
+    /*-fx-background-radius: 5;*/
     /*-fx-background-color: #f3f6dd;*/
 }
 
 .pile_show_grey {
     /*-fx-background-color: #b4b4b4;*/
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0), 0, 0, 0, 0);
+    -fx-text-fill: #9f9f9f;
 }
 
 .pile_show:hover {
     /*-fx-background-color: #ffd064*/
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 10, 0, 0, 0);
 }
 
 .pile_show_grey:hover {
     /*-fx-background-color: #b4b4b4;*/
+    -fx-text-fill: #9f9f9f;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0), 0, 0, 0, 0);
 }
 
 
