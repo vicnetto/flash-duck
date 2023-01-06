@@ -80,6 +80,10 @@ public class PageStatistiquePileController implements Initializable {
 
     }
 
+    public void retour() throws IOException{
+        ViewSwitcher.switchTo(View.STATISTIQUES);
+    }
+
     public void resetStats(ActionEvent actionEvent) throws IOException {
         Pile currentPile = this.fcg.getPileCurrentPile();
         currentPile.setScores(new ArrayList<Float>());
