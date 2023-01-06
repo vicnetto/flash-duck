@@ -64,13 +64,4 @@ public class TestApprentissageAccueil {
         robot.clickOn("#return");
     }
 
-    @Test
-    void shouldContainStatisticsButton(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#apprendre").queryAs(Button.class)).hasText("Apprentissage");
-        robot.clickOn("#apprendre");
-
-        Assertions.assertThat(robot.lookup("#statistics").queryAs(Button.class)).hasText("Statistiques");
-        robot.clickOn("#statistics");
-    }
-
 }

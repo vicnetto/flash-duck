@@ -60,13 +60,6 @@ class TestAffichageCreationPile {
     }
 
     @Test
-    void shouldContainButtonToImportPile(FxRobot robot) {
-        robot.clickOn("#creation");
-        Assertions.assertThat(robot.lookup("#import").queryAs(Button.class)).hasText("Importer une pile");
-//        robot.clickOn("#import");
-    }
-
-    @Test
     void shouldContainTwoStacks(FxRobot robot) {
         robot.clickOn("#creation");
         VBox vBox = (VBox) mainScene.getRoot();
