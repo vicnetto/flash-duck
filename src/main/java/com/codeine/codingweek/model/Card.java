@@ -4,7 +4,7 @@ public class Card {
 
     private String question ;
     private String reponse ;
-    private float freq_apparition ; // Fréquence d'apparition de base
+    private double freq_apparition ; // Fréquence d'apparition de base
     private int nbrErreur = 0 ; // Incrémente dès que le joueur se trompe
 
     /*
@@ -41,11 +41,11 @@ public class Card {
         this.reponse = reponse;
     }
 
-    public float getFreq_apparition() {
+    public double getFreq_apparition() {
         return freq_apparition;
     }
 
-    public void setFreq_apparition(float freq_apparition) {
+    public void setFreq_apparition(double freq_apparition) {
         this.freq_apparition = freq_apparition;
     }
 

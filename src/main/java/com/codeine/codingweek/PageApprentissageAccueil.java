@@ -1,6 +1,7 @@
 package com.codeine.codingweek;
 
 
+import com.codeine.codingweek.model.Card;
 import com.codeine.codingweek.model.FlashCardGame;
 import javafx.fxml.FXML;
 
@@ -43,6 +44,12 @@ public class PageApprentissageAccueil implements Initializable {
 
     public void goToPile(int i) throws IOException {
         this.fcg.setCurrentPile(i);
+
+        /* Répartition équiprobable une fois au début de la partie */
+        for (Card card : fcg.getPileCurrentPile().getCards()) {
+            card.setFreq_apparition(((double)1)/fcg.getPileCurrentPile().getCards().size()) ;
+        }
+
         ViewSwitcher.switchTo(View.APPRENTISSAGE_FORM_SELECT_PARAMETERS);
     }
 

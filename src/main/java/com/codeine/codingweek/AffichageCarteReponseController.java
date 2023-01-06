@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class AffichageCarteReponseController implements Initializable {
@@ -26,13 +27,21 @@ public class AffichageCarteReponseController implements Initializable {
     @FXML
     private Label question;
 
-//    @FXML
-//    private ImageView image;
+    private double increment = 0 ;
+    private double frequenciesSum = 0 ;
 
     private FlashCardGame fcg;
 
     public AffichageCarteReponseController(FlashCardGame flashCardGame) {
+
         this.fcg = flashCardGame;
+
+        increment = ((double) 1)/(2*this.fcg.getPileCurrentPile().getCards().size()) ;
+
+        for (Card card : this.fcg.getPileCurrentPile().getCards()) {
+            frequenciesSum += card.getFreq_apparition() ;
+        }
+
     }
 
     public FlashCardGame getFlashCardGame() {
@@ -44,25 +53,56 @@ public class AffichageCarteReponseController implements Initializable {
     }
 
     public void iKnew(ActionEvent actionEvent) throws IOException {
-        this.fcg.setCurrentIndexApprentissageList(this.fcg.getCurrentIndexApprentissageList()+1);
+        
+        /* JE SAVAIS => la fréquence d'apparition diminue */
+
+        Card currentCard = this.fcg.getPileCurrentPile().getCards().get(this.fcg.getCurrentIndexApprentissageList()) ;
+        if (currentCard.getFreq_apparition()-increment <= 0) currentCard.setFreq_apparition(1) ; // Normalement impossible mais bon
+        else currentCard.setFreq_apparition(currentCard.getFreq_apparition()-increment) ;
+        double randomNumber = new Random().nextDouble() * frequenciesSum ;
+
+        /* Recherche d'une carte avec une fréquence d'apparition OK avec les fréquences pondérées */
+        int i = 0 ;
+        while (randomNumber >= this.fcg.getPileCurrentPile().getCards().get(i).getFreq_apparition()) {
+            randomNumber -= this.fcg.getPileCurrentPile().getCards().get(i).getFreq_apparition() ;
+            i++ ;
+        }
+
+        /* Prochaine carte */
+        this.fcg.setCurrentIndexApprentissageList(i) ;
         handleNextApprentissage();
+
     }
 
     public void copyCurrentApprentissageToEndList() {
+        /* Recopie à la fin de la liste si JE NE SAVAIS PAS de la carte pour reposer la question */
         ArrayList<ApprentissageMethod> lesQuestionsPosees = this.fcg.getCurrentApprentissageList();
         ApprentissageMethod currentQuestion = lesQuestionsPosees.get(this.fcg.getCurrentIndexApprentissageList());
         lesQuestionsPosees.add(currentQuestion);
     }
 
     public void iDidntKnow(ActionEvent actionEvent) throws IOException {
-        copyCurrentApprentissageToEndList();
-        this.fcg.setCurrentIndexApprentissageList(this.fcg.getCurrentIndexApprentissageList()+1);
-        handleNextApprentissage();
-    }
 
-    public void nextQuestion(ActionEvent actionEvent) throws IOException {
-        this.fcg.setCurrentIndexApprentissageList(this.fcg.getCurrentIndexApprentissageList()+1);
+
+        /* JE NE SAVAIS PAS => la fréquence d'apparition augmente */
+
+        Card currentCard = this.fcg.getPileCurrentPile().getCards().get(this.fcg.getCurrentIndexApprentissageList()) ;
+       
+        if (currentCard.getFreq_apparition()+increment >= 1) currentCard.setFreq_apparition(1) ;
+        else currentCard.setFreq_apparition(currentCard.getFreq_apparition()+increment) ;
+        double randomNumber = new Random().nextDouble() * frequenciesSum ;
+
+        /* Recherche d'une carte avec une fréquence d'apparition OK avec les fréquences pondérées */
+        int i = 0 ;
+        while (randomNumber >= this.fcg.getPileCurrentPile().getCards().get(i).getFreq_apparition()) {
+            randomNumber -= this.fcg.getPileCurrentPile().getCards().get(i).getFreq_apparition() ;
+            i++ ;
+        }
+
+        /* Prochaine carte */
+        this.fcg.setCurrentIndexApprentissageList(i) ;
         handleNextApprentissage();
+
     }
 
     public void handleNextApprentissage() throws IOException {
