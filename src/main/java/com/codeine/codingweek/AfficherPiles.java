@@ -5,16 +5,23 @@ import com.codeine.codingweek.model.Pile;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.effect.BlurType;
+import javafx.scene.effect.GaussianBlur;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+
+import java.security.Identity;
+import java.util.HashMap;
 import java.util.function.IntConsumer;
 
 public class AfficherPiles {
 
     public static final int MAX_BY_LINE = 4;
 
-    public static void afficherToutesLesPiles(FlashCardGame fcg, GridPane gridPiles, IntConsumer goToPile) {
+    public static void afficherToutesLesPiles(FlashCardGame fcg, GridPane gridPiles, IntConsumer goToPile) throws ClassNotFoundException {
 
         // Trie des piles par thème
 
@@ -31,6 +38,21 @@ public class AfficherPiles {
             vb.setAlignment(Pos.CENTER);
             vb.setPadding(new Insets(10));
             vb.getStyleClass().add("pile_show");
+            // RECUPERATION DU PATH DE L'IMAGE
+            Class<?> currClass = Class.forName("com.codeine.codingweek.AffichagePilesController"); // BIZARRE
+            String categorie = fcg.getLesPiles().get(i).getCategory();
+            HashMap<String, String> hmap = fcg.getCategoriesImagePath();
+            String imgPathCateg = hmap.get(categorie);
+//            System.out.println(imgPathCateg);
+//            System.out.println(currClass.getResource(imgPathCateg));
+            String path = currClass.getResource(imgPathCateg).toString();
+            // CREATION DE L'IMAGE
+            Image bg = new Image(path);
+            BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, true);
+            BackgroundImage bimg = new BackgroundImage(bg, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
+            // BLUR
+//            GaussianBlur blur = new GaussianBlur(10);
+            vb.setBackground(new Background(bimg));
 
             Label nom = new Label(fcg.getLesPiles().get(i).getName());
             nom.setStyle("-fx-text-fill: #000000");

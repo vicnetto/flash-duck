@@ -38,7 +38,11 @@ public class PageApprentissageAccueil implements Initializable {
             }
         };
 
-        AfficherPiles.afficherToutesLesPiles(fcg, gridPiles, goToPile);
+        try {
+            AfficherPiles.afficherToutesLesPiles(fcg, gridPiles, goToPile);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         AfficherPiles.griserPilesVides(fcg, gridPiles);
     }
 
