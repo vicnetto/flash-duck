@@ -2,7 +2,7 @@
 
 ## Exécution avec le .jar
 
-Pour exécuter le projet (avec le .jar), sur n’importe quel système d’exploitation, il faut télécharger la librairie **JavaFX** sur votre ordinateur, ou utiliser le fat-jar, pour les utilisateurs de Linux. 
+Pour exécuter le projet (avec le .jar), sur n’importe quel système d’exploitation, il faut télécharger la librairie **JavaFX** sur votre ordinateur ou utiliser le fat-jar, pour les utilisateurs de Linux. 
 
 Le jar peut être trouvé dans les **versions du code** (tags).
 
@@ -24,6 +24,6 @@ java --module-path $CHEMIN_DE_LA_LIB_JAVAFX --add-modules=javafx.controls,javafx
 
 ## Lancement des tests
 
-Des tests de l'interface ont été implémentés. Ils est possible de l'exécuter en ouvrant le projet avec un IDE tel IntelliJ IDEA.
+Des tests de l'interface ont été implémentés. Il est possible de l'exécuter en ouvrant le projet avec un IDE tel IntelliJ IDEA.
 
 ![img_tests.png](img_tests.png)
