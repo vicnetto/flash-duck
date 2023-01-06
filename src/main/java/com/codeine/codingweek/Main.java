@@ -70,7 +70,7 @@ public class Main extends Application {
 
         scene.getStylesheets().add(getClass().getResource("css/style.css").toExternalForm()) ;
 
-        stage.setTitle("TN FlashCards") ;
+        stage.setTitle("FLASHDUCK") ;
         stage.getIcons().add(new Image(getClass().getResource("images/Mascotte_borderless.png").toExternalForm())) ;
         stage.setScene(scene) ;
         stage.show() ;
