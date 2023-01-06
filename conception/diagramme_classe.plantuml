@@ -7,15 +7,22 @@ title Diagramme de classe de l'application FlashCard
 class FlashCardGame {
     -int currentPile
     -int currentCarte
-    -ArrayList<String> categories
     -int currentIndexApprentissageList
+    -HashMap<String, String> categoriesImagePath
+    -String LAST_FOLDER
+    +void sort()
 }
-class FlashCard {
+class Card {
     -String question
     -String reponse
+    -double freq_apparittion
+    -int nbrErreur
 }
 class Pile {
-    -int score
+    -String name
+    -String category_name
+    -ArrayList<Float> score
+    +void compareTo(Pile) @override
 }
 
 package "Patern Creator" {
@@ -116,6 +123,15 @@ package "Controllers" {
         +List<String> getAutocompleOptions()
     }
 
+    class FinPartieController {
+        -Label percentage @FXML
+        -Label resultat @FXML
+        {static} -DecimalFormat df
+        +void goStatistiques() @FXML
+        +void goAccueil() @FXML
+        +void rejouer() @FXML
+    }
+
     class FormSelectParameterGameController {
         +void goToGameWithQuestions() @FXML
         +void goToGameWithReponses() @FXML
@@ -136,8 +152,19 @@ package "Controllers" {
     class ModificationCarteController {
         -TextArea textarea_q @FXML
         -TextArea textarea_r @FXML
+        -Button button_valider @FXML
         +void annuler() @FXML
         +void modifierCarte() @FXML
+    }
+
+    class ModificationPileController {
+        -TextArea textarea_t @FXML
+        -TextArea textarea_c @FXML
+        -Button button_valider @FXML
+        +void annuler() @FXML
+        +void modifierPile() @FXML
+        +List<String> getAutocompleteOptions()
+        +boolean isValidForm() @FXML
     }
 
     class PageApprentissageAccueil {
@@ -154,8 +181,29 @@ package "Controllers" {
     }
 
     class PageStatistiquesController {
-
+        -GridPane gridPiles @FXML
+        +void goToPileStatistiques(int numPile) @FXML
+        +void gotToStatiquesGlobales() @FXML
+        +void retour() @FXML
     }
+
+    class PageStatistiquePileController {
+        -Label nomPile @FXML
+        -HBox containerGraph @FXML
+        -FlashCardGame fcg
+        +void retour() @FXML
+        +void resetStats() @FXML
+    }
+
+    class PageStatistiqueGlobalController {
+        -HBox containerGraph @FXML
+        -FlashCardGame fcg
+        +void retour() @FXML
+    }
+}
+
+class MutableDouble {
+    -double value
 }
 
 class AfficherPile {
@@ -184,9 +232,13 @@ Initializable <|.. AffichageCarteReponseController
 AffichageCarteReponseController -- "1" FlashCardGame
 Initializable <|.. AffichageCartesController
 AffichageCartesController -- "1" FlashCardGame
+Initializable <|.. FinPartieController
+FinPartieController -- "1" FlashCardGame
 Initializable <|.. AffichagePilesController
 AffichagePilesController -- "1" FlashCardGame
 AffichagePilesController ..> AfficherPile
+AffichagePilesController -- "1" ModificationPileController
+ModificationPileController ..> AfficherPile
 Initializable <|.. CreationCarteController
 CreationCarteController -- "1" FlashCardGame
 Initializable <|.. CreationPileController
@@ -203,6 +255,12 @@ Initializable <|.. PageApprentissageWhatIsAskedController
 PageApprentissageWhatIsAskedController -- "1" FlashCardGame
 Initializable <|.. PageStatistiquesController
 PageStatistiquesController -- "1" FlashCardGame
+Initializable <|.. PageStatistiquePileController
+PageStatistiquePileController -- "1" FlashCardGame
+Initializable <|.. PageStatistiqueGlobalController
+PageStatistiqueGlobalController -- "1" FlashCardGame
 MenuController ..> ViewSwitcher
+CreationPileController ..> MutableDouble
+ModificationPileController ..> MutableDouble
 
 @enduml
