@@ -16,7 +16,7 @@
          <Label fx:id="resultat" alignment="CENTER" contentDisplay="CENTER" text="Résultat" />
          <HBox styleClass="card_bis" maxHeight="50" maxWidth="200" alignment="CENTER">
             <Label text="Score : "/>
-            <Label fx:id="percentage" style="-fx-font-weight: normal"/>
+            <Label fx:id="percentage"/>
          </HBox>
          <VBox alignment="CENTER">
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
