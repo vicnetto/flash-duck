@@ -17,7 +17,7 @@
    <ScrollPane>
    <VBox alignment="CENTER" prefHeight="570" prefWidth="780.0" style="-fx-padding: 30" BorderPane.alignment="CENTER">
       <VBox>
-         <Label text="Question">
+         <Label text="Question" styleClass="text">
             <font>
                <Font size="20.0" />
             </font>
@@ -43,21 +43,21 @@
                </Label>
                <HBox fx:id="hBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                     <Button fx:id="button_image_question" onAction="#ajouterImageQuestion">
+                     <Button fx:id="button_image_question" >
                         <graphic>
                            <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
                               <Image url="@../images/gallery_logo.png" />
                            </ImageView>
                         </graphic>
                      </Button>
-                     <Button fx:id="button_video_question" onAction="#ajouterVideoQuestion">
+                     <Button fx:id="button_video_question" >
                         <graphic>
                            <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
                               <Image url="@../images/video_logo.png" />
                            </ImageView>
                         </graphic>
                      </Button>
-                     <Button fx:id="button_audio_question" onAction="#ajouterAudioQuestion">
+                     <Button fx:id="button_audio_question" >
                         <graphic>
                            <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
                               <Image url="@../images/music_logo.png" />
@@ -103,21 +103,21 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="button_image_reponse" onAction="#ajouterImageReponse">
+                  <Button fx:id="button_image_reponse" >
                      <graphic>
                         <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
                            <Image url="@../images/gallery_logo.png" />
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="button_video_reponse" onAction="#ajouterVideoReponse">
+                  <Button fx:id="button_video_reponse" >
                      <graphic>
                         <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
                            <Image url="@../images/video_logo.png" />
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="button_audio_reponse" onAction="#ajouterAudioReponse">
+                  <Button fx:id="button_audio_reponse" >
                      <graphic>
                         <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
                            <Image url="@../images/music_logo.png" />

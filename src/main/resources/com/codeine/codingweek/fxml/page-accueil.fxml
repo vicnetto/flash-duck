@@ -25,7 +25,7 @@
 
     <HBox alignment="CENTER" prefHeight="400">
         <HBox alignment="CENTER" prefHeight="300" prefWidth="400">
-            <Button fx:id="button_creation" alignment="TOP_CENTER" contentDisplay="BOTTOM" graphicTextGap="80.0" onAction="#creation" prefHeight="400" prefWidth="300" styleClass="card" text="Création">
+            <Button id="creation" fx:id="button_creation" alignment="TOP_CENTER" contentDisplay="BOTTOM" graphicTextGap="80.0" onAction="#creation" prefHeight="400" prefWidth="300" styleClass="card" text="Création">
             <graphic>
                <ImageView fitHeight="200" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
                    <Image url="@../images/learning_logo.png" />
@@ -34,7 +34,7 @@
             </Button>
         </HBox>
         <HBox alignment="CENTER" prefHeight="300" prefWidth="400">
-            <Button fx:id="button_apprentissage" alignment="TOP_CENTER" contentDisplay="BOTTOM" graphicTextGap="80.0" onAction="#apprentissage" prefHeight="400" prefWidth="300" styleClass="card" text="Apprentissage">
+            <Button id="apprentissage" fx:id="button_apprentissage" alignment="TOP_CENTER" contentDisplay="BOTTOM" graphicTextGap="80.0" onAction="#apprentissage" prefHeight="400" prefWidth="300" styleClass="card" text="Apprentissage">
             <graphic>
                <ImageView fitHeight="193.0" fitWidth="230.0" preserveRatio="true">
                   <image>
