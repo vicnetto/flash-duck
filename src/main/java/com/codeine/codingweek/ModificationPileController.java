@@ -63,6 +63,7 @@ public class ModificationPileController implements Initializable {
             list.setOnMouseClicked(eventlist -> {
                 if (list.getSelectionModel().getSelectedItem() != null) 
                     textarea_c.setText(list.getSelectionModel().getSelectedItem().getText()) ;
+                button_valider.setDisable(!isValidForm());
                 popup.hide() ;
             });
 
@@ -92,6 +93,7 @@ public class ModificationPileController implements Initializable {
 
                         textarea_c.insertText(caretPosition - 1, option.substring(text.length()));
                         textarea_c.setText(textarea_c.getText().replaceAll("\t", ""));
+                        button_valider.setDisable(!isValidForm());
                         textarea_c.positionCaret(textarea_c.getLength());
                         break;
 
@@ -112,6 +114,7 @@ public class ModificationPileController implements Initializable {
                 list.setOnMouseClicked(eventlist -> {
                     if (list.getSelectionModel().getSelectedItem() != null) 
                         textarea_c.setText(list.getSelectionModel().getSelectedItem().getText()) ;
+                    button_valider.setDisable(!isValidForm());
                     popup.hide() ;
                 });
 

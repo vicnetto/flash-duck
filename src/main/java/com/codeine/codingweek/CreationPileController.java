@@ -1,15 +1,7 @@
 package com.codeine.codingweek;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
-import java.util.concurrent.atomic.AtomicLong;
-
 import com.codeine.codingweek.model.FlashCardGame;
 import com.codeine.codingweek.model.Pile;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,6 +11,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Popup;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class CreationPileController implements Initializable {
 
@@ -67,6 +65,7 @@ public class CreationPileController implements Initializable {
             list.setOnMouseClicked(eventlist -> {
                 if (list.getSelectionModel().getSelectedItem() != null) 
                     textarea_c.setText(list.getSelectionModel().getSelectedItem().getText()) ;
+                button_valider.setDisable(!isValidForm());
                 popup.hide() ;
             });
 
@@ -116,6 +115,7 @@ public class CreationPileController implements Initializable {
                 list.setOnMouseClicked(eventlist -> {
                     if (list.getSelectionModel().getSelectedItem() != null) 
                         textarea_c.setText(list.getSelectionModel().getSelectedItem().getText()) ;
+                    button_valider.setDisable(!isValidForm());
                     popup.hide() ;
                 });
 
@@ -137,7 +137,12 @@ public class CreationPileController implements Initializable {
         textarea_c.setOnKeyReleased(event -> {
             button_valider.setDisable(!isValidForm());
         });
-        
+//        textarea_t.setOnMouseClicked(event -> {
+//            button_valider.setDisable(!isValidForm());
+//        });
+//        textarea_c.setOnMouseClicked(event -> {
+//            button_valider.setDisable(!isValidForm());
+//        });
     }
 
     private List<String> getAutocompleteOptions() {
