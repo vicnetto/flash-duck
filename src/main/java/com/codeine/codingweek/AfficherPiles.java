@@ -1,12 +1,13 @@
 package com.codeine.codingweek;
 
 import com.codeine.codingweek.model.FlashCardGame;
+import com.codeine.codingweek.model.Pile;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-
 import java.util.function.IntConsumer;
 
 public class AfficherPiles {
@@ -14,6 +15,13 @@ public class AfficherPiles {
     public static final int MAX_BY_LINE = 4;
 
     public static void afficherToutesLesPiles(FlashCardGame fcg, GridPane gridPiles, IntConsumer goToPile) {
+
+        // Trie des piles par thème
+
+        fcg.sort() ;
+
+        // Affichage
+
         int line;
         int column = -1;
 

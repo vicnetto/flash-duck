@@ -4,6 +4,7 @@ import com.codeine.codingweek.PatternStrategyQuestions.ApprentissageMethod;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -17,7 +18,6 @@ public class FlashCardGame {
     // APPRENTISSAGE
     private ArrayList<ApprentissageMethod> currentApprentissageList;
     private int currentIndexApprentissageList;
-    private boolean shuffle;
 
     public FlashCardGame() {
         lesPiles = new ArrayList<Pile>();
@@ -111,6 +111,10 @@ public class FlashCardGame {
     }
     public Pile getPileCurrentPile() {
         return this.getLesPiles().get(this.getCurrentPile());
+    }
+
+    public void sort() {
+        Collections.sort(this.getLesPiles()) ;
     }
 
 }
