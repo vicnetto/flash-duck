@@ -155,9 +155,9 @@ public class AffichageCartesController implements Initializable {
             }
         }
         JFileChooser chooser = new JFileChooser();
-//        chooser.setDialogTitle("Sélectionnez un emplacement");
-//        chooser.setCurrentDirectory(new File(fcg.getLAST_FOLDER()));
-//        chooser.setFileFilter(new FileNameExtensionFilter("JSON", "json"));
+        chooser.setDialogTitle("Sélectionnez un emplacement");
+        chooser.setCurrentDirectory(new File(fcg.getLAST_FOLDER()));
+        chooser.setFileFilter(new FileNameExtensionFilter("JSON", "json"));
         int dialog = chooser.showSaveDialog(null);
         if (dialog == JFileChooser.APPROVE_OPTION) {
             try {
