@@ -11,15 +11,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.ModificationCarteController">
-    <top>
+<VBox fx:id="vBox_principale" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.ModificationCarteController">
         <fx:include source="menu.fxml" />
-        </top>
-    <center>
         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-            <children>
                 <VBox>
-                    <children>
                         <Label styleClass="text" text="Question">
                             <font>
                                 <Font size="20.0" />
@@ -33,9 +28,50 @@
                                 <Insets top="10.0" />
                             </VBox.margin>
                         </TextArea>
+                </VBox>
+                <VBox alignment="CENTER">
+                <VBox layoutX="10.0" layoutY="275.0">
+                    <children>
+                        <Label text="Ajouter un contenu multimédia">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <HBox fx:id="hBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Button fx:id="button_image_question">
+                                    <graphic>
+                                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@../images/gallery_logo.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="button_video_question">
+                                    <graphic>
+                                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@../images/video_logo.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="button_audio_question">
+                                    <graphic>
+                                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@../images/music_logo.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </HBox>
                     </children>
                 </VBox>
-                <VBox layoutX="10.0" layoutY="275.0">
+                </VBox>
+            <VBox>
                     <children>
                         <Label styleClass="text" text="Réponse">
                             <font>
@@ -55,36 +91,40 @@
                         <Insets top="30.0" />
                     </VBox.margin>
                 </VBox>
+                <VBox alignment="CENTER">
                 <VBox layoutX="10.0" layoutY="310.0">
                     <children>
                         <Label text="Ajouter un contenu multimédia">
                             <font>
                                 <Font size="20.0" />
                             </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
                         </Label>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                        <HBox fx:id="hBox_reponse" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/video_logo.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets right="30.0" />
-                           </HBox.margin></ImageView>
-                                <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/gallery_logo.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets right="20.0" />
-                           </HBox.margin></ImageView>
-                                <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/music_logo.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets right="30.0" />
-                           </HBox.margin></ImageView>
+                                <Button fx:id="button_image_reponse">
+                                    <graphic>
+                                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@../images/gallery_logo.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="button_video_reponse">
+                                    <graphic>
+                                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@../images/video_logo.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="button_audio_reponse">
+                                    <graphic>
+                                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@../images/music_logo.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
                             </children>
                             <VBox.margin>
                                 <Insets top="10.0" />
@@ -105,7 +145,7 @@
                                 <Font size="18.0" />
                             </font>
                         </Button>
-                        <Button fx:id="button_valider" mnemonicParsing="false" onAction="#modifierCarte" styleClass="bottom_button" text="Modifier">
+                        <Button fx:id="button_valider" mnemonicParsing="false"  onAction="#modifierCarte" styleClass="bottom_button" text="Modifier">
                             <font>
                                 <Font size="18.0" />
                             </font>
@@ -115,10 +155,6 @@
                         <Insets top="30.0" />
                     </VBox.margin>
                 </HBox>
-            </children>
+            </VBox>
         </VBox>
-    </center>
-    <padding>
-        <Insets left="30.0" right="30.0" />
-    </padding>
-</BorderPane>
+</VBox>
