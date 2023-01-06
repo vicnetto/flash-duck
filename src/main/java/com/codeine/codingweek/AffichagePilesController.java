@@ -56,6 +56,7 @@ public class AffichagePilesController implements Initializable {
 
     public void importPile() throws ClassNotFoundException {
         FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(new File(fcg.getLAST_FOLDER()));
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
         File selectedFile = fileChooser.showOpenDialog(null);
 
@@ -64,8 +65,15 @@ public class AffichagePilesController implements Initializable {
             return;
         }
 
+        fcg.setLAST_FOLDER(selectedFile.getParent());
         JsonController jsonController = new JsonController(selectedFile.getAbsolutePath());
         Pile newPile = jsonController.getPile();
+
+        if (newPile.getName() == null || newPile.getCards() == null || newPile.getCategory() == null) {
+            System.out.println("Fichier invalide.");
+            return;
+        }
+
         fcg.addPile(newPile);
 
         IntConsumer goToPile = integer -> {

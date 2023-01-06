@@ -150,7 +150,7 @@
 
 .question_response {
     -fx-font-weight: bold;
-    -fx-background-color: #ffd064;
+    -fx-text-fill: #d68301;
 }
 
 .text_area_edit {

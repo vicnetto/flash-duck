@@ -4,10 +4,13 @@ import com.codeine.codingweek.PatternStrategyQuestions.ApprentissageMethod;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
 public class FlashCardGame {
+
+    private String LAST_FOLDER = System.getProperty("user.home");
 
     private ArrayList<Pile> lesPiles;
     private int currentPile = 0;
@@ -17,7 +20,6 @@ public class FlashCardGame {
     // APPRENTISSAGE
     private ArrayList<ApprentissageMethod> currentApprentissageList;
     private int currentIndexApprentissageList;
-    private boolean shuffle;
 
     public FlashCardGame() {
         lesPiles = new ArrayList<Pile>();
@@ -113,5 +115,16 @@ public class FlashCardGame {
         return this.getLesPiles().get(this.getCurrentPile());
     }
 
+    public void sort() {
+        Collections.sort(this.getLesPiles()) ;
+    }
+
+    public String getLAST_FOLDER() {
+        return LAST_FOLDER;
+    }
+
+    public void setLAST_FOLDER(String LAST_FOLDER) {
+        this.LAST_FOLDER = LAST_FOLDER;
+    }
 }
 

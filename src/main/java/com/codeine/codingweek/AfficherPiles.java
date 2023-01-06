@@ -1,6 +1,8 @@
 package com.codeine.codingweek;
 
 import com.codeine.codingweek.model.FlashCardGame;
+import com.codeine.codingweek.model.Pile;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
@@ -20,6 +22,13 @@ public class AfficherPiles {
     public static final int MAX_BY_LINE = 4;
 
     public static void afficherToutesLesPiles(FlashCardGame fcg, GridPane gridPiles, IntConsumer goToPile) throws ClassNotFoundException {
+
+        // Trie des piles par thème
+
+        fcg.sort() ;
+
+        // Affichage
+
         int line;
         int column = -1;
 
@@ -46,7 +55,7 @@ public class AfficherPiles {
             vb.setBackground(new Background(bimg));
 
             Label nom = new Label(fcg.getLesPiles().get(i).getName());
-            nom.setStyle("-fx-text-fill: white");
+            nom.setStyle("-fx-text-fill: #000000");
             vb.getChildren().add(nom);
 
             int ii = i;

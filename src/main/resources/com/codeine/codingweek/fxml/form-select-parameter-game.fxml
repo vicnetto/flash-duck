@@ -16,10 +16,10 @@
    <center>
 
       <VBox>
-         <HBox alignment="CENTER" prefHeight="70">
+         <HBox alignment="CENTER" prefHeight="40">
             <Label text="Paramètres de la partie" styleClass="text"/>
          </HBox>
-         <HBox alignment="CENTER" spacing="50.0" prefHeight="450" BorderPane.alignment="CENTER" style="-fx-background-color: #ffffff">
+         <HBox alignment="CENTER" spacing="50.0" prefHeight="400" BorderPane.alignment="CENTER" style="-fx-background-color: #ffffff">
             <children>
              <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" graphicTextGap="80.0" mnemonicParsing="false" onAction="#goToGameWithQuestions" prefHeight="350" prefWidth="300" styleClass="card" text="Afficher les questions">
                <graphic>
@@ -41,12 +41,12 @@
             </Button>
          </children>
       </HBox>
-          <HBox alignment="CENTER" prefHeight="50" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER" style="-fx-background-color: #ffffff">
+          <HBox alignment="CENTER" prefHeight="50" prefWidth="200.0" BorderPane.alignment="CENTER" style="-fx-background-color: #ffffff">
               <children>
                   <CheckBox mnemonicParsing="false" text="Mélanger" fx:id="melangeBox"/>
               </children>
           </HBox>
-         <HBox alignment="CENTER" prefHeight="100">
+         <HBox alignment="CENTER" prefHeight="90">
             <Button text="Retour" styleClass="bottom_button" alignment="CENTER" onAction="#retour"/>
          </HBox>
       </VBox>

@@ -131,10 +131,10 @@ public class AffichageCartesController implements Initializable {
 
         for (int j = 0; j < this.vBoxCartes.getChildren().size(); j++) {
             HBox hb = (HBox) this.vBoxCartes.getChildren().get(j);
-            Button suppr = (Button) ((VBox) hb.getChildren().get(1)).getChildren().get(0);
+            Button suppr = (Button) ((VBox) hb.getChildren().get(1)).getChildren().get(1);
             int copieJ = j;
             suppr.setOnMouseClicked((e) -> supprimerCarte(copieJ));
-            Button modif = (Button) ((VBox) hb.getChildren().get(1)).getChildren().get(1);
+            Button modif = (Button) ((VBox) hb.getChildren().get(1)).getChildren().get(0);
             modif.setOnMouseClicked((e) ->{
                 try {
                     goToModificationFormCarte(copieJ);
@@ -156,13 +156,14 @@ public class AffichageCartesController implements Initializable {
         }
         JFileChooser chooser = new JFileChooser();
         chooser.setDialogTitle("Sélectionnez un emplacement");
-        chooser.setCurrentDirectory(new File("/"));
+        chooser.setCurrentDirectory(new File(fcg.getLAST_FOLDER()));
         chooser.setFileFilter(new FileNameExtensionFilter("JSON", "json"));
         int dialog = chooser.showSaveDialog(null);
         if (dialog == JFileChooser.APPROVE_OPTION) {
             try {
                 JsonController jsonController = new JsonController(chooser.getSelectedFile().toString() + ".json");
                 jsonController.writeNewPile(this.fcg.getLesPiles().get(this.fcg.getCurrentPile()));
+                fcg.setLAST_FOLDER(chooser.getSelectedFile().getParent());
             } catch (Exception ex) {
                 ex.printStackTrace();
             }

@@ -12,17 +12,17 @@
          <HBox spacing="50" alignment="CENTER" maxHeight="150" style="-fx-padding: 0 0 30 0">
             <HBox styleClass="card_bis" maxHeight="50">
                <Label text="Numéro: "/>
-               <Label id="question" style="-fx-font-weight: normal"/>
+               <Label id="question"/>
             </HBox>
             <HBox styleClass="card_bis" maxHeight="50">
                <Label text="Temps réstant: "/>
-               <Label fx:id="compteurLabel" style="-fx-font-weight: normal"/>
+               <Label fx:id="compteurLabel"/>
             </HBox>
          </HBox>
 
          <VBox prefHeight="330" alignment="CENTER" spacing="30" style="-fx-padding: 0 40 0 40">
             <VBox styleClass="card_bis" alignment="CENTER" prefHeight="150" spacing="20">
-               <Label text="Question)" prefHeight="50" styleClass="question_response"/>
+               <Label text="Question" prefHeight="50" styleClass="question_response"/>
                <Label id="asked" prefHeight="50"/>
                <Text id="hint" fx:id="hint" strokeType="OUTSIDE" strokeWidth="0.0" text="Hint">
                   <font>
@@ -31,8 +31,8 @@
                </Text>
             </VBox>
              <VBox minHeight="150" maxHeight="150" styleClass="card_bis" alignment="CENTER" spacing="20" visible="false">
-                 <Label text="Réponse)" prefHeight="50" styleClass="question_response"/>
-                 <Label id="reponse" prefHeight="50" styleClass="text"/>
+                 <Label text="Réponse" prefHeight="50" styleClass="question_response"/>
+                 <Label id="reponse" prefHeight="50"/>
                  <VBox minHeight="30" maxHeight="30"/>
              </VBox>
          </VBox>

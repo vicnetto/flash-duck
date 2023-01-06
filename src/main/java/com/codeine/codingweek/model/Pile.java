@@ -2,7 +2,7 @@ package com.codeine.codingweek.model;
 
 import java.util.ArrayList;
 
-public class Pile {
+public class Pile implements Comparable<Pile> {
 
     private String category_name ; // Nom de la catégorie
     private String name ;
@@ -78,4 +78,10 @@ public class Pile {
     public void addScore(float score) {
         this.scores.add(score);
     }
+
+    @Override
+    public int compareTo(Pile other) {
+        return this.category_name.compareTo(other.getCategory()) ;
+    }
+
 }
