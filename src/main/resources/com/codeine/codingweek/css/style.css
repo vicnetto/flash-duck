@@ -170,7 +170,6 @@
 
 .pile_show, .pile_show_grey {
     -fx-border-color: black;
-    -fx-border-radius: 5;
     -fx-margin-bottom: 20;
     -fx-border-radius: 5;
     /*-fx-background-color: #f3f6dd;*/
@@ -209,4 +208,13 @@
 
 .check-box:selected .mark {
   visibility: visible;
+}
+
+.vbox_reponse {
+
+  -fx-padding: 0 40 0 40 ;
+  -fx-background-color: #f3f6dd ;
+  -fx-border-radius: 5 ;
+  -fx-border-width: 5px ;
+
 }

@@ -58,6 +58,7 @@ public class AffichageCarteReponseController implements Initializable {
     }
 
     public void iDidntKnow(ActionEvent actionEvent) throws IOException {
+        
         copyCurrentApprentissageToEndList();
 
         ArrayList<ApprentissageMethod> lesQuestionsPosees = this.fcg.getCurrentApprentissageList() ;

@@ -56,6 +56,7 @@ public class AfficherPiles {
 
             Label nom = new Label(fcg.getLesPiles().get(i).getName());
             nom.setStyle("-fx-text-fill: #000000");
+            nom.setWrapText(true) ;
             vb.getChildren().add(nom);
 
             int ii = i;

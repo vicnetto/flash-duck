@@ -41,6 +41,13 @@ public class Main extends Application {
         maPile.setScores(scores) ;
         fcg.addPile(maPile) ;
 
+        maPile = new Pile("Histoire", "Histoire de France");
+        maPile.addCarte(new Card("Qu'elle est la date de la mort de Napoléon Ier ?", "5 mai 1821")) ;
+        scores = new ArrayList<Float>() ;
+        scores.add((float) 42.0) ;
+        maPile.setScores(scores) ;
+        fcg.addPile(maPile) ;
+
         // Scènes
 
         ViewSwitcher.setScene(scene) ;
