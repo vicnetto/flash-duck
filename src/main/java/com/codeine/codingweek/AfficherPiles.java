@@ -79,7 +79,9 @@ public class AfficherPiles {
             if (fcg.getLesPiles().get(i).getCards().isEmpty()) {
                 vb.getStyleClass().add("pile_show_grey");
                 Label innerLabel = (Label) vb.getChildren().get(0);
-                innerLabel.setStyle("-fx-text-fill: #9f9f9f");
+                String text = innerLabel.getText();
+                text = text + " (vide)";
+                innerLabel.setText(text);
                 vb.setOnMouseClicked(e -> {});
             }
         }
