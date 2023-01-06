@@ -31,6 +31,7 @@ class TestAccueil {
         ViewSwitcher.controllerFactory(loader);
         mainRoot = FXMLLoader.load(Main.class.getResource("fxml/page-accueil.fxml"));
         Scene scene = new Scene(mainRoot);
+        scene.getStylesheets().add(Main.class.getResource("css/style.css").toExternalForm()) ;
         stage.setScene(scene);
 
         ViewSwitcher.setScene(scene) ;
