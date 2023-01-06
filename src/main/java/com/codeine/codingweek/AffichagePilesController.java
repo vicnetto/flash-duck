@@ -64,6 +64,12 @@ public class AffichagePilesController implements Initializable {
         fcg.setLAST_FOLDER(selectedFile.getParent());
         JsonController jsonController = new JsonController(selectedFile.getAbsolutePath());
         Pile newPile = jsonController.getPile();
+
+        if (newPile.getName() == null || newPile.getCards() == null || newPile.getCategory() == null) {
+            System.out.println("Fichier invalide.");
+            return;
+        }
+
         fcg.addPile(newPile);
 
         IntConsumer goToPile = integer -> {
