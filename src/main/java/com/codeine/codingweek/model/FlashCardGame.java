@@ -9,6 +9,8 @@ import java.util.List;
 
 public class FlashCardGame {
 
+    private String LAST_FOLDER = System.getProperty("user.home");
+
     private ArrayList<Pile> lesPiles;
     private int currentPile = 0;
     private int currentCarte = 0;
@@ -113,4 +115,11 @@ public class FlashCardGame {
         return this.getLesPiles().get(this.getCurrentPile());
     }
 
+    public String getLAST_FOLDER() {
+        return LAST_FOLDER;
+    }
+
+    public void setLAST_FOLDER(String LAST_FOLDER) {
+        this.LAST_FOLDER = LAST_FOLDER;
+    }
 }
