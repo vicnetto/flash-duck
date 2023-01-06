@@ -21,3 +21,9 @@ Dans le cas d’un autre système d'exploitation que Linux, la ligne suivante do
 ```shell
 java --module-path $CHEMIN_DE_LA_LIB_JAVAFX --add-modules=javafx.controls,javafx.fxml -jar $CHEMIN_DU_THIN_JAR
 ```
+
+## Lancement des tests
+
+Des tests de l'interface ont été implémentés. Ils est possible de l'exécuter en ouvrant le projet avec un IDE tel IntelliJ IDEA.
+
+![img_tests.png](img_tests.png)
