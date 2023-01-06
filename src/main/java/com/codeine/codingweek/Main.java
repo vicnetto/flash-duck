@@ -22,10 +22,12 @@ public class Main extends Application {
         FlashCardGame fcg = new FlashCardGame();
 
         // DONNEES DE TEST
-        Pile maPile = new Pile("Histoire","Histoire");
-        maPile.addCarte(new Card("Année de la révolution française", "1789"));
-        maPile.addCarte(new Card("Dans quel pays est né Nikos Aliagas ?", "France (eh ça t'en bouche un coin)"));
-        maPile.addCarte(new Card("Qui n'aime pas la tarte aux pommes ?", "Les racistes"));
+        Pile maPile = new Pile("Histoire","Première Guerre Mondiale");
+        maPile.addCarte(new Card("Année de début de la Première Guerre Mondiale", "1914"));
+        maPile.addCarte(new Card("Année de fin de la Première Guerre Mondiale", "1918"));
+        maPile.addCarte(new Card("Quelles étaient les forces impliquées dans le camps de l'Entente ?", "France, Royaume-Uni, Russie, États-Unis"));
+        maPile.addCarte(new Card("Quelles étaient les forces impliquées dans le camps de l'Axe ?", "Allemagne, Autriche-Hongrie, Italie"));
+        maPile.addCarte(new Card("Quel camps a remporté ce conflit ?", "L'Entente"));
         ArrayList<Float> scores = new ArrayList<Float>();
         scores.add((float) 21.0);
         scores.add((float) 55.0);
@@ -36,16 +38,28 @@ public class Main extends Application {
 
         maPile = new Pile("Gastronomie", "France");
         maPile.addCarte(new Card("Qu'elle est la spécialité de la Picardie ?", "La ficelle picarde")) ;
-        scores = new ArrayList<Float>() ;
-        scores.add((float) 98.0) ;
-        maPile.setScores(scores) ;
+        maPile.addCarte(new Card("De quoi est composé le Potjevleesch ?", "De la viande froide en gelée")) ;
+        maPile.addCarte(new Card("Quel est le plat préféré des français en 2022 ?", "Le magret de canard")) ;
+        maPile.addCarte(new Card("Viande utilisée dans la blanquette de veau ?", "Le veau"));
+        scores = new ArrayList<Float>();
+        scores.add((float) 33.0);
+        scores.add((float) 15.0);
+        scores.add((float) 50.0);
+        scores.add((float) 65.0);
+        maPile.setScores(scores);
         fcg.addPile(maPile) ;
 
-        maPile = new Pile("Histoire", "Histoire de France");
-        maPile.addCarte(new Card("Qu'elle est la date de la mort de Napoléon Ier ?", "5 mai 1821")) ;
-        scores = new ArrayList<Float>() ;
-        scores.add((float) 42.0) ;
-        maPile.setScores(scores) ;
+        maPile = new Pile("Sport", "Tournois de tennis");
+        maPile.addCarte(new Card("Quel est le plus grand tournoi de tennis du monde ?", "L'Open de France (Rolland-Garros)")) ;
+        maPile.addCarte(new Card("Qui est le joueur de tennis le plus titré de l'histoire ?", "Roger Federer")) ;
+        maPile.addCarte(new Card("Quel est le tournoi de tennis le plus ancien du monde ?", "L'Open de Grande-Bretagne (Wimbledon)")) ;
+        maPile.addCarte(new Card("Quel est le tournoi de tennis le plus prestigieux aux États-Unis ?", "L'US Open")) ;
+        scores = new ArrayList<Float>();
+        scores.add((float) 17.0);
+        scores.add((float) 74.0);
+        scores.add((float) 86.0);
+        scores.add((float) 95.0);
+        maPile.setScores(scores);
         fcg.addPile(maPile) ;
 
         // Scènes
