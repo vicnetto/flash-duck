@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class FinPartieController implements Initializable {
@@ -19,6 +20,7 @@ public class FinPartieController implements Initializable {
     private Label resultat;
 
     private FlashCardGame fcg;
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public FinPartieController(FlashCardGame fcg) {
         this.fcg = fcg;
@@ -32,7 +34,7 @@ public class FinPartieController implements Initializable {
         float score = ((float) 100.0*(div));
 
         resultat.setText(nbErreurs + " erreurs parmis les " + nbQuestions + " questions");
-        percentage.setText(score + "%");
+        percentage.setText(df.format(score) + "%");
     }
 
     @FXML
