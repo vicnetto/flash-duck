@@ -33,7 +33,6 @@ public class TestApprentissageAccueil {
         ViewSwitcher.controllerFactory(loader);
         mainRoot = FXMLLoader.load(Main.class.getResource("fxml/page-accueil.fxml"));
         mainScene = new Scene(mainRoot);
-        mainScene.getStylesheets().add(Main.class.getResource("css/style.css").toExternalForm()) ;
         stage.setScene(mainScene);
 
         ViewSwitcher.setScene(mainScene) ;
@@ -46,7 +45,7 @@ public class TestApprentissageAccueil {
 
     @Test
     void shouldContainTwoStacks(FxRobot robot) {
-        robot.clickOn("#apprentissage");
+        robot.clickOn("#apprendre");
         VBox vBox = (VBox) mainScene.getRoot();
         VBox firstElement = (VBox) ((GridPane) ((ScrollPane) vBox.getChildren().get(2)).getContent()).getChildren().get(0);
         VBox secondElement = (VBox) ((GridPane) ((ScrollPane) vBox.getChildren().get(2)).getContent()).getChildren().get(1);
@@ -57,8 +56,8 @@ public class TestApprentissageAccueil {
 
     @Test
     void shouldContainReturnButton(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#apprentissage").queryAs(Button.class)).hasText("Apprentissage");
-        robot.clickOn("#apprentissage");
+        Assertions.assertThat(robot.lookup("#apprendre").queryAs(Button.class)).hasText("Apprentissage");
+        robot.clickOn("#apprendre");
 
         Assertions.assertThat(robot.lookup("#return").queryAs(Button.class)).hasText("Retour");
         robot.clickOn("#return");
@@ -66,10 +65,11 @@ public class TestApprentissageAccueil {
 
     @Test
     void shouldContainStatisticsButton(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#apprentissage").queryAs(Button.class)).hasText("Apprentissage");
-        robot.clickOn("#apprentissage");
+        Assertions.assertThat(robot.lookup("#apprendre").queryAs(Button.class)).hasText("Apprentissage");
+        robot.clickOn("#apprendre");
 
         Assertions.assertThat(robot.lookup("#statistics").queryAs(Button.class)).hasText("Statistiques");
         robot.clickOn("#statistics");
     }
+
 }

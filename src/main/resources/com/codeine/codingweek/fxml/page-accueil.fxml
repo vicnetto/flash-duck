@@ -34,7 +34,7 @@
             </Button>
         </HBox>
         <HBox alignment="CENTER" prefHeight="300" prefWidth="400">
-            <Button id="apprentissage" fx:id="button_apprentissage" alignment="TOP_CENTER" contentDisplay="BOTTOM" graphicTextGap="80.0" onAction="#apprentissage" prefHeight="400" prefWidth="300" styleClass="card" text="Apprentissage">
+            <Button id="apprendre" fx:id="button_apprentissage" alignment="TOP_CENTER" contentDisplay="BOTTOM" graphicTextGap="80.0" onAction="#apprentissage" prefHeight="400" prefWidth="300" styleClass="card" text="Apprentissage">
             <graphic>
                <ImageView fitHeight="193.0" fitWidth="230.0" preserveRatio="true">
                   <image>

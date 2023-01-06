@@ -34,7 +34,6 @@ public class TestApprentissageParam {
         ViewSwitcher.controllerFactory(loader);
         mainRoot = FXMLLoader.load(Main.class.getResource("fxml/page-accueil.fxml"));
         mainScene = new Scene(mainRoot);
-        mainScene.getStylesheets().add(Main.class.getResource("css/style.css").toExternalForm()) ;
         stage.setScene(mainScene);
 
         ViewSwitcher.setScene(mainScene) ;
@@ -47,8 +46,8 @@ public class TestApprentissageParam {
 
     @Test
     void shouldContainStartByQuestions(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#apprentissage").queryAs(Button.class)).hasText("Apprentissage");
-        robot.clickOn("#apprentissage");
+        Assertions.assertThat(robot.lookup("#apprendre").queryAs(Button.class)).hasText("Apprentissage");
+        robot.clickOn("#apprendre");
 
         VBox vBox = (VBox) mainScene.getRoot();
         VBox firstElement = (VBox) ((GridPane) ((ScrollPane) vBox.getChildren().get(2)).getContent()).getChildren().get(0);
@@ -63,8 +62,8 @@ public class TestApprentissageParam {
 
     @Test
     void shouldContainStartByAnswers(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#apprentissage").queryAs(Button.class)).hasText("Apprentissage");
-        robot.clickOn("#apprentissage");
+        Assertions.assertThat(robot.lookup("#apprendre").queryAs(Button.class)).hasText("Apprentissage");
+        robot.clickOn("#apprendre");
 
         VBox vBox = (VBox) mainScene.getRoot();
         VBox firstElement = (VBox) ((GridPane) ((ScrollPane) vBox.getChildren().get(2)).getContent()).getChildren().get(0);
@@ -79,8 +78,8 @@ public class TestApprentissageParam {
 
     @Test
     void shouldContainMixButton(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#apprentissage").queryAs(Button.class)).hasText("Apprentissage");
-        robot.clickOn("#apprentissage");
+        Assertions.assertThat(robot.lookup("#apprendre").queryAs(Button.class)).hasText("Apprentissage");
+        robot.clickOn("#apprendre");
 
         VBox vBox = (VBox) mainScene.getRoot();
         VBox firstElement = (VBox) ((GridPane) ((ScrollPane) vBox.getChildren().get(2)).getContent()).getChildren().get(0);
@@ -95,8 +94,8 @@ public class TestApprentissageParam {
 
     @Test
     void shouldContainReturnButton(FxRobot robot) {
-        Assertions.assertThat(robot.lookup("#apprentissage").queryAs(Button.class)).hasText("Apprentissage");
-        robot.clickOn("#apprentissage");
+        Assertions.assertThat(robot.lookup("#apprendre").queryAs(Button.class)).hasText("Apprentissage");
+        robot.clickOn("#apprendre");
 
         VBox vBox = (VBox) mainScene.getRoot();
         VBox firstElement = (VBox) ((GridPane) ((ScrollPane) vBox.getChildren().get(2)).getContent()).getChildren().get(0);

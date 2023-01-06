@@ -29,7 +29,6 @@ class TestMenu {
         ViewSwitcher.controllerFactory(loader);
         mainRoot = FXMLLoader.load(Main.class.getResource("fxml/page-accueil.fxml"));
         mainScene = new Scene(mainRoot);
-        mainScene.getStylesheets().add(Main.class.getResource("css/style.css").toExternalForm()) ;
         stage.setScene(mainScene);
 
         ViewSwitcher.setScene(mainScene) ;

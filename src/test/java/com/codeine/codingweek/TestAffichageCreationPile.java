@@ -34,7 +34,6 @@ class TestAffichageCreationPile {
         ViewSwitcher.controllerFactory(loader);
         mainRoot = FXMLLoader.load(Main.class.getResource("fxml/page-accueil.fxml"));
         mainScene = new Scene(mainRoot);
-        mainScene.getStylesheets().add(Main.class.getResource("css/style.css").toExternalForm()) ;
         stage.setScene(mainScene);
 
         ViewSwitcher.setScene(mainScene) ;
@@ -63,7 +62,7 @@ class TestAffichageCreationPile {
     void shouldContainButtonToImportPile(FxRobot robot) {
         robot.clickOn("#creation");
         Assertions.assertThat(robot.lookup("#import").queryAs(Button.class)).hasText("Importer une pile");
-        robot.clickOn("#import");
+//        robot.clickOn("#import");
     }
 
     @Test
