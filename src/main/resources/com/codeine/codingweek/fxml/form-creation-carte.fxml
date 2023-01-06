@@ -43,21 +43,21 @@
                </Label>
                <HBox fx:id="hBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                     <Button fx:id="button_image_question" onAction="#ajouterImage">
+                     <Button fx:id="button_image_question" onAction="#ajouterImageQuestion">
                         <graphic>
                            <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
                               <Image url="@../images/gallery_logo.png" />
                            </ImageView>
                         </graphic>
                      </Button>
-                     <Button fx:id="button_video_question" onAction="#ajouterVideo">
+                     <Button fx:id="button_video_question" onAction="#ajouterVideoQuestion">
                         <graphic>
                            <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
                               <Image url="@../images/video_logo.png" />
                            </ImageView>
                         </graphic>
                      </Button>
-                     <Button fx:id="button_audio_question" onAction="#ajouterAudio">
+                     <Button fx:id="button_audio_question" onAction="#ajouterAudioQuestion">
                         <graphic>
                            <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
                               <Image url="@../images/music_logo.png" />
