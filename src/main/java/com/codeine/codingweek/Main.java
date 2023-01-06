@@ -36,7 +36,7 @@ public class Main extends Application {
         maPile.setScores(scores);
         fcg.addPile(maPile);
 
-        maPile = new Pile("Gastronomie", "France");
+        maPile = new Pile("Gastronomie", "Gastronomie française");
         maPile.addCarte(new Card("Qu'elle est la spécialité de la Picardie ?", "La ficelle picarde")) ;
         maPile.addCarte(new Card("De quoi est composé le Potjevleesch ?", "De la viande froide en gelée")) ;
         maPile.addCarte(new Card("Quel est le plat préféré des français en 2022 ?", "Le magret de canard")) ;

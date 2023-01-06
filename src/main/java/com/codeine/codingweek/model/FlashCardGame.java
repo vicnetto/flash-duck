@@ -23,7 +23,7 @@ public class FlashCardGame {
 
     public FlashCardGame() {
         lesPiles = new ArrayList<Pile>();
-        categoriesImagePath.put("Histoire", "images/categ_bg_default.jpg");
+        categoriesImagePath.put("Histoire", "images/categ_bg_histoire.jpg");
         categoriesImagePath.put("Art", "images/categ_bg_art.jpg");
         categoriesImagePath.put("Musique", "images/categ_bg_music.jpg");
         categoriesImagePath.put("Cinéma", "images/categ_bg_cinema.jpg");
