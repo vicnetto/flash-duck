@@ -9,14 +9,17 @@
 <?import javafx.geometry.Insets?>
 <VBox alignment="CENTER" prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="CENTER"
       xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      style="-fx-background-color: #e7ecec"
       fx:controller="com.codeine.codingweek.PageStatistiquePileController">
+
     <fx:include source="menu.fxml"/>
-    <Label fx:id="nomPile" prefHeight="100" styleClass="text" text="Nom pile"/>
-    <HBox fx:id="containerGraph" alignment="CENTER" prefHeight="500.0" prefWidth="400.0" spacing="40.0"/>
-    <Button mnemonicParsing="false" text="Réinitialiser les statistiques" onAction="#resetStats"
-            styleClass="bottom_button">
-        <VBox.margin>
-            <Insets bottom="10.0"/>
-        </VBox.margin>
-    </Button>
+    <HBox alignment="CENTER" prefHeight="50">
+        <Label fx:id="nomPile"  styleClass="text" text="Nom pile"/>
+    </HBox>
+    <HBox fx:id="containerGraph" alignment="CENTER" minHeight="450.0" maxHeight="450" prefWidth="800.0" spacing="40.0" style="-fx-background-color : #ffffff"/>
+
+    <HBox alignment="CENTER" prefHeight="100" spacing="50" style="-fx-background-color: #e7ecec">
+        <Button alignment="CENTER" text="Retour" styleClass="bottom_button" onAction="#retour"/>
+        <Button alignment="CENTER" text="Réinitialiser les statistiques" onAction="#resetStats" styleClass="bottom_button"/>
+    </HBox>
 </VBox>

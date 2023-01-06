@@ -4,8 +4,18 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<VBox alignment="CENTER" prefHeight="400.0" BorderPane.alignment="CENTER" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageStatistiqueGlobalController">
+
+
+<?import javafx.scene.control.Button?>
+<VBox alignment="CENTER" style="-fx-background-color: #e7ecec" prefHeight="400.0" BorderPane.alignment="CENTER" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageStatistiqueGlobalController">
      <fx:include source="menu.fxml" />
-     <Label fx:id="global" text="Statistiques globales" prefHeight="100" styleClass="text" />
-      <HBox fx:id="containerGraph" alignment="CENTER" prefHeight="500.0" prefWidth="800.0" spacing="40.0" />
+
+    <HBox alignment="CENTER" prefHeight="50">
+        <Label fx:id="global" text="Statistiques globales"  styleClass="text" />
+    </HBox>
+    <HBox fx:id="containerGraph" alignment="CENTER" minHeight="450.0" maxHeight="450" prefWidth="800.0" style="-fx-background-color: #ffffff"/>
+
+    <HBox prefHeight="100" alignment="CENTER" spacing="50">
+        <Button text="Retour" onAction="#retour" styleClass="bottom_button"/>
+    </HBox>
 </VBox>

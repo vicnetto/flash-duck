@@ -59,7 +59,8 @@ public class AfficherPiles {
             vb.setBackground(new Background(bimg));
 
             Label nom = new Label(fcg.getLesPiles().get(i).getName());
-            nom.setStyle("-fx-text-fill: white");
+            nom.setStyle("-fx-text-fill: #ffffff");
+            nom.setWrapText(true) ;
             vb.getChildren().add(nom);
 
             int ii = i;

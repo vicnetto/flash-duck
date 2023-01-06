@@ -1,5 +1,6 @@
 package com.codeine.codingweek;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.OptionalDouble;
 import java.util.ResourceBundle;
@@ -67,6 +68,10 @@ public class PageStatistiqueGlobalController implements Initializable {
 
         containerGraph.getChildren().add(barChart) ;
 
+    }
+
+    public void retour() throws IOException {
+        ViewSwitcher.switchTo(View.STATISTIQUES);
     }
 
 }

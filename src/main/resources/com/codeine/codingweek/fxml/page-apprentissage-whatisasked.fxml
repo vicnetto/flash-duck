@@ -15,7 +15,7 @@
                <Label id="question"/>
             </HBox>
             <HBox styleClass="card_bis" maxHeight="50">
-               <Label text="Temps réstant: "/>
+               <Label text="Temps restant: "/>
                <Label fx:id="compteurLabel"/>
             </HBox>
          </HBox>

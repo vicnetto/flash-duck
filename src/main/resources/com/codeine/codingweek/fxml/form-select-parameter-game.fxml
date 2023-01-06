@@ -43,7 +43,7 @@
       </HBox>
           <HBox alignment="CENTER" prefHeight="50" prefWidth="200.0" BorderPane.alignment="CENTER" style="-fx-background-color: #ffffff">
               <children>
-                  <CheckBox mnemonicParsing="false" text="Mélanger" fx:id="melangeBox"/>
+                  <CheckBox mnemonicParsing="false" text="Mélanger" fx:id="melangeBox" styleClass="check-box" />
               </children>
           </HBox>
          <HBox alignment="CENTER" prefHeight="90">
