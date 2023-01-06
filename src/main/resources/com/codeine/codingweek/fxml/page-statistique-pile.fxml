@@ -9,13 +9,14 @@
 <?import javafx.geometry.Insets?>
 <VBox alignment="CENTER" prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="CENTER"
       xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      style="-fx-background-color: #ffffff"
+      style="-fx-background-color: #e7ecec"
       fx:controller="com.codeine.codingweek.PageStatistiquePileController">
+
     <fx:include source="menu.fxml"/>
-    <HBox alignment="CENTER" style="-fx-background-color: #e7ecec" prefHeight="50">
-    <Label fx:id="nomPile" prefHeight="100" styleClass="text" text="Nom pile"/>
+    <HBox alignment="CENTER" prefHeight="50">
+        <Label fx:id="nomPile"  styleClass="text" text="Nom pile"/>
     </HBox>
-    <HBox fx:id="containerGraph" alignment="CENTER" prefHeight="450.0" prefWidth="400.0" spacing="40.0" style="-fx-background : #ffffff"/>
+    <HBox fx:id="containerGraph" alignment="CENTER" minHeight="450.0" maxHeight="450" prefWidth="800.0" spacing="40.0" style="-fx-background-color : #ffffff"/>
 
     <HBox alignment="CENTER" prefHeight="100" spacing="50" style="-fx-background-color: #e7ecec">
         <Button alignment="CENTER" text="Retour" styleClass="bottom_button" onAction="#retour"/>
