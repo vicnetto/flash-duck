@@ -131,10 +131,10 @@ public class AffichageCartesController implements Initializable {
 
         for (int j = 0; j < this.vBoxCartes.getChildren().size(); j++) {
             HBox hb = (HBox) this.vBoxCartes.getChildren().get(j);
-            Button suppr = (Button) ((VBox) hb.getChildren().get(1)).getChildren().get(0);
+            Button suppr = (Button) ((VBox) hb.getChildren().get(1)).getChildren().get(1);
             int copieJ = j;
             suppr.setOnMouseClicked((e) -> supprimerCarte(copieJ));
-            Button modif = (Button) ((VBox) hb.getChildren().get(1)).getChildren().get(1);
+            Button modif = (Button) ((VBox) hb.getChildren().get(1)).getChildren().get(0);
             modif.setOnMouseClicked((e) ->{
                 try {
                     goToModificationFormCarte(copieJ);
