@@ -32,7 +32,11 @@ public class PageStatistiquesController implements Initializable {
             }
         };
 
-        AfficherPiles.afficherToutesLesPiles(fcg, gridPiles, goToPileStatistique);
+        try {
+            AfficherPiles.afficherToutesLesPiles(fcg, gridPiles, goToPileStatistique);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void goToPileStatistique(int numPile) throws IOException {

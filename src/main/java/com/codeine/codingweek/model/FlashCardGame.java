@@ -12,7 +12,7 @@ public class FlashCardGame {
     private ArrayList<Pile> lesPiles;
     private int currentPile = 0;
     private int currentCarte = 0;
-    private HashMap<String, Color> categoriesColor = new HashMap<String, Color>();
+    private HashMap<String, String> categoriesImagePath = new HashMap<String, String>();
 
     // APPRENTISSAGE
     private ArrayList<ApprentissageMethod> currentApprentissageList;
@@ -21,34 +21,34 @@ public class FlashCardGame {
 
     public FlashCardGame() {
         lesPiles = new ArrayList<Pile>();
-        categoriesColor.put("Histoire", new Color(203, 25, 231));
-        categoriesColor.put("Art", new Color(231, 221, 98));
-        categoriesColor.put("Musique", new Color(255, 0, 0));
-        categoriesColor.put("Cinéma", new Color(57, 76, 206));
-        categoriesColor.put("Gastronomie", new Color(173, 112, 67));
-        categoriesColor.put("Sport", new Color(128, 40, 40));
-        categoriesColor.put("Science", new Color(0, 255, 185));
-        categoriesColor.put("Littérature", new Color(22, 180, 24));
+        categoriesImagePath.put("Histoire", "images/categ_bg_default.jpg");
+        categoriesImagePath.put("Art", "images/categ_bg_art.jpg");
+        categoriesImagePath.put("Musique", "images/categ_bg_default.jpg");
+        categoriesImagePath.put("Cinéma", "images/categ_bg_default.jpg");
+        categoriesImagePath.put("Gastronomie", "images/categ_bg_default.jpg");
+        categoriesImagePath.put("Sport", "images/categ_bg_default.jpg");
+        categoriesImagePath.put("Science", "images/categ_bg_default.jpg");
+        categoriesImagePath.put("Littérature", "images/categ_bg_default.jpg");
     }
 
-    public void addCategorie(String nom, Color couleur) {
-        this.categoriesColor.put(nom, couleur);
+    public void addCategorie(String nom, String imagePath) {
+        this.categoriesImagePath.put(nom, imagePath);
     }
 
     public void removeCategorie(String nom) {
-        this.categoriesColor.remove(nom);
+        this.categoriesImagePath.remove(nom);
     }
 
     public List<String> getCategories() {
-        return new ArrayList<String>(categoriesColor.keySet());
+        return new ArrayList<String>(categoriesImagePath.keySet());
     }
 
     public ArrayList<Pile> getLesPiles() {
         return lesPiles;
     }
 
-    public HashMap<String, Color> getCategoriesColor() {
-        return categoriesColor;
+    public HashMap<String, String> getCategoriesImagePath() {
+        return categoriesImagePath;
     }
 
     public void setLesPiles(ArrayList<Pile> lesPiles) {
@@ -114,3 +114,4 @@ public class FlashCardGame {
     }
 
 }
+

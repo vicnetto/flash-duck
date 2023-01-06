@@ -34,7 +34,11 @@ public class AffichagePilesController implements Initializable {
             }
         };
 
-        AfficherPiles.afficherToutesLesPiles(fcg, gridPiles, goToPile);
+        try {
+            AfficherPiles.afficherToutesLesPiles(fcg, gridPiles, goToPile);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void goToPile(int i) throws IOException {
@@ -50,7 +54,7 @@ public class AffichagePilesController implements Initializable {
         ViewSwitcher.switchTo(View.ACCUEIL);
     }
 
-    public void importPile() {
+    public void importPile() throws ClassNotFoundException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JSON", "*.json"));
         File selectedFile = fileChooser.showOpenDialog(null);

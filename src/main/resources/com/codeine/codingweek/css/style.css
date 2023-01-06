@@ -172,19 +172,20 @@
     -fx-border-color: black;
     -fx-border-radius: 5;
     -fx-margin-bottom: 20;
-    -fx-background-color: #f3f6dd;
+    -fx-border-radius: 5;
+    /*-fx-background-color: #f3f6dd;*/
 }
 
 .pile_show_grey {
-    -fx-background-color: #b4b4b4;
+    /*-fx-background-color: #b4b4b4;*/
 }
 
 .pile_show:hover {
-    -fx-background-color: #ffd064
+    /*-fx-background-color: #ffd064*/
 }
 
 .pile_show_grey:hover {
-    -fx-background-color: #b4b4b4;
+    /*-fx-background-color: #b4b4b4;*/
 }
 
 

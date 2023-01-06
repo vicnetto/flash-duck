@@ -22,7 +22,7 @@ public class Main extends Application {
         FlashCardGame fcg = new FlashCardGame();
 
         // DONNEES DE TEST
-        Pile maPile = new Pile("Aucune catégorie","Histoire");
+        Pile maPile = new Pile("Histoire","Histoire");
         maPile.addCarte(new Card("Année de la révolution française", "1789"));
         maPile.addCarte(new Card("Dans quel pays est né Nikos Aliagas ?", "France (eh ça t'en bouche un coin)"));
         maPile.addCarte(new Card("Qui n'aime pas la tarte aux pommes ?", "Les racistes"));
