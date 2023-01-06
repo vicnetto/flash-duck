@@ -7,6 +7,7 @@ module com.codeine.codingweek {
     requires org.kordamp.bootstrapfx.core;
     requires com.google.gson;
     requires java.desktop;
+    requires javafx.media;
 
     opens com.codeine.codingweek to javafx.fxml, com.google.gson;
     exports com.codeine.codingweek;
