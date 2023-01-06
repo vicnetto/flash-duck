@@ -50,4 +50,8 @@ public class PageStatistiquesController implements Initializable {
         ViewSwitcher.switchTo(View.STATISTIQUES_PAGE_GLOBAL) ;
     }
 
+    public void retour() throws IOException {
+        ViewSwitcher.switchTo(View.APPRENTISSAGE_ACCUEIL);
+    }
+
 }

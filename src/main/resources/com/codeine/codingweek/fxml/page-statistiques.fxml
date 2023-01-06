@@ -4,15 +4,22 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.VBox?>
-<VBox prefHeight="600" prefWidth="800" style="-fx-background-color: #e7ecec" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageStatistiquesController">
+<?import javafx.scene.layout.HBox?>
 
+<?import javafx.scene.control.Label?>
+<VBox prefHeight="600" prefWidth="800" style="-fx-background-color: #e7ecec" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codeine.codingweek.PageStatistiquesController">
     <fx:include source="menu.fxml" />
-    <ScrollPane prefHeight="500" style="-fx-padding: 33">
+
+    <HBox alignment="CENTER" prefHeight="50">
+        <Label text="Menu Statistiques" styleClass="text"/>
+    </HBox>
+
+    <ScrollPane minHeight="450" maxHeight="450" style="-fx-padding: 33">
         <GridPane fx:id="gridPiles" hgap="40" vgap="30" alignment="CENTER" style="-fx-background: #e7ecec"/>
     </ScrollPane>
-    <VBox prefHeight="100" alignment="CENTER">
-        <Button text="Statistiques globales" onAction="#goToStatistiquesGlobales" styleClass="bottom_button">
-        </Button>
-    </VBox>
+    <HBox prefHeight="100" alignment="CENTER" spacing="50">
+        <Button text="Retour" onAction="#retour" styleClass="bottom_button"/>
+        <Button text="Statistiques globales" onAction="#goToStatistiquesGlobales" styleClass="bottom_button"/>
+    </HBox>
 
 </VBox>
