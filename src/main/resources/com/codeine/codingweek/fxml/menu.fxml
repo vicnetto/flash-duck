@@ -13,17 +13,17 @@
         <MenuBar styleClass="menu">
             <Menu>
                 <graphic>
-                    <Button fx:id="create" text="Création" style="-fx-background-color: transparent; -fx-font-size: 11; -fx-font-weight: bold"/>
+                    <Button id="menuCreate" fx:id="create" text="Création" style="-fx-background-color: transparent; -fx-font-size: 11; -fx-font-weight: bold"/>
                 </graphic>
             </Menu>
             <Menu>
                 <graphic>
-                    <Button fx:id="principal" text="Principal" style="-fx-background-color: transparent; -fx-font-size: 11; -fx-font-weight: bold"/>
+                    <Button id="menuPrincipal" fx:id="principal" text="Principal" style="-fx-background-color: transparent; -fx-font-size: 11; -fx-font-weight: bold"/>
                 </graphic>
             </Menu>
             <Menu>
                 <graphic>
-                    <Button fx:id="learn" text="Apprentissage" style="-fx-background-color: transparent; -fx-font-size: 11; -fx-font-weight: bold"/>
+                    <Button id="menuLearn" fx:id="learn" text="Apprentissage" style="-fx-background-color: transparent; -fx-font-size: 11; -fx-font-weight: bold"/>
                 </graphic>
             </Menu>
         </MenuBar>

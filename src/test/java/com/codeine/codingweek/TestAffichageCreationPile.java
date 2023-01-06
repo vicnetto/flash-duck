@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,9 @@ import org.testfx.framework.junit5.Start;
 import java.io.IOException;
 
 @ExtendWith(ApplicationExtension.class)
-public class TestAffichageCreationPile {
+class TestAffichageCreationPile {
+
+    private Scene mainScene;
 
     private VBox mainRoot;
 
@@ -30,10 +33,10 @@ public class TestAffichageCreationPile {
         FXMLLoader loader = new FXMLLoader();
         ViewSwitcher.controllerFactory(loader);
         mainRoot = FXMLLoader.load(Main.class.getResource("fxml/page-accueil.fxml"));
-        Scene scene = new Scene(mainRoot);
-        stage.setScene(scene);
+        mainScene = new Scene(mainRoot);
+        stage.setScene(mainScene);
 
-        ViewSwitcher.setScene(scene) ;
+        ViewSwitcher.setScene(mainScene) ;
         ViewSwitcher.setFlashCardGame(fcg);
         ViewSwitcher.switchTo(View.ACCUEIL);
 
@@ -62,11 +65,14 @@ public class TestAffichageCreationPile {
         robot.clickOn("#import");
     }
 
-//    @Test
-//    void shouldContainTwoStacks(FxRobot robot) {
-//        robot.clickOn("#creation");
-//        System.out.println(mainRoot.getChildren());
-//        org.junit.jupiter.api.Assertions.assertNotNull(((GridPane) ((ScrollPane) mainRoot.getChildren().get(2)).getContent()).getChildren().get(0));
-
-//    }
+    @Test
+    void shouldContainTwoStacks(FxRobot robot) {
+        robot.clickOn("#creation");
+        VBox vBox = (VBox) mainScene.getRoot();
+        VBox firstElement = (VBox) ((GridPane) ((ScrollPane) vBox.getChildren().get(2)).getContent()).getChildren().get(0);
+        VBox secondElement = (VBox) ((GridPane) ((ScrollPane) vBox.getChildren().get(2)).getContent()).getChildren().get(1);
+        org.junit.jupiter.api.Assertions.assertNotNull(firstElement);
+        org.junit.jupiter.api.Assertions.assertNotNull(secondElement);
+        robot.clickOn(secondElement);
+    }
 }
