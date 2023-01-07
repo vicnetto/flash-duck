@@ -26,9 +26,9 @@ java --module-path $CHEMIN_DE_LA_LIB_JAVAFX --add-modules=javafx.controls,javafx
 
 Des tests de l'interface ont été implémentés. Il est possible de l'exécuter en ouvrant le projet avec un IDE tel IntelliJ IDEA.
 
+![img_tests.png](img_tests.png)
+
 ## Vidéo de présentation
 
 Vous pouvez accéder à la vidéo de présentation du projet gràce à ce lien : https://www.youtube.com/watch?v=oX8QFcOse7A 
 Bon visionnage!
-
-![img_tests.png](img_tests.png)
